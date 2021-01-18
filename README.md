@@ -1,2 +1,2 @@
 ## Description
-Pesonal website for Nathan Embaye
+- Pesonal website for Nathan Embaye
