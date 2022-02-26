@@ -1,0 +1,80 @@
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  margin-top: 12%;
+}
+
+.title {
+  color: #e0218a;
+  font-family: Trebuchet MS, sans-serif;
+}
+
+h1 {
+  font-weight: 200;
+}
+
+.body {
+  font-family: "Verdana", sans-serif;
+  font-size: 15px;
+}
+
+.body a {
+  color: #e0218a;
+  text-decoration: none;
+}
+
+.social {
+}
+
+.social img {
+  height: 25px;
+  width: 25px;
+  margin: 2% 3% 0% 0%;
+}
+
+.linkedin:hover {
+  opacity: 0.3;
+}
+
+.github:hover {
+  opacity: 0.3;
+}
+
+.spotify:hover {
+  opacity: 0.3;
+}
+
+@media (max-width: 1100px) {
+  .container {
+    width: 50%;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: 60%;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: 60%;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: 80%;
+    margin-top: 25%;
+  }
+
+  .social img {
+    height: 22px;
+    width: 22px;
+  }
+
+  .body {
+    font-size: 13px;
+  }
+}
