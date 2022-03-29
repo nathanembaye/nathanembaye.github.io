@@ -46,6 +46,9 @@ class App extends React.Component {
           <a href="https://github.com/nathanembaye">
             <img className="github" src={github} />
           </a>
+          <a href="https://github.com/nathanembaye">
+            <img className="spotify" src={spotify} />
+          </a>
           <a href={process.env.PUBLIC_URL + "/Resume.pdf"} target="_blank">
             <img className="spotify" src={resume} />
           </a>
