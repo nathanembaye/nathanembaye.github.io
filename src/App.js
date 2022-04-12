@@ -5,8 +5,8 @@ import github from "./githubGrey.png";
 import linkedin from "./linkedinGrey.png";
 import resume from "./resumeGrey.png";
 import time from "./time.png";
-import { Routes, Route, Link } from "react-router-dom";
-import { CodeBlock, atomOneLight, rainbow } from "react-code-blocks";
+import { Route, Link, Routes } from "react-router-dom";
+import { CodeBlock, atomOneLight } from "react-code-blocks";
 
 class App extends React.Component {
   constructor(props) {
