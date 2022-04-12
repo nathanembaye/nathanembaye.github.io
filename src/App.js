@@ -16,9 +16,9 @@ class App extends React.Component {
   render() {
     return (
       <Routes>
-        <Route path="https://nathanembaye.com/" element={<Home />} />
-        <Route path="https://nathanembaye.com/notes" title="notes" element={<Notes />} />
-        <Route path="https://nathanembaye.com/complexity" title="complexity" element={<Complexity />} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/notes" title="notes" element={<Notes />} />
+        <Route exact path="/complexity" title="complexity" element={<Complexity />} />
       </Routes>
     );
   }
@@ -60,7 +60,7 @@ function Home() {
           <a href="https://github.com/nathanembaye">
             <img className="github" src={github} />
           </a>
-          <a href="https://nathanembaye.com/notes">
+          <a href="/notes">
             <img className="pencil" src={pencil} />
           </a>
           <a href={process.env.PUBLIC_URL + "/Resume.pdf"} target="_blank">
@@ -79,13 +79,13 @@ function Notes() {
         <br/>
         <br/>
         <br/>
-        <h1><a href="https://nathanembaye.com/">notes</a></h1>
+        <h1><a href="/">notes</a></h1>
         <p>writing about things to better understand them.</p>
         <br/>
         <br/>
         <br/>
         <div className="blogDescripion">
-          <a href="https://nathanembaye.com/complexity">computational complexity</a>
+          <a href="/complexity">computational complexity</a>
           <p>a fancy way of asking: <i>roughly</i> how much resources does a computer need to run this algorithm?</p>
         </div>
       </div>
@@ -102,7 +102,7 @@ function Complexity() {
         <br/>
         <br/>
         <h1>computational complexity</h1>
-        <a href="https://nathanembaye.com/notes">april 9th, 2022</a>
+        <a href="/notes">april 9th, 2022</a>
         <br/>
         <br/>
         <h3>computational complexity</h3>
