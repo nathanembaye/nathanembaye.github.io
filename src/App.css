@@ -24,9 +24,6 @@ h1 {
   text-decoration: none;
 }
 
-.social {
-}
-
 .social img {
   height: 25px;
   width: 25px;
@@ -43,6 +40,82 @@ h1 {
 
 .spotify:hover {
   opacity: 0.3;
+}
+
+.resume:hover {
+  opacity: 0.3;
+}
+
+.pencil:hover {
+  opacity: 0.3;
+}
+
+.article {
+  text-align: center;
+}
+
+.arrow {
+text-decoration: none;
+color: #e0218a;
+}
+
+.article h1{
+  color: #e0218a;
+  font-family: Trebuchet MS, sans-serif;
+}
+
+.article a{
+  color: #e0218a;
+  font-family: Trebuchet MS, sans-serif;
+  text-decoration: none;
+}
+
+.blogDescripion {
+  display: inline-block; 
+  text-align: left;
+}
+
+.blogDescripion a {
+  color: #e0218a;
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+.blogDescripion p {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 15px;
+}
+
+.articleDescripion {
+  display: inline-block; 
+  text-align: left;
+  width: 65%;
+}
+
+.articleDescripion h1{
+  font-family: Trebuchet MS, sans-serif;
+  color: #000;
+}
+
+.articleDescripion a{
+  color: #e0218a;
+  text-decoration: underline;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.articleDescripion p{
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 15px;
+}
+
+.articleDescripion h5{
+  color: #e0218a;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.articleDescripion h3{
+  color: #e0218a;
+  font-family: 'Trebuchet MS', sans-serif;
 }
 
 @media (max-width: 1100px) {
