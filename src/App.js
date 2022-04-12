@@ -16,7 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route exact path="/notes" title="notes" element={<Notes />} />
         <Route exact path="/complexity" title="complexity" element={<Complexity />} />
       </Routes>
