@@ -5,7 +5,7 @@ import github from "./githubGrey.png";
 import linkedin from "./linkedinGrey.png";
 import resume from "./resumeGrey.png";
 import time from "./time.png";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import { CodeBlock, atomOneLight, rainbow } from "react-code-blocks";
 
 class App extends React.Component {
@@ -17,8 +17,8 @@ class App extends React.Component {
     return (
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route exact path="https://nathanembaye.com/notes" title="notes" element={<Notes />} />
-        <Route path="https://nathanembaye.com/complexity" title="complexity" element={<Complexity />} />
+        <Route path="/notes" title="notes" element={<Notes />} />
+        <Route path="/complexity" title="complexity" element={<Complexity />} />
       </Routes>
     );
   }
@@ -60,9 +60,9 @@ function Home() {
           <a href="https://github.com/nathanembaye">
             <img className="github" src={github} />
           </a>
-          <a href="/notes">
+          <Link to="/notes">
             <img className="pencil" src={pencil} />
-          </a>
+          </Link>
           <a href={process.env.PUBLIC_URL + "/Resume.pdf"} target="_blank">
             <img className="resume" src={resume} />
           </a>
@@ -79,13 +79,13 @@ function Notes() {
         <br/>
         <br/>
         <br/>
-        <h1><a href="/">notes</a></h1>
+        <h1><Link to="/">notes</Link></h1>
         <p>writing about things to better understand them.</p>
         <br/>
         <br/>
         <br/>
         <div className="blogDescripion">
-          <a href="/complexity">computational complexity</a>
+          <Link to="/complexity">computational complexity</Link>
           <p>a fancy way of asking: <i>roughly</i> how much resources does a computer need to run this algorithm?</p>
         </div>
       </div>
@@ -102,7 +102,7 @@ function Complexity() {
         <br/>
         <br/>
         <h1>computational complexity</h1>
-        <a href="/notes">april 9th, 2022</a>
+        <Link to="/notes">april 9th, 2022</Link>
         <br/>
         <br/>
         <h3>computational complexity</h3>
