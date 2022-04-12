@@ -17,8 +17,8 @@ class App extends React.Component {
     return (
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/notes" title="notes" element={<Notes />} />
-        <Route path="/complexity" title="complexity" element={<Complexity />} />
+        <Route exact path="/notes" title="notes" element={<Notes />} />
+        <Route exact path="/complexity" title="complexity" element={<Complexity />} />
       </Routes>
     );
   }
