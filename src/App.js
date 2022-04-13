@@ -86,7 +86,7 @@ function Notes() {
         <br/>
         <div className="blogDescripion">
           <Link to="/complexity">computational complexity</Link>
-          <p>a fancy way of asking: <i>roughly</i> how much resources does a computer need to run this algorithm?</p>
+          <p>a fancy way of asking: how much resources does a computer need to run this algorithm?</p>
         </div>
       </div>
   );
