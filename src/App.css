@@ -158,8 +158,11 @@ color: #e0218a;
     width: 95%;
   }
 
+  .articleDescripion {
+    width: 85%;
+  }
   .articleDescripion img {
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
   }
 }
