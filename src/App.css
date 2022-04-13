@@ -73,6 +73,7 @@ color: #e0218a;
 .blogDescripion {
   display: inline-block; 
   text-align: left;
+  
 }
 
 .blogDescripion a {
@@ -134,6 +135,7 @@ color: #e0218a;
   .container {
     width: 60%;
   }
+
 }
 
 @media (max-width: 700px) {
@@ -149,5 +151,9 @@ color: #e0218a;
 
   .body {
     font-size: 13px;
+  }
+
+  .blogDescripion{
+    width: 95%;
   }
 }
