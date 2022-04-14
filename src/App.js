@@ -103,10 +103,8 @@ function Complexity() {
         <br/>
         <h1>computational complexity</h1>
         <Link to="/notes">april 9th, 2022</Link>
+        <p><i>Computational complexity is the estimate of computer resources an algorithm needs to complete a run. In it there's a particular focus on two categories: time and space.</i></p>
         <br/>
-        <br/>
-        <h3>computational complexity</h3>
-        <p>Computational complexity is the estimate of computer resources an algorithm needs to complete a run. In it there's a particular focus on two categories: time and space.</p>
         <h3>time complexity</h3>
         <p>We should begin by saying time complexity is not the actual hours:minutes:seconds required to execute any particular piece of code. That depends on a myriad of factors like programming language, operating system and processing power.</p>
         <p>Instead, time complexity describes how long an algorithm will take to execute with changes in its input size. In other words, how the execution time will increase or decrease based on how big or small the input data is. Why an algorithm's lifetime time could differ given a new input length is because it could change the number of operations being performed.</p>
@@ -179,6 +177,7 @@ function Complexity() {
           showLineNumbers={true}
           theme={atomOneLight}/>
         <p>Since the input here is a single element it would have a real execution time that is O(1). But this reveals something about our time complexity estimates: we are calculating the worst-case. This is in consideration of the varying input sizes. We cannot guarantee the unsorted input array will always be a length of 1, so we cannot call it constant. Since its execution time grows at input length, we call its complexity by the worst-case, linear.</p>
+        <br/>
         <h3>space complexity</h3>
         <p>The space complexity of an algorithm is the amount of memory it requires to execute completely. It’s calculated as <i>space complexity = auxiliary space + input space.</i></p>
         <p>Auxiliary space is defined as all the memory used inside the algorithm itself (think variables, loops, data structures, etc.), while input space is the memory used for the data that goes into the algorithm for processing. Differentiating that, when comparing different algorithms' space complexity, we would only consider auxiliary space since they’re solutions accepting the same sets of data.</p>

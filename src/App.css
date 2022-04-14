@@ -99,7 +99,7 @@ color: #e0218a;
 }
 
 .articleDescripion a{
-  color: #e0218a;
+  color: #000;
   text-decoration: underline;
   font-family: 'Trebuchet MS', sans-serif;
 }
@@ -117,6 +117,10 @@ color: #e0218a;
 .articleDescripion h3{
   color: #e0218a;
   font-family: 'Trebuchet MS', sans-serif;
+}
+
+.articleDescripion h1{
+  color: #000;
 }
 
 
