@@ -86,7 +86,7 @@ function Notes() {
         <br/>
         <div className="blogDescripion">
           <Link to="/complexity">computational complexity</Link>
-          <p>a fancy way of asking: how much resources does a computer need to run this algorithm?</p>
+          <p>a fancy way of asking: how much work is it to run this algorithm?</p>
         </div>
       </div>
   );
@@ -103,7 +103,7 @@ function Complexity() {
         <br/>
         <h1>computational complexity</h1>
         <Link to="/notes">april 9th, 2022</Link>
-        <p><i>Computational complexity is the estimate of computer resources an algorithm needs to complete a run. In it there's a particular focus on two categories: time and space.</i></p>
+        <p><i>Computational complexity is the estimate of computer resources an algorithm needs to complete a execution. In it there's a particular focus on two categories: time and space.</i></p>
         <br/>
         <h3>time complexity</h3>
         <p>We should begin by saying time complexity is not the actual hours:minutes:seconds required to execute any particular piece of code. That depends on a myriad of factors like programming language, operating system and processing power.</p>
