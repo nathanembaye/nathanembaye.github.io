@@ -64,9 +64,6 @@ function Home() {
           <Link to="/notes">
             <img className="pencil" src={pencil} />
           </Link>
-          <a href="https://open.spotify.com/user/31np4zuxao4wa25n2kf4unvazmvy">
-            <img className="spotify" src={spotify} />
-          </a>
           <a href={process.env.PUBLIC_URL + "/Resume.pdf"} target="_blank">
             <img className="resume" src={resume} />
           </a>
