@@ -45,9 +45,9 @@ function Home() {
             <br />
             When I'm not developing I like to lift,{" "}
             <a href="https://riosmauricio.com/wp-content/uploads/2020/07/Basic-Economics-5th-Edition-Thomas-Sowell.pdf">
-              read{" "}
+              read
             </a>
-            and frequent comedy clubs. Feel free to check out my latest project,
+            {""} and frequent comedy clubs. Feel free to check out my latest project,
             a COVID-19 relief initiative:{" "}
             <a href="https://github.com/nathanembaye/DekiProject">
               Deki Ottawa
