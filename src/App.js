@@ -231,6 +231,8 @@ function Articles() {
             <br/>
             <br/>
             <br/>
+            <h1 className="articleDescripion2"><Link to="/notes">articles</Link></h1>
+            <br/>
             <a href="https://hbr.org/2015/06/the-great-decoupling"><i>The Great Decoupling</i></a>
             <p>Technology is increasing productivity (profit) but reducing the need for some kinds of workers. The pie is being less equally distributed because of it. Brynjolfsson and McAfee explore the implications: who will win, who will lose, and how businesses will need to respond.</p>
           </div>
