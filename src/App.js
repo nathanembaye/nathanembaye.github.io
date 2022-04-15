@@ -20,6 +20,7 @@ class App extends React.Component {
         <Route path="/" element={<Home />} />
         <Route exact path="/notes" title="notes" element={<Notes />} />
         <Route exact path="/complexity" title="complexity" element={<Complexity />} />
+        <Route exact path="/articles" title="articles" element={<Articles />} />
       </Routes>
     );
   }
@@ -88,6 +89,8 @@ function Notes() {
         <div className="blogDescripion">
           <Link to="/complexity">computational complexity</Link>
           <p>a fancy way of asking: how much work is it to run this algorithm?</p>
+          <Link to="/articles">articles</Link>
+          <p>Interesting essay's I’ve read in 2022</p>
         </div>
       </div>
   );
@@ -216,6 +219,22 @@ function Complexity() {
         <br/>
         </div>
       </div>
+  );
+}
+
+function Articles() {
+  return (
+        <div className="article">
+          <div className="articleDescripion">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <a href="https://hbr.org/2015/06/the-great-decoupling"><i>The Great Decoupling</i></a>
+            <p>Technology is increasing productivity (profit) but reducing the need for some kinds of workers. The pie is being less equally distributed because of it. Brynjolfsson and McAfee explore the implications: who will win, who will lose, and how businesses will need to respond.</p>
+          </div>
+        </div>
   );
 }
 
