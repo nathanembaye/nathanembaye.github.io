@@ -20,7 +20,7 @@ class App extends React.Component {
         <Route path="/" element={<Home />} />
         <Route exact path="/notes" title="notes" element={<Notes />} />
         <Route exact path="/complexity" title="complexity" element={<Complexity />} />
-        <Route exact path="/articles" title="articles" element={<Articles />} />
+        <Route exact path="/miscellania" title="miscellania" element={<Miscellania />} />
       </Routes>
     );
   }
@@ -89,8 +89,8 @@ function Notes() {
         <div className="blogDescripion">
           <Link to="/complexity">computational complexity</Link>
           <p>a fancy way of asking: how much work is it to run this algorithm?</p>
-          <Link to="/articles">articles</Link>
-          <p>Interesting essay's I’ve read in 2022</p>
+          <Link to="/miscellania">miscellania</Link>
+          <p>Post-it worthy essay's I’ve read in 2022</p>
         </div>
       </div>
   );
@@ -106,7 +106,7 @@ function Complexity() {
         <br/>
         <br/>
         <h1>computational complexity</h1>
-        <Link to="/notes">april 9th, 2022</Link>
+        <Link to="/notes">apr 9, 2022</Link>
         <p><i>Computational complexity is the estimate of computer resources an algorithm needs to complete a execution. In it there's a particular focus on two categories: time and space.</i></p>
         <br/>
         <h3>time complexity</h3>
@@ -222,7 +222,7 @@ function Complexity() {
   );
 }
 
-function Articles() {
+function Miscellania() {
   return (
         <div className="article">
           <div className="articleDescripion">
@@ -231,8 +231,12 @@ function Articles() {
             <br/>
             <br/>
             <br/>
-            <h1 className="articleDescripion2"><Link to="/notes">articles</Link></h1>
-            <br/>
+            <h1>miscellania</h1>
+            <Link to="/notes">apr 15, 2022</Link>
+            <br/> 
+            <br/> 
+            <br/> 
+            <br/>            
             <a href="https://hbr.org/2015/06/the-great-decoupling"><i>The Great Decoupling</i></a>
             <p>Technology is increasing productivity (profit) but reducing the need for some kinds of workers. The pie is being less equally distributed because of it. Brynjolfsson and McAfee explore the implications: who will win, who will lose, and how businesses will need to respond.</p>
           </div>
