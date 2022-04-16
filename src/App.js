@@ -243,6 +243,8 @@ function Miscellania() {
             <p>Luxury beliefs are ideas and opinions that confer status on the rich at very little cost, while taking a toll on the lower class.</p>
             <a href="https://bariweiss.substack.com/p/americas-lost-boys-and-me?s=r"><i>America's Lost Boys and Me</i></a>
             <p>Rob Henderson is an outsider now on the inside, a poor foster-care kid now living inside the Ivory Tower, which grants him a powerful critical distance.</p>
+            <br/>
+            <br/>
           </div>
         </div>
   );
