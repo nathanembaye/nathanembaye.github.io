@@ -242,7 +242,7 @@ function Miscellania() {
             <a href="https://nypost.com/2019/08/17/luxury-beliefs-are-the-latest-status-symbol-for-rich-americans/"><i>Luxury Beliefs</i></a>
             <p>Luxury beliefs are ideas and opinions that confer status on the rich at very little cost, while taking a toll on the lower class.</p>
             <a href="https://bariweiss.substack.com/p/americas-lost-boys-and-me?s=r"><i>America's Lost Boys and Me</i></a>
-            <p>Rob Henderson is an outsider now on the inside, a poor foster-care kid now living inside the Ivory Tower, which grants him a powerful critical distance.</p>
+            <p>Rob Henderson is an outsider now on the inside, a poor foster-care kid currently living in the Ivory Tower, which grants him a powerful critical distance.</p>
             <br/>
             <br/>
           </div>
