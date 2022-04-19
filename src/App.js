@@ -247,6 +247,14 @@ function Miscellania() {
             <p>The old form of marriage, based on outdated social rules and gender roles, is fading. A new version is emerging—egalitarian, committed, and focused on children.</p>
             <a href="http://www.paulgraham.com/smart.html"><i>Beyond Smart</i></a>
             <p>What was special about Einstein?</p>
+            <a href="https://timdillontalks.tumblr.com/post/138638249053/embed"><i>Pizza Hut</i></a>
+            <p>We live in a time of disorienting change. I think Obama said that. But the Pizza Hut lunch buffet remains the same. And that is a comfort.</p>
+            <a href="https://timdillontalks.tumblr.com/post/139544641093/embed"><i>Staten Island</i></a>
+            <p>I took a train to a boat to a bus every morning.</p>
+            <a href="https://timdillontalks.tumblr.com/post/148652686978/embed"><i>Dennis</i></a>
+            <p>Life in the big city.</p>
+            <a href="https://timdillontalks.tumblr.com/post/151946572273/embed"><i>The Unexamined Life</i></a>
+            <p>Tim I’ll always be rich. You know why? Because everything else is boring.</p>
             <br/>
             <br/>
           </div>
