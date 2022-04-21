@@ -253,8 +253,8 @@ function Miscellania() {
             <p>I took a train to a boat to a bus every morning.</p>
             <a href="https://timdillontalks.tumblr.com/post/148652686978/embed"><i>Dennis</i></a>
             <p>Life in the big city.</p>
-            <a href="https://timdillontalks.tumblr.com/post/151946572273/embed"><i>The Unexamined Life</i></a>
-            <p>Tim I’ll always be rich. You know why? Because everything else is boring.</p>
+            <a href="https://timdillontalks.tumblr.com/post/140455976833/embed"><i>Vive la Crêpe</i></a>
+            <p>I’m getting marshmallow though and you’re not.</p>
             <br/>
             <br/>
           </div>
