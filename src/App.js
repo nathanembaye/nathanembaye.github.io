@@ -44,7 +44,7 @@ function Home() {
             <br />
             <br />
             When I'm not developing I like to lift,{" "}
-            <a href="https://riosmauricio.com/wp-content/uploads/2020/07/Basic-Economics-5th-Edition-Thomas-Sowell.pdf">
+            <a href="http://www.rosenfels.org/Joseph%20Campbell%20-%20The%20Hero%20With%20A%20Thousand%20Faces,%20Commemorative%20Edition%20%282004%29.pdf">
               read
             </a>
             {""} and frequent comedy clubs. Feel free to check out my latest project,
