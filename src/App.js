@@ -249,6 +249,8 @@ function Miscellania() {
             <p>Life in the big city.</p>
             <a href="https://timdillontalks.tumblr.com/post/140455976833/embed"><i>Vive la Crêpe</i></a>
             <p>I’m getting marshmallow though and you’re not.</p>
+            <a href="https://medium.com/poem-of-the-day/charles-bukowski-bluebird-f4e80e5000ef"><i>Bluebird</i></a>
+            <p>Bukowski</p>
             <br/>
             <br/>
           </div>
