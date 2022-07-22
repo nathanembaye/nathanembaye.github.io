@@ -49,7 +49,7 @@ function Home() {
             </a>
             {""} and frequent comedy clubs. Feel free to check out my latest project,
             a COVID-19 relief initiative:{" "}
-            <a href="https:/dekiottawa.com">
+            <a href="https://dekiottawa.com">
               Deki Ottawa
             </a>
             .
