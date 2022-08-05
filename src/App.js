@@ -21,6 +21,8 @@ class App extends React.Component {
         <Route exact path="/notes" title="notes" element={<Notes />} />
         <Route exact path="/complexity" title="complexity" element={<Complexity />} />
         <Route exact path="/miscellania" title="miscellania" element={<Miscellania />} />
+        <Route exact path="/leetcode" title="leetcode" element={<Leetcode />} />
+        <Route exact path="/slidingwindow" title="slidingwindow" element={<SlidingWindow />} />
       </Routes>
     );
   }
@@ -90,7 +92,9 @@ function Notes() {
           <Link to="/complexity">computational complexity</Link>
           <p>a fancy way of asking: how much work is it to run this algorithm?</p>
           <Link to="/miscellania">miscellania</Link>
-          <p>Post-it worthy essay's I’ve come across in 2022</p>
+          <p>post-it worthy essay's I’ve come across in 2022</p>
+          <Link to="/leetcode">leetcode patterns</Link>
+          <p>annoying</p>
         </div>
       </div>
   );
@@ -258,5 +262,87 @@ function Miscellania() {
   );
 }
 
-export default App;
+function Leetcode() {
+  return (
+        <div className="article">
+          <div className="articleDescripion">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <h1>leetcode patterns</h1>
+            <Link to="/notes">apr 15, 2022</Link>
+            <br/> 
+            <br/> 
+            <br/> 
+            <br/> 
+            <Link to="/slidingwindow">Sliding Window</Link>           
+            <p>Cha-cha slide through linear data structures</p>
+            <br/>
+            <br/>
+          </div>
+        </div>
+  );
+}
 
+function SlidingWindow() {
+  return (
+      <div className="article">
+        <div className="articleDescripion">
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <h1>sliding window</h1>
+        <Link to="/leetcode">Aug 2, 2022</Link>
+        <br/>
+        <p><i>The sliding window technique applies to linear data structures like arrays, lists and strings. It’s used to reduce algorithms time complexity, from O(n²) to O(n). There are three ways it's usually applied:</i></p>
+        <br/>
+        <h5>(1) Fixed Window Size</h5>
+        <p>This is when the window being used stays the same size, while it makes it's way to the end of our input. Say we have a list:</p>
+        <CodeBlock
+          text={`arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']`}
+          language={"python"}
+          showLineNumbers={true}
+          theme={atomOneLight}/>
+          <p>Now, lets set the fixed size, length = 3. The sliding window of that would be:</p>
+          <CodeBlock
+          text={`['a', 'b', 'c']
+      ['b', 'c', 'd']
+             ['c', 'd', 'e']
+                   ['d', 'e', 'f']
+                          ['e', 'f', 'g']
+                                ['f', 'g', 'h']`}
+          language={"python"}
+          showLineNumbers={true}
+          theme={atomOneLight}/>
+        <h5>(2) Dynamic Window Size</h5>
+        <p>The dynamic version describes when the window can both expand and contract when traversing through our input.</p>
+        <CodeBlock
+          text={`['a']
+['a', 'b']
+['a', 'b', 'c']
+['a', 'b', 'c', 'd']
+['a', 'b', 'c', 'd', 'e']`}
+          language={"python"}
+          showLineNumbers={true}
+          theme={atomOneLight}/>
+          <p>Shown above is the window beginning at the first element, and then expanding to include the next 4. It also can be contracted.</p>
+          <CodeBlock
+          text={`['a', 'b', 'c', 'd', 'e']
+['b', 'c', 'd', 'e']
+['c', 'd', 'e']`}
+          language={"python"}
+          showLineNumbers={true}
+          theme={atomOneLight}/>
+          <p>Typically the expansion and contracion of window size is based on a questions given condition being fufilled or unfulfilled.</p>
+        <h5>(3) Dynamic Window Size with a helper Data Structure</h5>
+        <p>The sliding window technique applies to linear data structures like arrays, lists and strings. It’s used to reduce algorithms, usually of nested loops from O(n²) to O(n). There are three ways it can be applied:</p>
+        </div>
+      </div>
+  );
+}
+
+export default App;
