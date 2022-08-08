@@ -117,7 +117,7 @@ function Complexity() {
         <br/>
         <h3>time complexity</h3>
         <p>We should begin by saying time complexity is not the actual hours:minutes:seconds required to execute any particular piece of code. That depends on a myriad of factors like programming language, operating system and processing power.</p>
-        <p>Instead, time complexity describes how long an algorithm will take to execute with changes in its input size. Simply put, how the execution time will increase or decrease based on how big or small the input data is. Why an algorithm's lifetime time could differ given a new input length is because it could change the number of operations being performed.</p>
+        <p>Instead, time complexity describes how long an algorithm will take to execute with changes in its input size. In other words, how the execution time will increase or decrease based on how big or small the input data is. Why an algorithm's lifetime time could differ given a new input length is because it could change the number of operations being performed.</p>
         <h5>constant time - O(1)</h5>
         <p>An algorithm is said to have constant time, O(1), when how long it takes to execute is not dependent on input length. Simply -- it takes the same amount of time to run no matter the size of the input.</p>
         <h5>logarithmic time - (log n)</h5>
@@ -179,6 +179,14 @@ function Complexity() {
           showLineNumbers={true}
           theme={atomOneLight}/>
         <p>Since our algorithm processes each value in the input, the execution time will increase with input length - and because that growth is proportional (1 to 1) to the change in size, its linear, O(n).</p>
+        <h5>the worst case</h5>
+        <p>With that being said there are cases where an unsorted array input could execute in constant time:</p>
+        <CodeBlock
+          text={`arr = [3]`}
+          language={"python"}
+          showLineNumbers={true}
+          theme={atomOneLight}/>
+        <p>Since the input here is a single element it would have a real execution time that is O(1). But this reveals something about our time complexity estimates: we are calculating the worst-case. This is in consideration of the varying input sizes. We cannot guarantee the unsorted input array will always be a length of 1, so we cannot call it constant. Since its execution time grows at input length, we call its complexity by the worst-case, linear.</p>
         <br/>
         <h3>space complexity</h3>
         <p>The space complexity of an algorithm is the amount of memory it requires to execute completely. It’s calculated as <i>space complexity = auxiliary space + input space.</i></p>
@@ -295,12 +303,93 @@ function SlidingWindow() {
         <h1>sliding window</h1>
         <Link to="/grokking">Aug 2, 2022</Link>
         <br/>
-        <p><i>The sliding window technique applies to linear data structures like arrays, lists and strings. It improves performance for algorithms trying to visit every sub-structure of an input. Typically containg nested loops, we’ll see how time complexities can go from O(n²) to O(n).  Here are three of it's variations:</i></p>
+        <p><i>The sliding window technique applies to linear data structures like arrays, lists and strings. It improves the performance of algorithms trying to visit every substructure of an input. For any given window (substructure), there is an index that denotes the start of the window and an index that marks the end of the window. Typically containing nested loops, we’ll see how time complexities can go from O(n²) to O(n). Here are its three variations:</i></p>
+        <ul className="listTitle">
+        <li><h5>(1) Fixed Window Size</h5></li>
+        <li><h5>(2) Dynamic Window Size</h5></li>
+        <li><h5>(3) Dynamic Window Size + Auxiliary Structure</h5></li>
+        </ul>
         <br/>
-        <h5>(1) Fixed Window Size</h5>
-        <h5>(2) Dynamic Window Size</h5>
-        <h5>(3) Dynamic Window Size with a helper Data Structure</h5>
+        <h4>Fixed Window Size</h4>
+        <p>For some questions, typically “easy'', the windows (substructures) to be visited must be of a set size. This is when the window being used to traverse our input always stays the same size. Say we have a list:</p>
+        <CodeBlock
+          text={`arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']`}
+          language={"python"}
+          showLineNumbers={true}
+          theme={atomOneLight}/>
+          <p>Now, lets set the fixed size to k = 3. The sliding window of that would be:</p>
+          <CodeBlock
+          text={`['a', 'b', 'c']
+      ['b', 'c', 'd']
+             ['c', 'd', 'e']
+                   ['d', 'e', 'f']
+                          ['e', 'f', 'g']
+                                ['f', 'g', 'h']`}
+          language={"python"}
+          showLineNumbers={true}
+          theme={atomOneLight}/>
+        <br/>
+        <br/>
+        <h4>Dynamic Window Size</h4>
+        <p>For most problems, you’ll need a window that is dynamic. This means the answer to the question can be a window of any size, so we’ll need to dynamically expand and contract it. How windows size will change though varies:</p>
+        <ul className="listTitle">
+        <br/>
+        <li><h5>(1) Fast/Slow</h5></li>
+        <dl>Here we expand the window (increment right pointer by a single index) until a condition is fulfilled, then contract the window (increment left pointer by a single index) until it’s no longer true.</dl>
+        <CodeBlock
+          text={`['a']
+['a', 'b']
+['a', 'b', 'c']
+['a', 'b', 'c', 'd']
+['a', 'b', 'c', 'd', 'e']`}
+          language={"python"}
+          showLineNumbers={true}
+          theme={atomOneLight}/>
+          <p>Shown above is the window beginning at the first element, and then expanding to include the next 4. It also can be contracted:</p>
+          <CodeBlock
+          text={`['a', 'b', 'c', 'd', 'e']
+['b', 'c', 'd', 'e']
+['c', 'd', 'e']`}
+          language={"python"}
+          showLineNumbers={true}
+          theme={atomOneLight}/>
+          <p>Typically the expansion and contracion of window size is based on a questions given condition being fufilled or unfulfilled.</p>
+          <br/>
+          <li><h5>(2) Fast/Catch Up</h5></li>
+        <dl>Here we expand the window (increment right pointer by a single index) until a condition is fulfilled, then contract the window (set left pointer’s index to the right pointer's current index) when it’s no longer true.</dl>
+        <br/>
+        <CodeBlock
+          text={`['a']
+['a', 'b']
+['a', 'b', 'c']   #condition fufilled processing letter d`}
+          language={"python"}
+          showLineNumbers={true}
+          theme={atomOneLight}/>
+          <p>With our condition fufilled we set the letter "d" as our windows start and continue expansion:</p>
+          <CodeBlock
+          text={`['d']
+['d', 'e']
+['d', 'e', 'f']`}
+          language={"python"}
+          showLineNumbers={true}
+          theme={atomOneLight}/>
+        </ul>
+          <br/>
+          <br/>
+          <h4>Dynamic Window Size + Auxiliary Structure</h4>
+          <p>These types of questions require our window to dynamically grow and shrink, however, along the way we must keep track of the number of occurrences for each unique/distinct element.</p>
+          <br/>
+          <br/>
+          <h4>When to use the Sliding Window?</h4>
+          <ol className="listInfo">
+          <li><p>When the input is an array, list or string</p></li>
+          <li><p>When some keywords are used: maximum, minimum, longest, shortest, optimal, unique, distinct, contiguous, sub-array/string</p></li>
+          <li><p>The brute force solution is O(n²)/has nested loops</p></li>
+          </ol>
         </div>
+        <br/>
+        <br/>
+        <br/>
       </div>
   );
 }
