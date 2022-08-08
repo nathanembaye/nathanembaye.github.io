@@ -117,7 +117,7 @@ function Complexity() {
         <br/>
         <h3>time complexity</h3>
         <p>We should begin by saying time complexity is not the actual hours:minutes:seconds required to execute any particular piece of code. That depends on a myriad of factors like programming language, operating system and processing power.</p>
-        <p>Instead, time complexity describes how long an algorithm will take to execute with changes in its input size. In other words, how the execution time will increase or decrease based on how big or small the input data is. Why an algorithm's lifetime time could differ given a new input length is because it could change the number of operations being performed.</p>
+        <p>Instead, time complexity describes how long an algorithm will take to execute with changes in its input size. Simply put, how the execution time will increase or decrease based on how big or small the input data is. Why an algorithm's lifetime time could differ given a new input length is because it could change the number of operations being performed.</p>
         <h5>constant time - O(1)</h5>
         <p>An algorithm is said to have constant time, O(1), when how long it takes to execute is not dependent on input length. Simply -- it takes the same amount of time to run no matter the size of the input.</p>
         <h5>logarithmic time - (log n)</h5>
@@ -179,14 +179,6 @@ function Complexity() {
           showLineNumbers={true}
           theme={atomOneLight}/>
         <p>Since our algorithm processes each value in the input, the execution time will increase with input length - and because that growth is proportional (1 to 1) to the change in size, its linear, O(n).</p>
-        <h5>the worst case</h5>
-        <p>With that being said there are cases where an unsorted array input could execute in constant time:</p>
-        <CodeBlock
-          text={`arr = [3]`}
-          language={"python"}
-          showLineNumbers={true}
-          theme={atomOneLight}/>
-        <p>Since the input here is a single element it would have a real execution time that is O(1). But this reveals something about our time complexity estimates: we are calculating the worst-case. This is in consideration of the varying input sizes. We cannot guarantee the unsorted input array will always be a length of 1, so we cannot call it constant. Since its execution time grows at input length, we call its complexity by the worst-case, linear.</p>
         <br/>
         <h3>space complexity</h3>
         <p>The space complexity of an algorithm is the amount of memory it requires to execute completely. It’s calculated as <i>space complexity = auxiliary space + input space.</i></p>
