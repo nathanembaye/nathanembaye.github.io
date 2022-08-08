@@ -1,18 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import pencil from "./pencil.png";
 import github from "./githubGrey.png";
 import linkedin from "./linkedinGrey.png";
 import resume from "./resumeGrey.png";
 import time from "./time.png";
-import spotify from "./spotify.png";
 import { Route, Link, Routes } from "react-router-dom";
 import { CodeBlock, atomOneLight } from "react-code-blocks";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+
 
   render() {
     return (
@@ -21,14 +18,21 @@ class App extends React.Component {
         <Route exact path="/notes" title="notes" element={<Notes />} />
         <Route exact path="/complexity" title="complexity" element={<Complexity />} />
         <Route exact path="/miscellania" title="miscellania" element={<Miscellania />} />
-        <Route exact path="/leetcode" title="leetcode" element={<Leetcode />} />
+        <Route exact path="/grokking" title="grokking" element={<Grokking />} />
         <Route exact path="/slidingwindow" title="slidingwindow" element={<SlidingWindow />} />
       </Routes>
     );
   }
 }
 
+function ChangeTitle(title) {
+  useEffect(() => {
+    document.title = title;
+  });
+}
+
 function Home() {
+  ChangeTitle("nathan embaye")
   return (
     <div className="container">
         <div className="title">
@@ -59,16 +63,16 @@ function Home() {
         </div>
         <div className="social">
           <a href="https://www.linkedin.com/in/nathanembaye/">
-            <img className="linkedin" src={linkedin} />
+            <img alt='' className="linkedin" src={linkedin} />
           </a>
           <a href="https://github.com/nathanembaye">
-            <img className="github" src={github} />
+            <img alt='' className="github" src={github} />
           </a>
           <Link to="/notes">
-            <img className="pencil" src={pencil} />
+            <img alt='' className="pencil" src={pencil} />
           </Link>
-          <a href={process.env.PUBLIC_URL + "/Resume.pdf"} target="_blank">
-            <img className="resume" src={resume} />
+          <a href={process.env.PUBLIC_URL + "/Resume.pdf"} rel="noreferrer" target="_blank">
+            <img alt='' className="resume" src={resume} />
           </a>
         </div>
       </div>
@@ -76,31 +80,29 @@ function Home() {
 }
 
 function Notes() {
+  ChangeTitle("notes")
   return (
-      <div className="article">
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <h1><Link to="/">notes</Link></h1>
-        <p>writing about things to better understand them.</p>
-        <br/>
-        <br/>
-        <br/>
-        <div className="blogDescripion">
-          <Link to="/complexity">computational complexity</Link>
-          <p>a fancy way of asking: how much work is it to run this algorithm?</p>
-          <Link to="/miscellania">miscellania</Link>
-          <p>post-it worthy essay's I’ve come across in 2022</p>
-          <Link to="/leetcode">leetcode patterns</Link>
-          <p>annoying</p>
+    <div className="section">
+      <br/><br/><br/><br/>
+      <div className="sectiontitle">
+      <Link className="myname" to="/">notes<p><i>writing to understand</i></p><p>←</p></Link><br/>
         </div>
-      </div>
+        <div className="sectioninfo">
+          <div className="address">
+            <Link to="/complexity">computational complexity</Link><br/>
+            <p>a fancy way of asking: how much work is it to run this algorithm?</p>
+            <Link to="/grokking">grokking</Link><br/>
+            <p>annoying</p>
+            <Link to="/miscellania">miscellania</Link><br/>
+            <p>post-it worthy essay's I’ve come across in 2022</p>
+            </div>
+          </div>
+        </div>
   );
 }
 
 function Complexity() {
+  ChangeTitle("computational complexity")
   return (
       <div className="article">
         <div className="articleDescripion">
@@ -125,7 +127,7 @@ function Complexity() {
         <h5>quadratic time - (n<sup>2</sup>)</h5>
         <p>An algorithm is said to have Quadratic time, O(n<sup>2</sup>), when the execution time increases proportionally to the squared size of the input length. This occurs in cases when we have input data that needs to have every value inside it processed, but each of those assessments must process the entire length of the original input data with it. These types of algorithms are most commonly seen with nested for loops.</p>
         <h5>time complexity comparison </h5>
-        <img width="600" height="450" src={time} />
+        <img width="600" height="450" src={time} alt='' />
         <p>Above we can see the time complexity differences illustrated</p>
         <h5>example</h5>
         <p>Say we have an array sorted in ascending order:</p>
@@ -227,6 +229,7 @@ function Complexity() {
 }
 
 function Miscellania() {
+  ChangeTitle("miscellania")
   return (
         <div className="article">
           <div className="articleDescripion">
@@ -262,7 +265,8 @@ function Miscellania() {
   );
 }
 
-function Leetcode() {
+function Grokking() {
+  ChangeTitle("grokking")
   return (
         <div className="article">
           <div className="articleDescripion">
@@ -271,8 +275,8 @@ function Leetcode() {
             <br/>
             <br/>
             <br/>
-            <h1>leetcode patterns</h1>
-            <Link to="/notes">apr 15, 2022</Link>
+            <h1>grokking</h1>
+            <Link to="/notes">aug 1, 2022</Link>
             <br/> 
             <br/> 
             <br/> 
@@ -287,6 +291,7 @@ function Leetcode() {
 }
 
 function SlidingWindow() {
+  ChangeTitle("sliding window")
   return (
       <div className="article">
         <div className="articleDescripion">
@@ -296,50 +301,13 @@ function SlidingWindow() {
         <br/>
         <br/>
         <h1>sliding window</h1>
-        <Link to="/leetcode">Aug 2, 2022</Link>
+        <Link to="/grokking">Aug 2, 2022</Link>
         <br/>
-        <p><i>The sliding window technique applies to linear data structures like arrays, lists and strings. It’s used to reduce algorithms time complexity, from O(n²) to O(n). There are three ways it's usually applied:</i></p>
+        <p><i>The sliding window technique applies to linear data structures like arrays, lists and strings. It improves performance for algorithms trying to visit every sub-structure of an input. Typically containg nested loops, we’ll see how time complexities can go from O(n²) to O(n).  Here are three of it's variations:</i></p>
         <br/>
         <h5>(1) Fixed Window Size</h5>
-        <p>This is when the window being used stays the same size, while it makes it's way to the end of our input. Say we have a list:</p>
-        <CodeBlock
-          text={`arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']`}
-          language={"python"}
-          showLineNumbers={true}
-          theme={atomOneLight}/>
-          <p>Now, lets set the fixed size, length = 3. The sliding window of that would be:</p>
-          <CodeBlock
-          text={`['a', 'b', 'c']
-      ['b', 'c', 'd']
-             ['c', 'd', 'e']
-                   ['d', 'e', 'f']
-                          ['e', 'f', 'g']
-                                ['f', 'g', 'h']`}
-          language={"python"}
-          showLineNumbers={true}
-          theme={atomOneLight}/>
         <h5>(2) Dynamic Window Size</h5>
-        <p>The dynamic version describes when the window can both expand and contract when traversing through our input.</p>
-        <CodeBlock
-          text={`['a']
-['a', 'b']
-['a', 'b', 'c']
-['a', 'b', 'c', 'd']
-['a', 'b', 'c', 'd', 'e']`}
-          language={"python"}
-          showLineNumbers={true}
-          theme={atomOneLight}/>
-          <p>Shown above is the window beginning at the first element, and then expanding to include the next 4. It also can be contracted.</p>
-          <CodeBlock
-          text={`['a', 'b', 'c', 'd', 'e']
-['b', 'c', 'd', 'e']
-['c', 'd', 'e']`}
-          language={"python"}
-          showLineNumbers={true}
-          theme={atomOneLight}/>
-          <p>Typically the expansion and contracion of window size is based on a questions given condition being fufilled or unfulfilled.</p>
         <h5>(3) Dynamic Window Size with a helper Data Structure</h5>
-        <p>The sliding window technique applies to linear data structures like arrays, lists and strings. It’s used to reduce algorithms, usually of nested loops from O(n²) to O(n). There are three ways it can be applied:</p>
         </div>
       </div>
   );

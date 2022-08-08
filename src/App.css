@@ -53,9 +53,9 @@ h1 {
   text-align: center;
 }
 
-.arrow {
+.articleDescripion .arrow a{
 text-decoration: none;
-color: #e0218a;
+color: #000
 }
 
 .article h1{
@@ -68,21 +68,70 @@ color: #e0218a;
   font-family: Trebuchet MS, sans-serif;
 }
 
-.blogDescripion {
-  display: inline-block; 
-  text-align: left;
-  
+
+.section {
+  color: black;
+  margin: 1em;
+  font-family: "FreeSerif", serif;
+  text-transform: lowercase;
+  font-size: 15pt;
 }
 
-.blogDescripion a {
+.section p {
+  font-size: 10pt;
+}
+
+.section a {
   color: #e0218a;
-  text-decoration: underline;
-  font-size: 20px;
+  text-decoration: none;
 }
 
-.blogDescripion p {
-  font-family: 'Trebuchet MS', sans-serif;
-  font-size: 15px;
+.sectiontitle {
+  position: absolute;
+  right: 75%;
+  width: 25%;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  font-family: "FreeSans", sans-serif;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.myname {
+  font-family: "Trebuchet MS",sans-serif;
+  font-size: 200%;
+  text-transform: lowercase;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+a.myname {
+  color: black;
+}
+
+.myname i {
+  font-weight: normal;
+}
+
+.sectioninfo {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  padding-left: 1em;
+  left: 25%;
+  width: 75%;
+  text-align: left;
+}
+
+.address {
+  font-family: "Trebuchet MS",sans-serif;
+  padding-top: 1em;
+}
+
+.address a {
+   font-size: 20px;
+   text-decoration: underline;
 }
 
 .articleDescripion {
@@ -125,6 +174,7 @@ color: #e0218a;
   .container {
     width: 50%;
   }
+
 }
 
 @media (max-width: 900px) {
@@ -137,6 +187,7 @@ color: #e0218a;
   .container {
     width: 60%;
   }
+
 
 }
 
@@ -155,10 +206,6 @@ color: #e0218a;
     font-size: 13px;
   }
 
-  .blogDescripion{
-    width: 95%;
-  }
-
   .articleDescripion {
     width: 85%;
   }
@@ -166,4 +213,37 @@ color: #e0218a;
     width: 80%;
     height: 80%;
   }
+
+  .address a {
+    font-size: 80%;
+  }
+
+  .address p {
+    font-size: 50%;
+  }
+
+  .sectioninfo {
+    left: 35%;
+    width: 60%;
+    margin-top: -5%;
+  }
+
+  .sectiontitle {
+    left: 10%;
+    margin-top: -5%;
+  }
+ 
+
+  .myname i {
+    font-size: 70%;
+  }
+
+  .myname p {
+    margin-top: -5%;
+  }
+
+  .section {
+ 
+  }
+
 }
