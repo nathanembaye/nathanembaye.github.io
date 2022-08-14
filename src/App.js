@@ -281,7 +281,7 @@ function Grokking() {
             <br/> 
             <br/> 
             <br/> 
-            <Link to="/slidingwindow">Sliding Window</Link>           
+            <Link to="/slidingwindow"><i>Sliding Window</i></Link>           
             <p>Cha-cha slide through linear data structures</p>
             <br/>
             <br/>
@@ -305,6 +305,7 @@ function SlidingWindow() {
         <br/>
         <p><i>The sliding window technique applies to linear data structures like arrays, lists and strings. It improves the performance of algorithms trying to visit every substructure of an input. For any given window (substructure), there is an index that denotes the start of the window and an index that marks the end of the window. Typically containing nested loops, we’ll see how time complexities can go from O(n²) to O(n). Here are its three variations:</i></p>
         <ul className="listTitle">
+        <br/>
         <li><h5>(1) Fixed Window Size</h5></li>
         <li><h5>(2) Dynamic Window Size</h5></li>
         <li><h5>(3) Dynamic Window Size + Auxiliary Structure</h5></li>
