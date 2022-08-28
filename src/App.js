@@ -20,6 +20,7 @@ class App extends React.Component {
         <Route exact path="/miscellania" title="miscellania" element={<Miscellania />} />
         <Route exact path="/grokking" title="grokking" element={<Grokking />} />
         <Route exact path="/slidingwindow" title="slidingwindow" element={<SlidingWindow />} />
+        <Route exact path="/twopointers" title="twopointers" element={<TwoPointers />} />
       </Routes>
     );
   }
@@ -282,7 +283,9 @@ function Grokking() {
             <br/> 
             <br/> 
             <Link to="/slidingwindow"><i>Sliding Window</i></Link>           
-            <p>Cha-cha slide through linear data structures</p>
+            <p>cha-cha slide through linear data structures</p>
+            <Link to="/twopointers"><i>Two Pointers</i></Link>           
+            <p>two stepping by data structures sorted in non-decreasing order</p>
             <br/>
             <br/>
           </div>
@@ -301,6 +304,111 @@ function SlidingWindow() {
         <br/>
         <br/>
         <h1>sliding window</h1>
+        <Link to="/grokking">Aug 2, 2022</Link>
+        <br/>
+        <p><i>The sliding window technique applies to linear data structures like arrays, lists and strings. It improves the performance of algorithms trying to visit every substructure of an input. For any given window (substructure), there is an index that denotes the start of the window and an index that marks the end of the window. Typically containing nested loops, we’ll see how time complexities can go from O(n²) to O(n). Here are its three variations:</i></p>
+        <ul className="listTitle">
+        <br/>
+        <li><h5>(1) Fixed Window Size</h5></li>
+        <li><h5>(2) Dynamic Window Size</h5></li>
+        <li><h5>(3) Dynamic Window Size + Auxiliary Structure</h5></li>
+        </ul>
+        <br/>
+        <h4>Fixed Window Size</h4>
+        <p>For some questions, typically “easy'', the windows (substructures) to be visited must be of a set size. This is when the window being used to traverse our input always stays the same size. Say we have a list:</p>
+        <CodeBlock
+          text={`arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']`}
+          language={"python"}
+          showLineNumbers={true}
+          theme={atomOneLight}/>
+          <p>Now, lets set the fixed size to k = 3. The sliding window of that would be:</p>
+          <CodeBlock
+          text={`['a', 'b', 'c']
+      ['b', 'c', 'd']
+             ['c', 'd', 'e']
+                   ['d', 'e', 'f']
+                          ['e', 'f', 'g']
+                                ['f', 'g', 'h']`}
+          language={"python"}
+          showLineNumbers={true}
+          theme={atomOneLight}/>
+        <br/>
+        <br/>
+        <h4>Dynamic Window Size</h4>
+        <p>For most problems, you’ll need a window that is dynamic. This means the answer to the question can be a window of any size, so we’ll need to dynamically expand and contract it. How windows size will change though varies:</p>
+        <ul className="listTitle">
+        <br/>
+        <li><h5>(1) Fast/Slow</h5></li>
+        <dl>Here we expand the window (increment right pointer by a single index) until a condition is fulfilled, then contract the window (increment left pointer by a single index) until it’s no longer true.</dl>
+        <CodeBlock
+          text={`['a']
+['a', 'b']
+['a', 'b', 'c']
+['a', 'b', 'c', 'd']
+['a', 'b', 'c', 'd', 'e']`}
+          language={"python"}
+          showLineNumbers={true}
+          theme={atomOneLight}/>
+          <p>Shown above is the window beginning at the first element, and then expanding to include the next 4. It also can be contracted:</p>
+          <CodeBlock
+          text={`['a', 'b', 'c', 'd', 'e']
+['b', 'c', 'd', 'e']
+['c', 'd', 'e']`}
+          language={"python"}
+          showLineNumbers={true}
+          theme={atomOneLight}/>
+          <p>Typically the expansion and contracion of window size is based on a questions given condition being fufilled or unfulfilled.</p>
+          <br/>
+          <li><h5>(2) Fast/Catch Up</h5></li>
+        <dl>Here we expand the window (increment right pointer by a single index) until a condition is fulfilled, then contract the window (set left pointer’s index to the right pointer's current index) when it’s no longer true.</dl>
+        <br/>
+        <CodeBlock
+          text={`['a']
+['a', 'b']
+['a', 'b', 'c']   #condition fufilled processing letter d`}
+          language={"python"}
+          showLineNumbers={true}
+          theme={atomOneLight}/>
+          <p>With our condition fufilled we set the letter "d" as our windows start and continue expansion:</p>
+          <CodeBlock
+          text={`['d']
+['d', 'e']
+['d', 'e', 'f']`}
+          language={"python"}
+          showLineNumbers={true}
+          theme={atomOneLight}/>
+        </ul>
+          <br/>
+          <br/>
+          <h4>Dynamic Window Size + Auxiliary Structure</h4>
+          <p>These types of questions require our window to dynamically grow and shrink, however, along the way we must keep track of the number of occurrences for each unique/distinct element.</p>
+          <br/>
+          <br/>
+          <h4>When to use the Sliding Window?</h4>
+          <ol className="listInfo">
+          <li><p>When the input is an array, list or string</p></li>
+          <li><p>When some keywords are used: maximum, minimum, longest, shortest, optimal, unique, distinct, contiguous, sub-array/string</p></li>
+          <li><p>The brute force solution is O(n²)/has nested loops</p></li>
+          </ol>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+      </div>
+  );
+}
+
+function TwoPointers() {
+  ChangeTitle("two ponters")
+  return (
+      <div className="article">
+        <div className="articleDescripion">
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <h1>two pointers</h1>
         <Link to="/grokking">Aug 2, 2022</Link>
         <br/>
         <p><i>The sliding window technique applies to linear data structures like arrays, lists and strings. It improves the performance of algorithms trying to visit every substructure of an input. For any given window (substructure), there is an index that denotes the start of the window and an index that marks the end of the window. Typically containing nested loops, we’ll see how time complexities can go from O(n²) to O(n). Here are its three variations:</i></p>
