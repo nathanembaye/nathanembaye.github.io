@@ -21,6 +21,7 @@ class App extends React.Component {
         <Route exact path="/grokking" title="grokking" element={<Grokking />} />
         <Route exact path="/slidingwindow" title="slidingwindow" element={<SlidingWindow />} />
         <Route exact path="/twopointers" title="twopointers" element={<TwoPointers />} />
+        <Route exact path="/fastslow" title="fastslow" element={<FastSlow />} />
       </Routes>
     );
   }
@@ -122,7 +123,7 @@ function Complexity() {
         <h5>constant time - O(1)</h5>
         <p>An algorithm is said to have constant time, O(1), when how many operations it performs is independent of input length. Simply -- it completes the same number of tasks no matter input size.</p>
         <h5>logarithmic time - (log n)</h5>
-        <p>An algorithm is said to have logarithmic time, O(log n), when it begins processing input at its initial length but divides said data by a constant (usually 2) each iteration until its less or equal to 1. This is most commonly seen with Binary Search Trees.</p>
+        <p>An algorithm is said to have logarithmic time, O(log n), when it begins processing input at its initial length but divides said data by a constant (usually two) each iteration until its less or equal to 1. This is most commonly seen with binary search trees.</p>
         <h5>linear time - O(n)</h5>
         <p>An algorithm is said to have linear time, O(n), when how long it takes to execute increases proportionally (1 to 1) with its input length. This occurs in cases when we have input data that needs to have every value inside it processed, and each of those assessments take constant time, O(1). This growth can be understood as <i>cn</i>, where <i>c = 1</i> and  <i>n = input length</i>.</p>
         <h5>quadratic time - (n<sup>2</sup>)</h5>
@@ -131,16 +132,17 @@ function Complexity() {
         <br/>
         <h3>space complexity</h3>
         <p>The space complexity of an algorithm is the amount of memory it requires to execute completely. It’s sum is <i>space complexity = auxiliary space + input space.</i></p>
-        <p>Auxiliary space is defined as all the memory used inside the algorithm itself (think variables, loops, data structures, etc.), while input space is the memory used for the data that goes into the algorithm for processing. Differentiating that, when comparing different algorithms' space complexity, we would only consider auxiliary space since they’re solutions accepting the same sets of data.</p>
+        <p>Auxiliary space is defined as all the memory used inside the algorithm itself (think variables, loops, data structures, etc.), while input space is the memory used for the data that goes into the algorithm for processing. Differentiating that, when comparing different algorithms' space complexity, we would only consider auxiliary space since they’re solutions accepting the same input.</p>
         <p>Similar to time complexity, space complexity measures the storage needed relative to changes in the size of input data. That is, how the storage used during execution time increases or decreases based on how big or small the input data is.</p>
         <h5>constant space - O(1)</h5>
-        <p>An algorithm is said to use constant space when none of its storage holds linear data structures. Examples are only when booleans or integers are used.</p> 
+        <p>An algorithm is said to use constant space when the amount of memory used each execution remains the same, no matter the size of the input. A telltale of this is when only booleans and integers are ever stored.</p> 
         <h5>linear space - O(n)</h5>
-        <p>An algorithm is said to use linear space when it uses storage to hold a linea data stucture, like a list or HashMap</p>         
+        <p>An algorithm is said to use linear space when the amount of memory used for an execution, could take up to the length of the given input. A giveaway for this is the requirement of a linear data structure, like list or a hash table.</p>         
         <br/>
         <br/>
         <h3>big-o chart</h3>
         <p>An illustration of how increasing input lengths affect different big-o complexities.</p>
+        <br/>
         <img width="500" height="400" src={chart} alt='' />
         <br/>
         <br/>
@@ -207,6 +209,8 @@ function Grokking() {
             <p>cha-cha slide through linear data structures</p>
             <Link to="/twopointers"><i>Two Pointers</i></Link>           
             <p>two stepping data structures sorted in non-decreasing order</p>
+            <Link to="/fastslow"><i>Fast and Slow Pointers</i></Link>           
+            <p>the tortoise and the hare</p>
             <br/>
             <br/>
           </div>
@@ -225,9 +229,9 @@ function SlidingWindow() {
         <br/>
         <br/>
         <h1>sliding window</h1>
-        <Link to="/grokking">Aug 2, 2022</Link>
+        <Link to="/grokking">aug 2, 2022</Link>
         <br/>
-        <p><i>The sliding window technique applies to linear data structures like arrays, lists and strings. It improves the performance of algorithms trying to visit every substructure of an input. For any given window (contigous elements), there is an index that denotes the start of the window and an index that marks the end of the window. Typically containing nested loops, O(n²), we’ll see how it can be optimized to O(n). Here are its three variations:</i></p>
+        <p><i>The sliding window technique applies to linear data structures like arrays, lists and strings. It improves the performance of algorithms trying to visit every substructure of an input. For any given window (contigous elements), there is an index that denotes the start of the window and an index that marks the end of the window. Typically using nested loops, O(n²), we’ll see how it can be optimized to O(n). Here are its three variations:</i></p>
         <ul className="listTitle">
         <li><h5>(1) Fixed Window Size</h5></li>
         <li><h5>(2) Dynamic Window Size</h5></li>
@@ -269,6 +273,7 @@ for i in range(k, len(nums)):
           theme={tomorrow}/>
         <br/>
         <br/>
+        <br/>
         <h4>Dynamic Window Size</h4>
         <p>For most problems however, you’ll work with a window that is dynamic. This means the answer could be a window of any size, so we need to be able to expand and contract it. When we might do either, depends on if the current window fufills a condition or not:</p>
         <Code
@@ -291,8 +296,9 @@ for right in range(len(nums)):
           theme={tomorrow}/>
           <br/>
           <br/>
+          <br/>
           <h4>Dynamic Window Size + Auxiliary Structure</h4>
-          <p>These types of questions require our window to dynamically grow and shrink, however, the result will require multiple elements, so we'll manipulate a linear data structure along the way.</p>
+          <p>Similar to above, these types of questions require our window to dynamically grow and shrink. However, it differs in the way that computation requires data storage possibly up to the length of the input - which is where our auxiliary structure comes into play.</p>
           <br/>
           <h4>When to use the Sliding Window?</h4>
           <ol className="listInfo">
@@ -309,7 +315,7 @@ for right in range(len(nums)):
 }
 
 function TwoPointers() {
-  ChangeTitle("two ponters")
+  ChangeTitle("two pointers")
   return (
       <div className="article">
         <div className="articleDescripion">
@@ -319,9 +325,77 @@ function TwoPointers() {
         <br/>
         <br/>
         <h1>two pointers</h1>
-        <Link to="/grokking">Aug 2, 2022</Link>
+        <Link to="/grokking">aug 2, 2022</Link>
         <br/>
         <p><i>The two pointer technique applies to (often sorted) linear data structures like arrays, lists and strings. It improves the performance of algorithms trying to visit every possible pair in such inputs. For any pair, there is a left pointer denoting the first element and a right pointer identifying the second. Typically done in O(n²) time with nested loops, we'll see how such pairings can be improved to O(n) time.</i></p>
+        <ul className="listTitle">
+        <li><h5>(1) Brute Force Pairs</h5></li>
+        <li><h5>(2) Two Pointers with Sorted Array</h5></li>
+        <li><h5>(3) Two Pointers with Unsorted Array</h5></li>
+        </ul>
+        <br/>
+        <h4>Brute Force Pairs</h4>
+        <p>When given a question that requires processing pairs, there is a <i>naive</i> approach that applies to both sorted and unsorted arrays:</p>
+        <Code
+          text={`nums = [1, 2, 3, 4, 5, 6] or nums = [5, 3, 2, 6, 1, 4]`}
+          language={"python"}
+          showLineNumbers={false}
+          theme={tomorrow}/>
+        <p>Applied to either array, the algorithm below will process the same pairs, just in a different order. The cost, however, is O(n^2) time.</p>
+        <Code
+          text={`#O(n^2)
+for left in range(len(nums)):
+    for right in range(left+1, len(nums)):
+        #process pair nums[left]:nums[right]`}
+          language={"python"}
+          showLineNumbers={false}
+          theme={tomorrow}/>
+          <br/>
+          <br/>
+          <br/>
+        <h4>Two Pointers with Sorted Array</h4>
+        <p>When given an array thats pre-sorted, we can be more strategic about its processing. Pointing at the head and tail, we can process the pair, and based on the combination, decide if we want to move the left or right pointer.</p>
+        <Code
+          text={`#O(n)
+left, right = 0, len(data) - 1
+while left < right:
+    
+    if (condition fufilled):
+        return [nums[left], nums[right]]
+    elif (condition failed this way):
+        left += 1
+    else:
+        right -= 1`}
+          language={"python"}
+          showLineNumbers={false}
+          theme={tomorrow}/>
+          <br/>
+          <br/>
+          <br/>
+          <h4>Two Pointers with Unsorted Array</h4>
+          <p>There is no tecehnique to necessarily be applied here. Rather, we just need to sort the array we're working with before applying the two pointer technique. Seeing as the time complexity of the metho is O(n) time, its best to use a sorting algorithm that runs in the same time to experience no complexity difference. I'll leave it to your imagination which can be applied here.</p>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+      </div>
+  );
+}
+
+function FastSlow() {
+  ChangeTitle("fast and slow pointers")
+  return (
+      <div className="article">
+        <div className="articleDescripion">
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <h1>fast and slow pointers</h1>
+        <Link to="/grokking">oct 1st, 2022</Link>
+        <br/>
+        <p><i>The fast and slow pointer technique applies to arrays, lists and linked-lists. It improves the performance of algorithms determining if a input posesses a cycle. For every structure, we set two pointers to move at difference speeds (a tortoise and a hare). If there is no cycle, the fast pointer will reach the end of the input. However, if the fast pointer meets the slow pointer (laps), there is a cycle present.</i></p>
         </div>
         <br/>
         <br/>
