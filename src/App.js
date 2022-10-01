@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import pencil from "./pencil.png";
-import Github from "./githubGrey.png";
+import github from "./githubGrey.png";
 import linkedin from "./linkedinGrey.png";
 import resume from "./resumeGrey.png";
 import chart from "./chart.svg";
 import { Route, Link, Routes } from "react-router-dom";
-import { CodeBlock, Code, CopyBlock, atomOneLight, github, a11yLight, tomorrow, googlecode, shadesOfPurple } from "react-code-blocks";
+import { Code, atomOneLight, a11yLight, tomorrow, googlecode, shadesOfPurple } from "react-code-blocks";
 
 class App extends React.Component {
 
@@ -240,7 +240,7 @@ function SlidingWindow() {
         <Code
           text={`nums = [1, 2, 3, 4, 5, 6]`}
           language={"python"}
-          showLineNumbers={true}
+          showLineNumbers={false}
           theme={tomorrow}/>
           <p>Now, lets say the fixed size is k = 3. How could we traverse <i>nums</i> for every window of lengh k?</p>
           <Code
@@ -260,13 +260,13 @@ for i in range(k, len(nums)):
     nums[i] #remove first, add new, then process
         `}
           language={"python"}
-          showLineNumbers={true}
+          showLineNumbers={false}
           theme={tomorrow}/>
         <p>Which would process windows:</p>
         <Code
           text={`[1, 2, 3, 4], [2, 3, 4, 5], [3, 4, 5, 6]`}
           language={"python"}
-          showLineNumbers={true}
+          showLineNumbers={false}
           theme={tomorrow}/>
         <br/>
         <br/>
@@ -288,7 +288,7 @@ for right in range(len(nums)):
     else:
         #keep expanding`}
           language={"python"}
-          showLineNumbers={true}
+          showLineNumbers={false}
           theme={tomorrow}/>
           <br/>
           <br/>
