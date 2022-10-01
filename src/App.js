@@ -227,9 +227,8 @@ function SlidingWindow() {
         <h1>sliding window</h1>
         <Link to="/grokking">Aug 2, 2022</Link>
         <br/>
-        <p><i>The sliding window technique applies to linear data structures like arrays, lists and strings. It improves the performance of algorithms trying to visit every substructure of an input. For any given window (contigous elements), there is an index that denotes the start of the window and an index that marks the end of the window. Typically containing nested loops, we’ll see how time complexities can go from O(n²) to O(n). Here are its three variations:</i></p>
+        <p><i>The sliding window technique applies to linear data structures like arrays, lists and strings. It improves the performance of algorithms trying to visit every substructure of an input. For any given window (contigous elements), there is an index that denotes the start of the window and an index that marks the end of the window. Typically containing nested loops, O(n²), we’ll see how it can be optimized to O(n). Here are its three variations:</i></p>
         <ul className="listTitle">
-        <br/>
         <li><h5>(1) Fixed Window Size</h5></li>
         <li><h5>(2) Dynamic Window Size</h5></li>
         <li><h5>(3) Dynamic Window Size + Auxiliary Structure</h5></li>
@@ -242,7 +241,7 @@ function SlidingWindow() {
           language={"python"}
           showLineNumbers={false}
           theme={tomorrow}/>
-          <p>Now, lets say the fixed size is k = 3. How could we traverse <i>nums</i> for every window of lengh k?</p>
+          <p>Now, lets say the fixed size is k = 3. How could we traverse <i>nums</i> for every window of length k?</p>
           <Code
           text={`#brue force O(n*k)
 for i in range(len(nums)-k+1):
