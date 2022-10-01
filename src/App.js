@@ -4,10 +4,10 @@ import pencil from "./pencil.png";
 import github from "./githubGrey.png";
 import linkedin from "./linkedinGrey.png";
 import resume from "./resumeGrey.png";
-import time from "./time.png";
 import chart from "./chart.svg";
 import { Route, Link, Routes } from "react-router-dom";
-import { CodeBlock, atomOneLight } from "react-code-blocks";
+import { CodeBlock, Code, CopyBlock, atomOneLight, googlecode } from "react-code-blocks";
+import { toBeRequired } from "@testing-library/jest-dom/dist/matchers";
 
 class App extends React.Component {
 
@@ -228,7 +228,7 @@ function SlidingWindow() {
         <h1>sliding window</h1>
         <Link to="/grokking">Aug 2, 2022</Link>
         <br/>
-        <p><i>The sliding window technique applies to linear data structures like arrays, lists and strings. It improves the performance of algorithms trying to visit every substructure of an input. For any given window (substructure), there is an index that denotes the start of the window and an index that marks the end of the window. Typically containing nested loops, we’ll see how time complexities can go from O(n²) to O(n). Here are its three variations:</i></p>
+        <p><i>The sliding window technique applies to linear data structures like arrays, lists and strings. It improves the performance of algorithms trying to visit every substructure of an input. For any given window (contigous elements), there is an index that denotes the start of the window and an index that marks the end of the window. Typically containing nested loops, we’ll see how time complexities can go from O(n²) to O(n). Here are its three variations:</i></p>
         <ul className="listTitle">
         <br/>
         <li><h5>(1) Fixed Window Size</h5></li>
@@ -237,74 +237,64 @@ function SlidingWindow() {
         </ul>
         <br/>
         <h4>Fixed Window Size</h4>
-        <p>For some questions, typically “easy'', the windows (substructures) to be visited must be of a set size. This is when the window being used to traverse our input always stays the same size. Say we have a list:</p>
-        <CodeBlock
-          text={`arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']`}
+        <p>For some questions, typically “easy'', the windows (substructures) to be visited must be of a set size. Say we have a list:</p>
+        <Code
+          text={`nums = [1, 2, 3, 4, 5, 6]`}
           language={"python"}
           showLineNumbers={true}
-          theme={atomOneLight}/>
-          <p>Now, lets set the fixed size to k = 3. The sliding window of that would be:</p>
-          <CodeBlock
-          text={`['a', 'b', 'c']
-      ['b', 'c', 'd']
-             ['c', 'd', 'e']
-                   ['d', 'e', 'f']
-                          ['e', 'f', 'g']
-                                ['f', 'g', 'h']`}
+          theme={googlecode}/>
+          <p>Now, lets say the fixed size is k = 3. How could we traverse <i>nums</i> for every window of lengh k?</p>
+          <Code
+          text={`#brue force O(n*k)
+for i in range(len(nums)-k+1):
+    for j in range(i, i + k):
+        nums[j] #process window
+
+
+#optimal O(n)
+for i in range(k):
+    nums[i] #process first k elements
+
+for i in range(k, len(nums)):
+    sum -= nums[i-k]
+    sum += nums[i] 
+    nums[i]#remove first, add new, then process
+        `}
           language={"python"}
           showLineNumbers={true}
-          theme={atomOneLight}/>
+          theme={googlecode}/>
+        <p>Which would process windows:</p>
+        <Code
+          text={`[1, 2, 3, 4], [2, 3, 4, 5], [3, 4, 5, 6]`}
+          language={"python"}
+          showLineNumbers={true}
+          theme={googlecode}/>
         <br/>
         <br/>
         <h4>Dynamic Window Size</h4>
-        <p>For most problems, you’ll need a window that is dynamic. This means the answer to the question can be a window of any size, so we’ll need to dynamically expand and contract it. How windows size will change though varies:</p>
-        <ul className="listTitle">
-        <br/>
-        <li><h5>(1) Fast/Slow</h5></li>
-        <dl>Here we expand the window (increment right pointer by a single index) until a condition is fulfilled, then contract the window (increment left pointer by a single index) until it’s no longer true.</dl>
-        <CodeBlock
-          text={`['a']
-['a', 'b']
-['a', 'b', 'c']
-['a', 'b', 'c', 'd']
-['a', 'b', 'c', 'd', 'e']`}
+        <p>For most problems however, you’ll work with a window that is dynamic. This means the answer could be a window of any size, so we need to be able to expand and contract it. When we might do either, depends on if the current window fufills a condition or not:</p>
+        <Code
+          text={`
+#brute force O(n^2)
+for i in range(len(nums)):
+    for j in range(i+1, len(nums)):
+        nums[i:j] #process every window
+
+
+left = 0
+for right in range(len(nums)):
+
+    while (nums[left:right+1] fufills condition):
+        left += 1
+    else:
+        #keep expanding`}
           language={"python"}
           showLineNumbers={true}
-          theme={atomOneLight}/>
-          <p>Shown above is the window beginning at the first element, and then expanding to include the next 4. It also can be contracted:</p>
-          <CodeBlock
-          text={`['a', 'b', 'c', 'd', 'e']
-['b', 'c', 'd', 'e']
-['c', 'd', 'e']`}
-          language={"python"}
-          showLineNumbers={true}
-          theme={atomOneLight}/>
-          <p>Typically the expansion and contracion of window size is based on a questions given condition being fufilled or unfulfilled.</p>
-          <br/>
-          <li><h5>(2) Fast/Catch Up</h5></li>
-        <dl>Here we expand the window (increment right pointer by a single index) until a condition is fulfilled, then contract the window (set left pointer’s index to the right pointer's current index) when it’s no longer true.</dl>
-        <br/>
-        <CodeBlock
-          text={`['a']
-['a', 'b']
-['a', 'b', 'c']   #condition fufilled processing letter d`}
-          language={"python"}
-          showLineNumbers={true}
-          theme={atomOneLight}/>
-          <p>With our condition fufilled we set the letter "d" as our windows start and continue expansion:</p>
-          <CodeBlock
-          text={`['d']
-['d', 'e']
-['d', 'e', 'f']`}
-          language={"python"}
-          showLineNumbers={true}
-          theme={atomOneLight}/>
-        </ul>
+          theme={googlecode}/>
           <br/>
           <br/>
           <h4>Dynamic Window Size + Auxiliary Structure</h4>
-          <p>These types of questions require our window to dynamically grow and shrink, however, along the way we must keep track of the number of occurrences for each unique/distinct element.</p>
-          <br/>
+          <p>These types of questions require our window to dynamically grow and shrink, however, the result will require multiple elements, so we'll manipulate a linear data structure along the way.</p>
           <br/>
           <h4>When to use the Sliding Window?</h4>
           <ol className="listInfo">
