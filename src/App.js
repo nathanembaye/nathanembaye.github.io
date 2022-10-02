@@ -283,7 +283,7 @@ for i in range(len(nums)):
     for j in range(i+1, len(nums)):
         nums[i:j] #process every window
 
-
+#O(n)
 left = 0
 for right in range(len(nums)):
 
@@ -325,7 +325,7 @@ function TwoPointers() {
         <br/>
         <br/>
         <h1>two pointers</h1>
-        <Link to="/grokking">aug 2, 2022</Link>
+        <Link to="/grokking">aug 25, 2022</Link>
         <br/>
         <p><i>The two pointer technique applies to (often sorted) linear data structures like arrays, lists and strings. It improves the performance of algorithms trying to visit every possible pair in such inputs. For any pair, there is a left pointer denoting the first element and a right pointer identifying the second. Typically done in O(n²) time with nested loops, we'll see how such pairings can be improved to O(n) time.</i></p>
         <ul className="listTitle">
