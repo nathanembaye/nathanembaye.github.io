@@ -5,6 +5,11 @@ import github from "./githubGrey.png";
 import linkedin from "./linkedinGrey.png";
 import resume from "./resumeGrey.png";
 import chart from "./chart.svg";
+import sll0 from "./sll0.png";
+import sll1 from "./sll1.png";
+import sll2 from "./sll2.png";
+import sll3 from "./sll3.png";
+import sll4 from "./sll4.png";
 import { Route, Link, Routes } from "react-router-dom";
 import { Code, atomOneLight, a11yLight, tomorrow, googlecode, shadesOfPurple } from "react-code-blocks";
 
@@ -22,6 +27,7 @@ class App extends React.Component {
         <Route exact path="/slidingwindow" title="slidingwindow" element={<SlidingWindow />} />
         <Route exact path="/twopointers" title="twopointers" element={<TwoPointers />} />
         <Route exact path="/fastslow" title="fastslow" element={<FastSlow />} />
+        <Route exact path="/mergeintervals" title="mergeintervals" element={<MergeIntervals />} />
       </Routes>
     );
   }
@@ -211,6 +217,8 @@ function Grokking() {
             <p>two stepping data structures sorted in non-decreasing order</p>
             <Link to="/fastslow"><i>Fast and Slow Pointers</i></Link>           
             <p>the tortoise and the hare</p>
+            <Link to="/mergeintervals"><i>Merge Intervals</i></Link>           
+            <p>[a,b], [c,d], [e,f]</p>
             <br/>
             <br/>
           </div>
@@ -373,7 +381,20 @@ while left < right:
           <br/>
           <br/>
           <h4>Two Pointers with Unsorted Array</h4>
-          <p>There is no tecehnique to necessarily be applied here. Rather, we just need to sort the array we're working with before applying the two pointer technique. Seeing as the time complexity of the metho is O(n) time, its best to use a sorting algorithm that runs in the same time to experience no complexity difference. I'll leave it to your imagination which can be applied here.</p>
+          <p>There is no tecehnique to necessarily be applied here. Rather, we just need to sort the array we're working with before applying the two pointer technique. Seeing as the time complexity of the method is O(n) time, its best to use a sorting algorithm that runs in the same time to experience no complexity difference. I'll leave it to your imagination which can be applied here.</p>
+          <Code
+          text={`nums = [1, 2, 3, 4, 5, 6] or nums = [5, 3, 2, 6, 1, 4]`}
+          language={"python"}
+          showLineNumbers={false}
+          theme={tomorrow}/>
+        <br/>
+        <br/>
+        <br/>
+        <h4>When to use Two Pointers?</h4>
+          <ol className="listInfo">
+          <li><p>When the given input is pre-sorted or must be sorted for solving.</p></li>
+          <li><p>The set of elements in the array is a pair, triplet or subarray.</p></li>
+          </ol>
         </div>
         <br/>
         <br/>
@@ -395,7 +416,83 @@ function FastSlow() {
         <h1>fast and slow pointers</h1>
         <Link to="/grokking">oct 1st, 2022</Link>
         <br/>
-        <p><i>The fast and slow pointer technique applies to arrays, lists and linked-lists. It improves the performance of algorithms determining if a input posesses a cycle. For every structure, we set two pointers to move at difference speeds (a tortoise and a hare). If there is no cycle, the fast pointer will reach the end of the input. However, if the fast pointer meets the slow pointer (laps), there is a cycle present.</i></p>
+        <p><i>The fast and slow pointer technique applies to arrays, lists but most often linked-lists. It improves the performance of algorithms determining if a input posesses a cycle or not. For every structure, we set two pointers to move at difference speeds (a tortoise and a hare). If there is no cycle, the fast pointer will reach the end of the input. However, if the fast pointer meets the slow pointer (laps), there is a cycle present.</i></p>
+        <ul className="listTitle">
+        <li><h5>(1) Floyd's Cycle-Finding Algorithm</h5></li>
+        </ul>
+        <br/>
+        <h4>Floyd's Cycle-Finding Algorithm</h4>
+        <p>The first thing to consider with this approach is what exactly it approves on. Say we have a singly linked-list:</p>
+        <img width="400" height="200" src={sll0} alt='' />
+        <p>The intuition for most naive cycle-detecting algorithms would be to store all elements visited and end the function if we visit any element already stored. This detects any cycle that might exist, but uses extra space by storing each element, and time checking if it already exists in storage before appending it.</p>
+        <Code
+          text={`#O(n^2) time, O(n) space
+arr = []
+while head:
+
+    if head in arr:
+        return True
+    else:
+        arr.append(head)
+        head = head.next
+        
+return False`}
+          language={"python"}
+          showLineNumbers={false}
+          theme={tomorrow}/>
+        <p>Floyd's technique improves the time and space used by implementing two pointers which only store the elements they are currently at. This is where the slow pointer moves one step at a time and the fast pointer moves two steps at a time, eventually landing on the same element (if a cycle exists).</p>
+        <br/>
+        <img width="400" height="200" src={sll1} alt='' />
+        <img width="400" height="200" src={sll2} alt='' />
+        <img width="400" height="200" src={sll3} alt='' />
+        <img width="400" height="200" src={sll4} alt='' />
+        <br/>
+        <p>Pictured above the slow (red) pointer and fast (green) pointer overlap or meet at the fourth node - thus a cycle is present.</p>
+        <Code
+          text={`#O(n) time, O(1) space
+slow, fast = head, head
+while fast and fast.next:
+    
+    slow = slow.next
+    fast = fast.next.next
+    
+    if slow == fast:
+        return True  
+    
+return False`}
+          language={"python"}
+          showLineNumbers={false}
+          theme={tomorrow}/>
+          <br/>
+          <br/>
+          <br/>
+          <h4>When to use the Fast and Slow Pointer?</h4>
+          <ol className="listInfo">
+          <li><p>The problem works with a loop and has a linked-list or array as a input structure.</p></li>
+          <li><p>When you need to know the position of a element relative to all other items in the input.</p></li>
+          </ol>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+      </div>
+  );
+}
+
+function MergeIntervals() {
+  ChangeTitle("merge intervals")
+  return (
+      <div className="article">
+        <div className="articleDescripion">
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <h1>merge intervals</h1>
+        <Link to="/grokking">oct 2nd, 2022</Link>
+        <br/>
+        <p><i>i dont wanna do this right now</i></p>
         </div>
         <br/>
         <br/>
