@@ -10,8 +10,9 @@ import sll1 from "./sll1.png";
 import sll2 from "./sll2.png";
 import sll3 from "./sll3.png";
 import sll4 from "./sll4.png";
+import intervals from "./intervals.png";
 import { Route, Link, Routes } from "react-router-dom";
-import { Code, atomOneLight, a11yLight, tomorrow, googlecode, shadesOfPurple } from "react-code-blocks";
+import { Code, tomorrow } from "react-code-blocks";
 
 class App extends React.Component {
 
@@ -28,6 +29,7 @@ class App extends React.Component {
         <Route exact path="/twopointers" title="twopointers" element={<TwoPointers />} />
         <Route exact path="/fastslow" title="fastslow" element={<FastSlow />} />
         <Route exact path="/mergeintervals" title="mergeintervals" element={<MergeIntervals />} />
+        <Route exact path="/cyclicsort" title="cyclicsort" element={<CyclicSort />} />
       </Routes>
     );
   }
@@ -218,7 +220,9 @@ function Grokking() {
             <Link to="/fastslow"><i>Fast and Slow Pointers</i></Link>           
             <p>the tortoise and the hare</p>
             <Link to="/mergeintervals"><i>Merge Intervals</i></Link>           
-            <p>[a,b], [c,d], [e,f]</p>
+            <p>can i get a woot woot</p>
+            <Link to="/cyclicsort"><i>Cyclic Sort</i></Link>           
+            <p>the poor mans sort</p>
             <br/>
             <br/>
           </div>
@@ -486,7 +490,89 @@ function MergeIntervals() {
         <h1>merge intervals</h1>
         <Link to="/grokking">oct 2nd, 2022</Link>
         <br/>
-        <p><i>i dont wanna do this right now</i></p>
+        <p><i>The merge intervals technique applies to inputs with multiple elements, and those elements have values that could be considered overlapping or intersecting with one another. By detecting such occurences, we're free to merge, insert or delete them when we choose.</i></p>
+        <ul className="listTitle">
+        <li><h5>(1) Overlapping Unsorted Intervals</h5></li>
+        <li><h5>(2) Overlapping Sorted Intervals</h5></li>
+        </ul>
+        <br/>
+        <h4>Overlapping Unsorted Intervals</h4>
+        <p>An easy way to grasp what intervals are is by viewing their values as meeting times. Say interval A and B are meetings, both set some time between 12:00 a.m. and 12:00 p.m. For these two meeting times, there are six ways they can relate to each other:</p>
+        <br/>
+        <img src={intervals} alt='' />
+        <br/>
+        <br/>
+        <br/>
+        <p>Illustrated above, there are four ways (figure 2-5) that any two given intervals can overlap. Notice a pattern? For any overlap, the start of A is always less than or equal to the end of B, and the start of B is always less than or equal to the end of A. Say we have the following intervals: </p>
+        <br/>
+        <Code
+          text={`intervals = [(5,10),(0,30),(15,20)]`}
+          language={"python"}
+          showLineNumbers={false}
+          theme={tomorrow}/>
+        <br/>
+        <br/>
+        <p>Traversing every combination of interval, we can find which overlap:</p>
+        <br/>
+        <Code
+          text={`#O(n^2) time
+for i in range(len(intervals)):
+    for j in range(i+1, len(intervals)):
+
+        if intervals[i].start <= intervals[j].end and intervals[j].start <= intervals[i].end:
+            return False
+
+return True`}
+          language={"python"}
+          showLineNumbers={false}
+          theme={tomorrow}/>
+        <br/>
+        <br/>
+        <br/>
+        <h4>Overlapping Sorted Intervals</h4>
+        <p>Looking at the function above, there is a way to improve the performance of checking for overlaps. If our list of intervals were sorted in non-decreasing order, vis-à-vis their start values, we'd only need to check if each intervals end value is greater or equal to what's next to it. This would allow us to drop the second loop:</p>
+        <br/>
+        <Code
+          text={`#O(n log n) time
+intervals.sort(key = lambda i: i.start)
+for i in range(len(intervals)-1):
+  if intervals[i].end >= intervals[i+1].start:
+      return False
+
+return True`}
+          language={"python"}
+          showLineNumbers={false}
+          theme={tomorrow}/>
+          <br/>
+          <br/>
+          <br/>
+          <h4>When to use the Merge Intervals?</h4>
+          <ol className="listInfo">
+          <li><p>If the requested result requires mutually exclusive intervals</p></li>
+          <li><p>If the keywords "overlapping" or "intersecting" intervals are used</p></li>
+          </ol>
+          </div>
+          <br/>
+          <br/>
+          <br/>
+      </div>
+  );
+}
+
+function CyclicSort() {
+  ChangeTitle("cyclic sort")
+  return (
+      <div className="article">
+        <div className="articleDescripion">
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <h1>cyclic sort</h1>
+          <Link to="/grokking">oct 3rd, 2022</Link>
+          <br/>
+          <p><i>This cyclic sort technique is an approach to deal with problems involving arrays containing numbers in a given range. It iterates over each number, and if the current number you are visiting is at the wrong index (relative to its value), you swap it with the number at its correct index.</i></p>
         </div>
         <br/>
         <br/>
