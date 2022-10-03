@@ -384,7 +384,6 @@ while left < right:
           <p>There is no tecehnique to necessarily be applied here. Rather, we just need to sort the array we're working with before applying the two pointer technique. Seeing as the time complexity of the method is O(n) time, its best to use a sorting algorithm that runs in the same time to experience no complexity difference. I'll leave it to your imagination which can be applied here.</p>
         <br/>
         <br/>
-        <br/>
         <h4>When to use Two Pointers?</h4>
           <ol className="listInfo">
           <li><p>When the given input is pre-sorted or must be sorted for solving.</p></li>
@@ -461,7 +460,7 @@ return False`}
           <br/>
           <br/>
           <br/>
-          <h4>When to use the Fast and Slow Pointer?</h4>
+          <h4>When to use the Fast and Slow Pointers?</h4>
           <ol className="listInfo">
           <li><p>The problem works with a loop and has a linked-list or array as a input structure.</p></li>
           <li><p>When you need to know the position of a element relative to all other items in the input.</p></li>
