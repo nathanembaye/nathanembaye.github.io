@@ -382,11 +382,6 @@ while left < right:
           <br/>
           <h4>Two Pointers with Unsorted Array</h4>
           <p>There is no tecehnique to necessarily be applied here. Rather, we just need to sort the array we're working with before applying the two pointer technique. Seeing as the time complexity of the method is O(n) time, its best to use a sorting algorithm that runs in the same time to experience no complexity difference. I'll leave it to your imagination which can be applied here.</p>
-          <Code
-          text={`nums = [1, 2, 3, 4, 5, 6] or nums = [5, 3, 2, 6, 1, 4]`}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
         <br/>
         <br/>
         <br/>
