@@ -1,3 +1,4 @@
+
 .home {
   display: inline-block; 
   text-align: left;
@@ -25,14 +26,13 @@
   color: #e0218a;
 }
 
-.title img{
-  height: 11%;
-  width: 11%;
-}
-
 .title a{
   text-decoration: none;
   color: #e0218a;
+}
+
+.title span {
+  color: #7c7d7d;
 }
 
 .listTitle li {

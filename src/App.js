@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import pencil from "./pencil.png";
 import github from "./githubGrey.png";
 import linkedin from "./linkedinGrey.png";
-import resume from "./resumeGrey.png";
 import chart from "./chart.svg";
 import sll0 from "./sll0.png";
 import sll1 from "./sll1.png";
@@ -11,7 +9,6 @@ import sll2 from "./sll2.png";
 import sll3 from "./sll3.png";
 import sll4 from "./sll4.png";
 import intervals from "./intervals.png";
-import cloud from "./cloud.png";
 import { Route, Link, Routes } from "react-router-dom";
 import { Code, tomorrow } from "react-code-blocks";
 
@@ -32,6 +29,7 @@ class App extends React.Component {
         <Route exact path="/fastslow" title="fastslow" element={<FastSlow />} />
         <Route exact path="/mergeintervals" title="mergeintervals" element={<MergeIntervals />} />
         <Route exact path="/cyclicsort" title="cyclicsort" element={<CyclicSort />} />
+        <Route exact path="/llreversal" title="llreversal" element={<LinkListReversal />} />
       </Routes>
     );
   }
@@ -49,7 +47,7 @@ function Home() {
     <div className="homeContainer">
       <div className="home">
           <div className="title">
-            <h1>nathan embaye</h1>
+            <h1><span>λ</span> nathan embaye</h1>
           </div>
           <div className="home">
             <Link to="/about">about</Link>
@@ -70,7 +68,7 @@ function About() {
   return (
     <div className="container">
         <div className="title">
-          <a href="/"><h1>about</h1></a>
+        <a href="/"><h1>about</h1></a>
         </div>
         <div className="body">
           <p>
@@ -240,7 +238,9 @@ function Grokking() {
             <Link to="/mergeintervals"><i>Merge Intervals</i></Link>           
             <p>can i get a woot woot</p>
             <Link to="/cyclicsort"><i>Cyclic Sort</i></Link>           
-            <p>the poor mans sort</p>
+            <p>the frugal man's sort</p>
+            <Link to="/llreversal"><i>In-place Reversal of Linked List</i></Link>           
+            <p>now you see me now you don't</p>
             <br/>
             <br/>
           </div>
@@ -590,11 +590,171 @@ function CyclicSort() {
           <h1>cyclic sort</h1>
           <Link to="/grokking">oct 3rd, 2022</Link>
           <br/>
-          <p><i>This cyclic sort technique is an approach to deal with problems involving arrays containing numbers in a given range. It iterates over each number, and if the current number you are visiting is at the wrong index (relative to its value), you swap it with the number at its correct index.</i></p>
+          <p><i>This cyclic sort is exactly what it sounds like - a sorting algorithm. Its only prerequisite is an input array containing numbers in a defined range, typically [0, n] or [1, n]. It iterates over each number, and if the current number you are visiting is at the wrong index (sorted in non-decreasing order), you swap it with the number at its correct index. After this, any element placed at the incorrct index can be assessed.</i></p>
+          <ul className="listTitle">
+            <li><h5>(1) Range of [0, n]</h5></li>
+            <li><h5>(2) Range of [1, n]</h5></li>
+          </ul>
+          <br/>
+          <h4>Range of [0, n]</h4>
+          <p>First, let's visualize the input we're working with:</p>
+          <br/>
+          <Code
+          text={`nums = [9, 6, 4, 2, 3, 5, 7, 0, 1]`}
+          language={"python"}
+          showLineNumbers={false}
+          theme={tomorrow}/>
+          <br/>
+          <br/>
+          <p>Now, for each number at the wrong index, let's swap it with the number that is currently stored in it.</p>
+          <br/>
+          <Code
+          text={`i = 0
+while i < len(nums):
+
+    num = nums[i]
+
+    if num < len(nums) and num != i:
+        nums[num], nums[i] = num, nums[num]
+    else:
+        i += 1`}
+          language={"python"}
+          showLineNumbers={false}
+          theme={tomorrow}/>
+        <br/>
+        <br/>
+        <p>The resulting array from this would be:</p>
+        <br/>
+        <Code
+          text={`nums = [0, 1, 2, 3, 4, 5, 6, 7, 9]`}
+          language={"python"}
+          showLineNumbers={false}
+          theme={tomorrow}/>
+        <br/>
+        <br/>
+        <p>We can now attempt to fufill any particularities posed by the question.</p>
+        <br/>
+        <br/>
+        <br/>
+        <h4>Range of [1, n]</h4>
+          <p>Once again, let's define the input we're processing:</p>
+          <br/>
+          <Code
+          text={`nums = [7,6,4,2,3,5,7,1]`}
+          language={"python"}
+          showLineNumbers={false}
+          theme={tomorrow}/>
+          <br/>
+          <br/>
+          <p>Now, for each number at the wrong index, let's swap it with the number that is currently stored in it.</p>
+          <br/>
+          <Code
+          text={`i = 0
+while i < len(nums):
+
+    num = nums[i]
+
+    if nums[i] != (i+1) and nums[num-1] != num:
+        nums[num-1], nums[i] = num, nums[num-1]
+
+    else:
+        i += 1`}
+          language={"python"}
+          showLineNumbers={false}
+          theme={tomorrow}/>
+        <br/>
+        <br/>
+        <p>The resulting array from this would be:</p>
+        <br/>
+        <Code
+          text={`nums = [1, 2, 3, 4, 5, 6, 7, 7]`}
+          language={"python"}
+          showLineNumbers={false}
+          theme={tomorrow}/>
+        <br/>
+        <br/>
+        <p>We can now attempt to fufill any particularities posed by the question.</p>
+        <br/>
+        <br/>
+        <h4>When to use Cyclic Sort?</h4>
+          <ol className="listInfo">
+          <li><p>They will be problems involving a sorted array with numbers in a given range</p></li>
+          <li><p>If the problem asks you to find the missing/duplicate/smallest number in an sorted/rotated array</p></li>
+          </ol>
         </div>
         <br/>
         <br/>
         <br/>
+      </div>
+  );
+}
+
+function LinkListReversal() {
+  ChangeTitle("nathan embaye | in-place reversal of linked list")
+  return (
+      <div className="article">
+        <div className="articleDescripion">
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <h1>in-place reversal of linked list</h1>
+          <Link to="/grokking">oct 9th, 2022</Link>
+          <br/>
+          <p><i>The in-place reversal of a linked list is a technique to, you guessed it, reverse a linked list. Typical naive approaches would do this by storing the elements then reversing them, using O(n) memory. This algorithm does it, “in-place”, which optimizes memory used to O(1).</i></p>
+          <ul className="listTitle">
+            <li><h5>(1) In-place Reversal of Linked List</h5></li>
+          </ul>
+          <br/>
+          <h4>In-place Reversal of Linked List</h4>
+          <p>Before exploring how we can use O(1) memory to reverse a linked list, we should see what is actually being imporved upon by describing the brute-force solution first.</p>
+          <br/>
+        <Code
+          text={`#O(n) time, O(n) space
+curr, nodes = head, []
+while curr:
+    nodes.append(curr)
+    curr = curr.next
+
+nodes.reverse()
+
+for i in range(len(nodes)-1):
+    nodes[i].next = nodes[i+1]
+nodes[len(nodes)-1].next = None
+
+return nodes[0]`}
+          language={"python"}
+          showLineNumbers={false}
+          theme={tomorrow}/>
+          <br/>
+          <br/>
+          <p>As displayed above, the storage of each node in the linked list is what makes the solution expesive. If we coud, instead, reverse each node while we're visiting it, there would be no need to store it.</p>
+          <br/>
+          <br/>
+          <Code
+          text={`#O(n) time, O(1) space
+prev = None
+while head:
+    
+    next = head.next
+    head.next = prev
+    prev = head
+    head = next
+    
+return prev`}
+          language={"python"}
+          showLineNumbers={false}
+          theme={tomorrow}/>
+          <br/>
+          <br/>
+          <h4>When to use In-place Reversal of Linked List?</h4>
+          <ol className="listInfo">
+          <li><p>If you’re asked to reverse a linked list without using extra memory</p></li>
+          </ol>
+          <br/>
+          <br/>
+        </div>
       </div>
   );
 }
