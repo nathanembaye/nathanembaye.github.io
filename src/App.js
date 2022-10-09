@@ -11,6 +11,7 @@ import sll2 from "./sll2.png";
 import sll3 from "./sll3.png";
 import sll4 from "./sll4.png";
 import intervals from "./intervals.png";
+import cloud from "./cloud.png";
 import { Route, Link, Routes } from "react-router-dom";
 import { Code, tomorrow } from "react-code-blocks";
 
@@ -21,6 +22,7 @@ class App extends React.Component {
     return (
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route exact path="/about" title="about" element={<About />} />
         <Route exact path="/notes" title="notes" element={<Notes />} />
         <Route exact path="/complexity" title="complexity" element={<Complexity />} />
         <Route exact path="/miscellania" title="miscellania" element={<Miscellania />} />
@@ -42,11 +44,33 @@ function ChangeTitle(title) {
 }
 
 function Home() {
-  ChangeTitle("nathan embaye")
+  ChangeTitle("nathan embaye | home")
+  return (
+    <div className="homeContainer">
+      <div className="home">
+          <div className="title">
+            <h1>nathan embaye</h1>
+          </div>
+          <div className="home">
+            <Link to="/about">about</Link>
+            <br/>
+            <Link to="/notes">notes</Link>
+            <br/>
+            <a href={process.env.PUBLIC_URL + "/Resume.pdf"}>resume</a>
+            <br/>
+            <a href="mailto:nathanembaye26@gmail.com">contact</a>
+          </div>  
+        </div>
+      </div>
+  );
+}
+
+function About() {
+  ChangeTitle("nathan embaye | about")
   return (
     <div className="container">
         <div className="title">
-          <h1>nathan embaye</h1>
+          <a href="/"><h1>about</h1></a>
         </div>
         <div className="body">
           <p>
@@ -78,19 +102,13 @@ function Home() {
           <a href="https://github.com/nathanembaye">
             <img alt='' className="github" src={github} />
           </a>
-          <Link to="/notes">
-            <img alt='' className="pencil" src={pencil} />
-          </Link>
-          <a href={process.env.PUBLIC_URL + "/Resume.pdf"} rel="noreferrer" target="_blank">
-            <img alt='' className="resume" src={resume} />
-          </a>
         </div>
       </div>
   );
 }
 
 function Notes() {
-  ChangeTitle("notes")
+  ChangeTitle("nathan embaye | notes")
   return (
     <div className="section">
       <br/><br/><br/><br/>
@@ -112,7 +130,7 @@ function Notes() {
 }
 
 function Complexity() {
-  ChangeTitle("computational complexity")
+  ChangeTitle("nathan embaye | computational complexity")
   return (
       <div className="article">
         <div className="articleDescripion">
@@ -161,7 +179,7 @@ function Complexity() {
 }
 
 function Miscellania() {
-  ChangeTitle("miscellania")
+  ChangeTitle("nathan embaye | miscellania")
   return (
         <div className="article">
           <div className="articleDescripion">
@@ -198,7 +216,7 @@ function Miscellania() {
 }
 
 function Grokking() {
-  ChangeTitle("grokking")
+  ChangeTitle("nathan embaye | grokking")
   return (
         <div className="article">
           <div className="articleDescripion">
@@ -231,7 +249,7 @@ function Grokking() {
 }
 
 function SlidingWindow() {
-  ChangeTitle("sliding window")
+  ChangeTitle("nathan embaye | sliding window")
   return (
       <div className="article">
         <div className="articleDescripion">
@@ -327,7 +345,7 @@ for right in range(len(nums)):
 }
 
 function TwoPointers() {
-  ChangeTitle("two pointers")
+  ChangeTitle("nathan embaye | two pointers")
   return (
       <div className="article">
         <div className="articleDescripion">
@@ -402,7 +420,7 @@ while left < right:
 }
 
 function FastSlow() {
-  ChangeTitle("fast and slow pointers")
+  ChangeTitle("nathan embaye | fast and slow pointers")
   return (
       <div className="article">
         <div className="articleDescripion">
@@ -478,7 +496,7 @@ return False`}
 }
 
 function MergeIntervals() {
-  ChangeTitle("merge intervals")
+  ChangeTitle("nathan embaye | merge intervals")
   return (
       <div className="article">
         <div className="articleDescripion">
@@ -560,7 +578,7 @@ return True`}
 }
 
 function CyclicSort() {
-  ChangeTitle("cyclic sort")
+  ChangeTitle("nathan embaye | cyclic sort")
   return (
       <div className="article">
         <div className="articleDescripion">
