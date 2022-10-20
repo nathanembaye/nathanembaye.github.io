@@ -206,6 +206,8 @@ function Miscellania() {
             <p>I took a train to a boat to a bus every morning.</p>
             <a href="https://timdillontalks.tumblr.com/post/148652686978/embed"><i>Dennis</i></a>
             <p>Life in the big city.</p>
+            <a href="https://web.archive.org/web/20200706082311/http://iwarrior.uwaterloo.ca/2018/03/28/44837/44837/"><i>Dude Boy</i></a>
+            <p>Unlike me, he had the good sense to be born head first.</p>
             <br/>
             <br/>
           </div>
