@@ -47,7 +47,7 @@ function Home() {
     <div className="homeContainer">
       <div className="home">
           <div className="title">
-            <h1><span>λ</span> nathan embaye</h1>
+            <h1>nathan embaye</h1>
           </div>
           <div className="home">
             <Link to="/about">about</Link>
@@ -111,7 +111,7 @@ function Notes() {
     <div className="section">
       <br/><br/><br/><br/>
       <div className="sectiontitle">
-      <Link className="myname" to="/">notes<p><i>writing to understand</i></p><p>←</p></Link><br/>
+      <Link className="myname" to="/">notes</Link><br/>
         </div>
         <div className="sectioninfo">
           <div className="address">
