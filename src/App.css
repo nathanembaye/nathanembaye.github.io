@@ -237,6 +237,7 @@ a.myname {
   .container {
     width: 60%;
   }
+
 }
 
 @media (max-width: 800px) {
@@ -244,10 +245,18 @@ a.myname {
     width: 60%;
   }
 
-
 }
 
 @media (max-width: 700px) {
+
+  .title {
+    width: 90%;
+  }
+  
+  .homeContainer {
+    margin-left: 25%;
+  }
+
   .container {
     width: 80%;
     margin-top: 25%;
