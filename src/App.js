@@ -68,7 +68,7 @@ function About() {
   return (
     <div className="container">
         <div className="title">
-        <a href="/"><h1>about</h1></a>
+        <Link to="/"><h1>about</h1></Link>
         </div>
         <div className="body">
           <p>
@@ -108,20 +108,27 @@ function About() {
 function Notes() {
   ChangeTitle("nathan embaye | notes")
   return (
-    <div className="section">
-      <br/><br/><br/><br/>
-      <div className="sectiontitle">
-      <Link className="myname" to="/">notes<p><i>writing to understand</i></p><p>←</p></Link><br/>
-        </div>
-        <div className="sectioninfo">
-          <div className="address">
-            <Link to="/complexity">computational complexity</Link><br/>
+        <div className="article">
+          <div className="articleDescripion">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <h1>notes</h1>
+            <Link to="/">dec 6, 2022</Link>
+            <br/> 
+            <br/> 
+            <br/> 
+            <br/> 
+            <Link to="/complexity"><i>computational complexity</i></Link>           
             <p>a fancy way of asking: how much work is it to run this algorithm?</p>
-            <Link to="/grokking">grokking</Link><br/>
+            <Link to="/grokking"><i>grokking</i></Link>           
             <p>annoying</p>
-            <Link to="/miscellania">miscellania</Link><br/>
-            <p>post-it worthy essay's I’ve come across in 2022</p>
-            </div>
+            <Link to="/miscellania"><i>miscellania</i></Link>           
+            <p>post-it worthy essay's i’ve come across in 2022</p>
+            <br/>
+            <br/>
           </div>
         </div>
   );
