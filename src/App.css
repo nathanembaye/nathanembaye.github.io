@@ -376,8 +376,8 @@ a.myname {
 
 @media (max-width: 500px) {
   .aboutPhoto img {
-    width: 90px;
-    height: 90px;
+    width: 115px;
+    height: 115px;
   }
 
   .aboutPhoto {
@@ -386,5 +386,6 @@ a.myname {
 
   .aboutText {
     width: 85%;
+    font-size: 80%;
   }
 }
