@@ -1,3 +1,44 @@
+.about {
+  text-align: center;
+  margin-top: 13%;
+}
+
+.aboutPhoto {
+  width: 23%;
+  display: inline-block;
+}
+
+.aboutPhoto img {
+  border-radius: 50%;
+  height: 240px;
+  width: 240px;
+  border: 1px solid #7c7d7d;
+}
+
+.aboutText {
+  display: inline-block;
+  text-align: left;
+  width: 30%;
+}
+
+.aboutText h1 {
+  color: #e0218a;
+}
+
+.aboutText a {
+  color: #e0218a;
+}
+
+.aboutText p {
+  font-size: 98%;
+}
+
+.aboutText img {
+  height: 25px;
+  width: 25px;
+  margin: 2% 3% 0% 0%;
+}
+
 
 .home {
   display: inline-block; 
@@ -49,13 +90,6 @@ ol {
   font-size: 15px;
 }
 
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 30%;
-  margin-top: 12%;
-}
-
 .title {
   color: #e0218a;
   font-family: 'Trebuchet MS', sans-serif;
@@ -63,21 +97,6 @@ ol {
 
 h1 {
   font-weight: 200;
-}
-
-.body {
-  font-family: Trebuchet MS, sans-serif;
-  font-size: 15px;
-}
-
-.body a {
-  color: #e0218a;
-}
-
-.social img {
-  height: 25px;
-  width: 25px;
-  margin: 2% 3% 0% 0%;
 }
 
 .linkedin:hover {
@@ -226,26 +245,68 @@ a.myname {
   color: #000;
 }
 
-@media (max-width: 1100px) {
-  .container {
-    width: 50%;
+@media (max-width: 1150px) {
+  
+  .aboutPhoto {
+    width: 30%;
   }
-
+  
+  .aboutPhoto img {
+    height: 230px;
+    width: 230px;
+  }
+  
+  .aboutText {
+    width: 45%;
+  }
+  
+  .aboutText img {
+    height: 25px;
+    width: 25px;
+    margin: 2% 3% 0% 0%;
+  }
 }
 
-@media (max-width: 900px) {
-  .container {
-    width: 60%;
+@media (max-width: 880px) {
+  
+  .aboutPhoto {
+    width: 35%;
   }
-
+  
+  .aboutPhoto img {
+    height: 195px;
+    width: 195px;
+  }
+  
+  .aboutText {
+    width: 55%;
+  }
+  
+  .aboutText img {
+    height: 20px;
+    width: 20px;
+    margin: 2% 3% 0% 0%;
+  }
 }
+
 
 @media (max-width: 800px) {
-  .container {
-    width: 60%;
+  .aboutPhoto img {
+    height: 175px;
+    width: 175px;
   }
 
+  .aboutText {
+    font-size: 90%;
+  }
 }
+
+@media (max-width: 750px) {
+  .aboutText {
+    font-size: 90%;
+  }
+}
+
 
 @media (max-width: 700px) {
 
@@ -257,18 +318,9 @@ a.myname {
     margin-left: 25%;
   }
 
-  .container {
-    width: 80%;
-    margin-top: 25%;
-  }
-
   .social img {
     height: 22px;
     width: 22px;
-  }
-
-  .body {
-    font-size: 13px;
   }
 
   .articleDescripion {
@@ -311,4 +363,28 @@ a.myname {
     margin-top: 40%;
   }
 
+  .aboutText {
+    font-size: 70%;
+  }
+
+  .aboutPhoto img {
+    width: 130px;
+    height: 130px;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .aboutPhoto img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .aboutPhoto {
+    width: 35%;
+  }
+
+  .aboutText {
+    width: 85%;
+  }
 }

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.css";
+import nathan from "./nathan.jpg";
 import github from "./githubGrey.png";
 import linkedin from "./linkedinGrey.png";
 import chart from "./chart.svg";
@@ -66,41 +67,22 @@ function Home() {
 function About() {
   ChangeTitle("nathan embaye | about")
   return (
-    <div className="container">
-        <div className="title">
-        <Link to="/"><h1>about</h1></Link>
-        </div>
-        <div className="body">
-          <p>
-            Public policy junkie and software engineer. I enjoy turning elusive
-            business requirements into performant, scalable code. Currently I
-            do just that at Canada's{" "}
-            <a href="https://www.bankofcanada.ca/core-functions/">
-              central bank
-            </a>
-            .
-            <br />
-            <br />
-            When I'm not developing I like to lift,{" "}
-            <a href="http://www.rosenfels.org/Joseph%20Campbell%20-%20The%20Hero%20With%20A%20Thousand%20Faces,%20Commemorative%20Edition%20%282004%29.pdf">
-              read
-            </a>
-            {""} and frequent comedy clubs. Feel free to check out my latest project,
-            a COVID-19 relief initiative:{" "}
-            <a href="https://dekiottawa.com">
-              Deki Ottawa
-            </a>
-            .
-          </p>
-        </div>
-        <div className="social">
-          <a href="https://www.linkedin.com/in/nathanembaye/">
-            <img alt='' className="linkedin" src={linkedin} />
-          </a>
-          <a href="https://github.com/nathanembaye">
-            <img alt='' className="github" src={github} />
-          </a>
-        </div>
+    <div className="about">
+          <div className="aboutPhoto">
+            <img src={nathan}></img>
+          </div>
+          <div className="aboutText">
+            <Link style={{ textDecoration: 'none' }}to="/"><h1>about</h1></Link>
+            <p> Public policy junkie and software engineer. I enjoy turning elusive business requirements into performant, scalable code. Currently I do just that at Canada's{" "} <a href="https://www.bankofcanada.ca/core-functions/"> central bank </a> . <br /><br /> When I'm not developing I like to lift,{" "} <a href="http://www.rosenfels.org/Joseph%20Campbell%20-%20The%20Hero%20With%20A%20Thousand%20Faces,%20Commemorative%20Edition%20%282004%29.pdf"> read </a> {""} and frequent comedy clubs. Feel free to check out my latest project, a COVID-19 relief initiative:{" "} <a href="https://dekiottawa.com"> Deki Ottawa.</a></p>
+            <div>
+              <a href="https://www.linkedin.com/in/nathanembaye/">
+                <img alt='' className="linkedin" src={linkedin} />
+              </a>
+              <a href="https://github.com/nathanembaye">
+                <img alt='' className="github" src={github} />
+              </a>
+            </div>
+          </div>
       </div>
   );
 }
@@ -121,11 +103,11 @@ function Notes() {
             <br/> 
             <br/> 
             <br/> 
-            <Link to="/complexity"><i>computational complexity</i></Link>           
+            <Link to="/complexity">computational complexity</Link>           
             <p>a fancy way of asking: how much work is it to run this algorithm?</p>
-            <Link to="/grokking"><i>grokking</i></Link>           
+            <Link to="/grokking">grokking</Link>           
             <p>annoying</p>
-            <Link to="/miscellania"><i>miscellania</i></Link>           
+            <Link to="/miscellania">miscellania</Link>           
             <p>post-it worthy essay's i’ve come across in 2022</p>
             <br/>
             <br/>
