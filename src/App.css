@@ -141,21 +141,7 @@ h1 {
   font-weight: 200;
 }
 
-.linkedin:hover {
-}
-
-.github:hover {
-}
-
-.spotify:hover {
-  opacity: 0.3;
-}
-
 .resume:hover {
-  opacity: 0.3;
-}
-
-.pencil:hover {
   opacity: 0.3;
 }
 
@@ -449,6 +435,21 @@ a.myname {
 
   .menu li {
     padding: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .menu{
+    max-width: 320px;    
+  }
+
+  .menu a {
+    font-size: 12px;
+  }
+
+  .menu li {
+    padding: 11px;
   }
 }
 

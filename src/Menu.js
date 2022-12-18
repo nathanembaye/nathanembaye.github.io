@@ -11,7 +11,7 @@ export default class Menu extends React.Component {
               <li><Link to="/about">about</Link></li>
               <li><h2>λ</h2><Link to="/notes">notes</Link></li>
               <li><a href={process.env.PUBLIC_URL + "/Resume.pdf"}>resume</a></li>
-              <li><Link to="mailto:nathanembaye26@gmail.com">contact</Link></li>
+              <li><a href="mailto:nathanembaye26@gmail.com">contact</a></li>
             </ul>
       </div>
     );

@@ -102,9 +102,6 @@ function Notes() {
           <div className="articleDescripion">
             <br/>
             <br/>
-            <br/>
-            <br/>
-            <br/>
             <h1>notes</h1>
             <p className="date">dec 6, 2022</p>
             <br/> 
@@ -129,9 +126,6 @@ function Complexity() {
   return ( <div><Menu/>
       <div className="article">
         <div className="articleDescripion">
-        <br/>
-        <br/>
-        <br/>
         <br/>
         <br/>
         <h1>computational complexity</h1>
@@ -180,9 +174,6 @@ function Miscellania() {
           <div className="articleDescripion">
             <br/>
             <br/>
-            <br/>
-            <br/>
-            <br/>
             <h1>miscellania</h1>
             <p className="date">apr 15, 2022</p>
             <br/> 
@@ -219,9 +210,6 @@ function Grokking() {
           <div className="articleDescripion">
             <br/>
             <br/>
-            <br/>
-            <br/>
-            <br/>
             <h1>grokking</h1>
             <p className="date">aug 1, 2022</p>
             <br/> 
@@ -252,9 +240,6 @@ function SlidingWindow() {
   return ( <div><Menu/>
       <div className="article">
         <div className="articleDescripion">
-        <br/>
-        <br/>
-        <br/>
         <br/>
         <br/>
         <h1>sliding window</h1>
@@ -350,9 +335,6 @@ function TwoPointers() {
         <div className="articleDescripion">
         <br/>
         <br/>
-        <br/>
-        <br/>
-        <br/>
         <h1>two pointers</h1>
         <p className="date">aug 25, 2022</p>
         <br/>
@@ -423,9 +405,6 @@ function FastSlow() {
   return ( <div><Menu/>
       <div className="article">
         <div className="articleDescripion">
-        <br/>
-        <br/>
-        <br/>
         <br/>
         <br/>
         <h1>fast and slow pointers</h1>
@@ -499,9 +478,6 @@ function MergeIntervals() {
   return ( <div><Menu/>
       <div className="article">
         <div className="articleDescripion">
-        <br/>
-        <br/>
-        <br/>
         <br/>
         <br/>
         <h1>merge intervals</h1>
@@ -581,9 +557,6 @@ function CyclicSort() {
   return ( <div><Menu/>
       <div className="article">
         <div className="articleDescripion">
-          <br/>
-          <br/>
-          <br/>
           <br/>
           <br/>
           <h1>cyclic sort</h1>
@@ -693,9 +666,6 @@ function LinkListReversal() {
   return ( <div><Menu/>
       <div className="article">
         <div className="articleDescripion">
-          <br/>
-          <br/>
-          <br/>
           <br/>
           <br/>
           <h1>in-place reversal of linked list</h1>
