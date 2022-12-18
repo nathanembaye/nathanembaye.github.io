@@ -1,18 +1,59 @@
+.date {
+  color: #7c7d7d;
+  font-weight: 100;
+}
+
+.menu{
+  font-family: "Source Sans Pro", sans-serif, helvetica;
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+}
+
+.menu li {
+  display: inline-block;
+  padding: 30px;
+}
+
+.menu ul {
+  list-style: none;
+  border-bottom: 1px solid #e0218a;
+  margin-top: -5%;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #7c7d7d;
+}
+
+.menu a:hover {
+  color: #e0218a;
+}
+
+.menu a:active {
+  color: #e0218a;
+}
+
+.menu h2 {
+  color: #e0218a;
+  font-weight: 400;
+}
+
 .about {
   text-align: center;
-  margin-top: 13%;
+  margin-top: 0%;
 }
 
 .aboutPhoto {
-  width: 23%;
+  width: 15%;
   display: inline-block;
 }
 
 .aboutPhoto img {
   border-radius: 50%;
-  height: 240px;
-  width: 240px;
-  border: 1px solid #7c7d7d;
+  height: 120px;
+  width: 120px;
+  margin: 2% 3% 30% 10%;
 }
 
 .aboutText {
@@ -22,6 +63,7 @@
 }
 
 .aboutText h1 {
+  font-family: Trebuchet MS, sans-serif;
   color: #e0218a;
 }
 
@@ -30,7 +72,7 @@
 }
 
 .aboutText p {
-  font-size: 98%;
+  font-size: 90%;
 }
 
 .aboutText img {
@@ -100,11 +142,9 @@ h1 {
 }
 
 .linkedin:hover {
-  opacity: 0.3;
 }
 
 .github:hover {
-  opacity: 0.3;
 }
 
 .spotify:hover {
@@ -374,6 +414,16 @@ a.myname {
 
 }
 
+@media (max-width: 600px) {
+
+  .menu{
+    max-width: 500px;
+  }
+  .menu li {
+    padding: 20px;
+  }
+}
+
 @media (max-width: 500px) {
   .aboutPhoto img {
     width: 115px;
@@ -387,5 +437,32 @@ a.myname {
   .aboutText {
     width: 85%;
     font-size: 80%;
+  }
+
+  .menu{
+    max-width: 380px;
+  }
+
+  .menu a {
+    font-size: 13px;
+  }
+
+  .menu li {
+    padding: 13px;
+  }
+}
+
+@media (max-width: 330px) {
+
+  .menu{
+    max-width: 290px;    
+  }
+
+  .menu a {
+    font-size: 10px;
+  }
+
+  .menu li {
+    padding: 10px;
   }
 }

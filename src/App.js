@@ -2,7 +2,9 @@ import React, { useEffect } from "react";
 import "./App.css";
 import nathan from "./nathan.jpg";
 import github from "./githubGrey.png";
+import github2 from "./github2.png";
 import linkedin from "./linkedinGrey.png";
+import linkedin2 from "./linkedin2.png";
 import chart from "./chart.svg";
 import sll0 from "./sll0.png";
 import sll1 from "./sll1.png";
@@ -12,26 +14,27 @@ import sll4 from "./sll4.png";
 import intervals from "./intervals.png";
 import { Route, Link, Routes } from "react-router-dom";
 import { Code, tomorrow } from "react-code-blocks";
+import Menu from "./Menu.js"
+
 
 class App extends React.Component {
 
-
   render() {
     return (
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route exact path="/about" title="about" element={<About />} />
-        <Route exact path="/notes" title="notes" element={<Notes />} />
-        <Route exact path="/complexity" title="complexity" element={<Complexity />} />
-        <Route exact path="/miscellania" title="miscellania" element={<Miscellania />} />
-        <Route exact path="/grokking" title="grokking" element={<Grokking />} />
-        <Route exact path="/slidingwindow" title="slidingwindow" element={<SlidingWindow />} />
-        <Route exact path="/twopointers" title="twopointers" element={<TwoPointers />} />
-        <Route exact path="/fastslow" title="fastslow" element={<FastSlow />} />
-        <Route exact path="/mergeintervals" title="mergeintervals" element={<MergeIntervals />} />
-        <Route exact path="/cyclicsort" title="cyclicsort" element={<CyclicSort />} />
-        <Route exact path="/llreversal" title="llreversal" element={<LinkListReversal />} />
-      </Routes>
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" title="about" element={<About />} />
+            <Route path="/notes" title="notes" element={<Notes />} />
+            <Route path="/complexity" title="complexity" element={<Complexity />} />
+            <Route path="/miscellania" title="miscellania" element={<Miscellania />} />
+            <Route path="/grokking" title="grokking" element={<Grokking />} />
+            <Route path="/slidingwindow" title="slidingwindow" element={<SlidingWindow />} />
+            <Route path="/twopointers" title="twopointers" element={<TwoPointers />} />
+            <Route path="/fastslow" title="fastslow" element={<FastSlow />} />
+            <Route path="/mergeintervals" title="mergeintervals" element={<MergeIntervals />} />
+            <Route path="/cyclicsort" title="cyclicsort" element={<CyclicSort />} />
+            <Route path="/llreversal" title="llreversal" element={<LinkListReversal />} />
+        </Routes>
     );
   }
 }
@@ -39,8 +42,9 @@ class App extends React.Component {
 function ChangeTitle(title) {
   useEffect(() => {
     document.title = title;
-  });
+  }); 
 }
+
 
 function Home() {
   ChangeTitle("nathan embaye | home")
@@ -67,29 +71,33 @@ function Home() {
 function About() {
   ChangeTitle("nathan embaye | about")
   return (
-    <div className="about">
-          <div className="aboutPhoto">
-            <img src={nathan}></img>
-          </div>
-          <div className="aboutText">
-            <Link style={{ textDecoration: 'none' }}to="/"><h1>about</h1></Link>
-            <p> Public policy junkie and software engineer. I enjoy turning elusive business requirements into performant, scalable code. Currently I do just that at Canada's{" "} <a href="https://www.bankofcanada.ca/core-functions/"> central bank </a> . <br /><br /> When I'm not developing I like to lift,{" "} <a href="http://www.rosenfels.org/Joseph%20Campbell%20-%20The%20Hero%20With%20A%20Thousand%20Faces,%20Commemorative%20Edition%20%282004%29.pdf"> read </a> {""} and frequent comedy clubs. Feel free to check out my latest project, a COVID-19 relief initiative:{" "} <a href="https://dekiottawa.com"> Deki Ottawa.</a></p>
-            <div>
-              <a href="https://www.linkedin.com/in/nathanembaye/">
-                <img alt='' className="linkedin" src={linkedin} />
-              </a>
-              <a href="https://github.com/nathanembaye">
-                <img alt='' className="github" src={github} />
-              </a>
+    <div>
+      <Menu/>
+      <div className="about">
+            <div className="aboutPhoto">
+              <img alt="cant show" src={nathan}></img>
             </div>
-          </div>
-      </div>
-  );
+            <div className="aboutText">
+              <h1>about</h1>
+              <p> Public policy junkie and software engineer. I enjoy turning elusive business requirements into performant, scalable code. Currently I do just that at Canada's{" "} <a href="https://www.bankofcanada.ca/core-functions/"> central bank.</a><br /><br /> When I'm not developing I like to lift,{" "} <a href="http://www.rosenfels.org/Joseph%20Campbell%20-%20The%20Hero%20With%20A%20Thousand%20Faces,%20Commemorative%20Edition%20%282004%29.pdf"> read</a> {""} and frequent comedy clubs. Feel free to check out my latest project, a COVID-19 relief initiative:{" "} <a href="https://dekiottawa.com"> Deki Ottawa.</a></p>
+              <div>
+                <a href="https://www.linkedin.com/in/nathanembaye/">
+                  <img onMouseOver={e => e.currentTarget.src = linkedin2} onMouseLeave={e => e.currentTarget.src = linkedin} alt='' className="linkedin" src={linkedin} />
+                </a>
+                <a href="https://github.com/nathanembaye">
+                  <img onMouseOver={e => e.currentTarget.src = github2} onMouseLeave={e => e.currentTarget.src = github} alt='' className="github" src={github} />
+                </a>
+              </div>
+            </div>
+        </div>
+    </div>); 
 }
 
 function Notes() {
   ChangeTitle("nathan embaye | notes")
   return (
+    <div>
+        <Menu/>
         <div className="article">
           <div className="articleDescripion">
             <br/>
@@ -98,7 +106,7 @@ function Notes() {
             <br/>
             <br/>
             <h1>notes</h1>
-            <Link to="/">dec 6, 2022</Link>
+            <p className="date">dec 6, 2022</p>
             <br/> 
             <br/> 
             <br/> 
@@ -113,12 +121,12 @@ function Notes() {
             <br/>
           </div>
         </div>
-  );
+     </div>); 
 }
 
 function Complexity() {
   ChangeTitle("nathan embaye | computational complexity")
-  return (
+  return ( <div><Menu/>
       <div className="article">
         <div className="articleDescripion">
         <br/>
@@ -127,7 +135,7 @@ function Complexity() {
         <br/>
         <br/>
         <h1>computational complexity</h1>
-        <Link to="/notes">apr 9, 2022</Link>
+        <p className="date">apr 9, 2022</p>
         <p><i>Computational complexity is the estimate of computer resources an algorithm needs to complete a execution. In it there's a particular focus on two categories: time and space.</i></p>
         <br/>
         <h3>time complexity</h3>
@@ -162,12 +170,12 @@ function Complexity() {
         <br/>
         </div>
       </div>
-  );
+  </div>); 
 }
 
 function Miscellania() {
   ChangeTitle("nathan embaye | miscellania")
-  return (
+  return ( <div><Menu/>
         <div className="article">
           <div className="articleDescripion">
             <br/>
@@ -176,7 +184,7 @@ function Miscellania() {
             <br/>
             <br/>
             <h1>miscellania</h1>
-            <Link to="/notes">apr 15, 2022</Link>
+            <p className="date">apr 15, 2022</p>
             <br/> 
             <br/> 
             <br/> 
@@ -201,12 +209,12 @@ function Miscellania() {
             <br/>
           </div>
         </div>
-  );
+  </div>); 
 }
 
 function Grokking() {
   ChangeTitle("nathan embaye | grokking")
-  return (
+  return ( <div><Menu/>
         <div className="article">
           <div className="articleDescripion">
             <br/>
@@ -215,7 +223,7 @@ function Grokking() {
             <br/>
             <br/>
             <h1>grokking</h1>
-            <Link to="/notes">aug 1, 2022</Link>
+            <p className="date">aug 1, 2022</p>
             <br/> 
             <br/> 
             <br/> 
@@ -236,12 +244,12 @@ function Grokking() {
             <br/>
           </div>
         </div>
-  );
+  </div>); 
 }
 
 function SlidingWindow() {
   ChangeTitle("nathan embaye | sliding window")
-  return (
+  return ( <div><Menu/>
       <div className="article">
         <div className="articleDescripion">
         <br/>
@@ -250,7 +258,7 @@ function SlidingWindow() {
         <br/>
         <br/>
         <h1>sliding window</h1>
-        <Link to="/grokking">aug 2, 2022</Link>
+        <p className="date">aug 2, 2022</p>
         <br/>
         <p><i>The sliding window technique applies to linear data structures like arrays, lists and strings. It improves the performance of algorithms trying to visit every substructure of an input. For any given window (contigous elements), there is an index that denotes the start of the window and an index that marks the end of the window. Typically using nested loops, O(n²), we’ll see how it can be optimized to O(n). Here are its three variations:</i></p>
         <ul className="listTitle">
@@ -332,12 +340,12 @@ for right in range(len(nums)):
         <br/>
         <br/>
       </div>
-  );
+  </div>); 
 }
 
 function TwoPointers() {
   ChangeTitle("nathan embaye | two pointers")
-  return (
+  return ( <div><Menu/>
       <div className="article">
         <div className="articleDescripion">
         <br/>
@@ -346,7 +354,7 @@ function TwoPointers() {
         <br/>
         <br/>
         <h1>two pointers</h1>
-        <Link to="/grokking">aug 25, 2022</Link>
+        <p className="date">aug 25, 2022</p>
         <br/>
         <p><i>The two pointer technique applies to (often sorted) linear data structures like arrays, lists and strings. It improves the performance of algorithms trying to visit every possible pair in such inputs. For any pair, there is a left pointer denoting the first element and a right pointer identifying the second. Typically done in O(n²) time with nested loops, we'll see how such pairings can be improved to O(n) time.</i></p>
         <ul className="listTitle">
@@ -407,12 +415,12 @@ while left < right:
         <br/>
         <br/>
       </div>
-  );
+  </div>); 
 }
 
 function FastSlow() {
   ChangeTitle("nathan embaye | fast and slow pointers")
-  return (
+  return ( <div><Menu/>
       <div className="article">
         <div className="articleDescripion">
         <br/>
@@ -421,7 +429,7 @@ function FastSlow() {
         <br/>
         <br/>
         <h1>fast and slow pointers</h1>
-        <Link to="/grokking">oct 1st, 2022</Link>
+        <p className="date">oct 1st, 2022</p>
         <br/>
         <p><i>The fast and slow pointer technique applies to arrays, lists but most often linked-lists. It improves the performance of algorithms determining if a input posesses a cycle or not. For every structure, we set two pointers to move at difference speeds (a tortoise and a hare). If there is no cycle, the fast pointer will reach the end of the input. However, if the fast pointer meets the slow pointer (laps), there is a cycle present.</i></p>
         <ul className="listTitle">
@@ -483,12 +491,12 @@ return False`}
         <br/>
         <br/>
       </div>
-  );
+  </div>); 
 }
 
 function MergeIntervals() {
   ChangeTitle("nathan embaye | merge intervals")
-  return (
+  return ( <div><Menu/>
       <div className="article">
         <div className="articleDescripion">
         <br/>
@@ -497,7 +505,7 @@ function MergeIntervals() {
         <br/>
         <br/>
         <h1>merge intervals</h1>
-        <Link to="/grokking">oct 2nd, 2022</Link>
+        <p className="date">oct 2nd, 2022</p>
         <br/>
         <p><i>The merge intervals technique applies to inputs with multiple elements, and those elements have values that could be considered overlapping or intersecting with one another. By detecting such occurences, we're free to merge, insert or delete them when we choose.</i></p>
         <ul className="listTitle">
@@ -565,12 +573,12 @@ return True`}
           <br/>
           <br/>
       </div>
-  );
+  </div>); 
 }
 
 function CyclicSort() {
   ChangeTitle("nathan embaye | cyclic sort")
-  return (
+  return ( <div><Menu/>
       <div className="article">
         <div className="articleDescripion">
           <br/>
@@ -579,7 +587,7 @@ function CyclicSort() {
           <br/>
           <br/>
           <h1>cyclic sort</h1>
-          <Link to="/grokking">oct 3rd, 2022</Link>
+          <p className="date">oct 3rd, 2022</p>
           <br/>
           <p><i>This cyclic sort is exactly what it sounds like - a sorting algorithm. Its only prerequisite is an input array containing numbers in a defined range, typically [0, n] or [1, n]. It iterates over each number, and if the current number you are visiting is at the wrong index (sorted in non-decreasing order), you swap it with the number at its correct index. After this, any element placed at the incorrct index can be assessed.</i></p>
           <ul className="listTitle">
@@ -677,12 +685,12 @@ while i < len(nums):
         <br/>
         <br/>
       </div>
-  );
+  </div>); 
 }
 
 function LinkListReversal() {
   ChangeTitle("nathan embaye | in-place reversal of linked list")
-  return (
+  return ( <div><Menu/>
       <div className="article">
         <div className="articleDescripion">
           <br/>
@@ -691,7 +699,7 @@ function LinkListReversal() {
           <br/>
           <br/>
           <h1>in-place reversal of linked list</h1>
-          <Link to="/grokking">oct 9th, 2022</Link>
+          <p className="date">oct 9th, 2022</p>
           <br/>
           <p><i>The in-place reversal of a linked list is a technique to, you guessed it, reverse a linked list. Typical naive approaches would do this by storing the elements then reversing them, using O(n) memory. This algorithm does it, “in-place”, which optimizes memory used to O(1).</i></p>
           <ul className="listTitle">
@@ -747,7 +755,7 @@ return prev`}
           <br/>
         </div>
       </div>
-  );
+  </div>); 
 }
 
 export default App;
