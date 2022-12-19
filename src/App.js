@@ -106,8 +106,6 @@ function Notes() {
             <p className="date">dec 6, 2022</p>
             <br/> 
             <br/> 
-            <br/> 
-            <br/> 
             <Link to="/complexity">computational complexity</Link>           
             <p>a fancy way of asking: how much work is it to run this algorithm?</p>
             <Link to="/grokking">grokking</Link>           
@@ -212,8 +210,6 @@ function Grokking() {
             <br/>
             <h1>grokking</h1>
             <p className="date">aug 1, 2022</p>
-            <br/> 
-            <br/> 
             <br/> 
             <br/> 
             <Link to="/slidingwindow"><i>Sliding Window</i></Link>           
