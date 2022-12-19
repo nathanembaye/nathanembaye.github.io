@@ -47,7 +47,7 @@ function ChangeTitle(title) {
 
 
 function Home() {
-  ChangeTitle("nathan embaye | home")
+  ChangeTitle("home")
   return (
     <div className="homeContainer">
       <div className="home">
@@ -69,7 +69,7 @@ function Home() {
 }
 
 function About() {
-  ChangeTitle("nathan embaye | about")
+  ChangeTitle("about")
   return (
     <div>
       <Menu/>
@@ -94,7 +94,7 @@ function About() {
 }
 
 function Notes() {
-  ChangeTitle("nathan embaye | notes")
+  ChangeTitle("notes")
   return (
     <div>
         <Menu/>
@@ -120,7 +120,7 @@ function Notes() {
 }
 
 function Complexity() {
-  ChangeTitle("nathan embaye | computational complexity")
+  ChangeTitle("computational complexity")
   return ( <div><Menu/>
       <div className="article">
         <div className="articleDescripion">
@@ -166,7 +166,7 @@ function Complexity() {
 }
 
 function Miscellania() {
-  ChangeTitle("nathan embaye | miscellania")
+  ChangeTitle("miscellania")
   return ( <div><Menu/>
         <div className="article">
           <div className="articleDescripion">
@@ -202,7 +202,7 @@ function Miscellania() {
 }
 
 function Grokking() {
-  ChangeTitle("nathan embaye | grokking")
+  ChangeTitle("grokking")
   return ( <div><Menu/>
         <div className="article">
           <div className="articleDescripion">
@@ -232,7 +232,7 @@ function Grokking() {
 }
 
 function SlidingWindow() {
-  ChangeTitle("nathan embaye | sliding window")
+  ChangeTitle("sliding window")
   return ( <div><Menu/>
       <div className="article">
         <div className="articleDescripion">
@@ -325,7 +325,7 @@ for right in range(len(nums)):
 }
 
 function TwoPointers() {
-  ChangeTitle("nathan embaye | two pointers")
+  ChangeTitle("two pointers")
   return ( <div><Menu/>
       <div className="article">
         <div className="articleDescripion">
@@ -397,7 +397,7 @@ while left < right:
 }
 
 function FastSlow() {
-  ChangeTitle("nathan embaye | fast and slow pointers")
+  ChangeTitle("fast and slow pointers")
   return ( <div><Menu/>
       <div className="article">
         <div className="articleDescripion">
@@ -470,7 +470,7 @@ return False`}
 }
 
 function MergeIntervals() {
-  ChangeTitle("nathan embaye | merge intervals")
+  ChangeTitle("merge intervals")
   return ( <div><Menu/>
       <div className="article">
         <div className="articleDescripion">
@@ -549,7 +549,7 @@ return True`}
 }
 
 function CyclicSort() {
-  ChangeTitle("nathan embaye | cyclic sort")
+  ChangeTitle("cyclic sort")
   return ( <div><Menu/>
       <div className="article">
         <div className="articleDescripion">
@@ -658,7 +658,7 @@ while i < len(nums):
 }
 
 function LinkListReversal() {
-  ChangeTitle("nathan embaye | in-place reversal of linked list")
+  ChangeTitle("in-place reversal of linked list")
   return ( <div><Menu/>
       <div className="article">
         <div className="articleDescripion">
