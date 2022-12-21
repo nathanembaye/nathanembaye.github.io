@@ -195,6 +195,10 @@ function Miscellania() {
             <p>Life in the big city.</p>
             <a href="https://web.archive.org/web/20200706082311/http://iwarrior.uwaterloo.ca/2018/03/28/44837/44837/"><i>Dude Boy</i></a>
             <p>Unlike me, he had the good sense to be born head first.</p>
+            <a href="https://www.theatlantic.com/business/archive/2014/02/how-to-save-marriage-in-america/283732/"><i>How to Save Marriage in America</i></a>
+            <p>The old form of marriage, based on outdated social rules and gender roles, is fading. A new version is emerging—egalitarian, committed, and focused on children.</p>
+            <a href="https://www.youtube.com/watch?v=ZtpWTJ7Jsh8"><i>Geohot</i></a>
+            <p>Do it faster, do it better.</p>
             <br/>
             <br/>
           </div>
@@ -480,6 +484,7 @@ return True`}</SyntaxHighlighter>
         <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n log n) time
 intervals.sort(key = lambda i: i.start)
 for i in range(len(intervals)-1):
+
   if intervals[i].end >= intervals[i+1].start:
       return False
 
