@@ -1,3 +1,8 @@
+.codeBlocks{
+    border: 1px solid #bbb;
+    border-radius: 4px;
+}
+
 .date {
   color: #7c7d7d;
   font-weight: 100;

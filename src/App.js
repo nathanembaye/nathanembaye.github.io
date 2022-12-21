@@ -13,8 +13,9 @@ import sll3 from "./sll3.png";
 import sll4 from "./sll4.png";
 import intervals from "./intervals.png";
 import { Route, Link, Routes } from "react-router-dom";
-import { Code, tomorrow } from "react-code-blocks";
 import Menu from "./Menu.js"
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 
 class App extends React.Component {
@@ -250,14 +251,13 @@ function SlidingWindow() {
         <br/>
         <h4>Fixed Window Size</h4>
         <p>For some questions, typically “easy'', the windows (substructures) to be visited must be of a set size. Say we have a list:</p>
-        <Code
-          text={`nums = [1, 2, 3, 4, 5, 6]`}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
+    <SyntaxHighlighter className="codeBlocks" language="python" style={xcode}>
+      {`nums = [1, 2, 3, 4, 5, 6]`}
+    </SyntaxHighlighter>
           <p>Now, lets say the fixed size is k = 3. How could we traverse <i>nums</i> for every window of length k?</p>
-          <Code
-          text={`#brue force O(n*k)
+          <SyntaxHighlighter className="codeBlocks" 
+          language={"python"}
+          style={xcode}>{`#brue force O(n*k)
 for i in range(len(nums)-k+1):
     for j in range(i, i + k):
         nums[j] #process window
@@ -270,25 +270,16 @@ for i in range(k):
 for i in range(k, len(nums)):
     sum -= nums[i-k]
     sum += nums[i] 
-    nums[i] #remove first, add new, then process
-        `}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
+    nums[i] #remove first, add new, then process`}</SyntaxHighlighter>
         <p>Which would process windows:</p>
-        <Code
-          text={`[1, 2, 3, 4], [2, 3, 4, 5], [3, 4, 5, 6]`}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
-        <br/>
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`[1, 2, 3, 4], [2, 3, 4, 5], [3, 4, 5, 6]`}</SyntaxHighlighter>
         <br/>
         <br/>
         <h4>Dynamic Window Size</h4>
         <p>For most problems however, you’ll work with a window that is dynamic. This means the answer could be a window of any size, so we need to be able to expand and contract it. When we might do either, depends on if the current window fufills a condition or not:</p>
-        <Code
-          text={`
-#brute force O(n^2)
+        <SyntaxHighlighter className="codeBlocks"
+          language={"python"}
+          style={xcode}>{`#brute force O(n^2)
 for i in range(len(nums)):
     for j in range(i+1, len(nums)):
         nums[i:j] #process every window
@@ -300,10 +291,7 @@ for right in range(len(nums)):
     while (nums[left:right+1] fufills condition):
         left += 1
     else:
-        #keep expanding`}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
+        #keep expanding`}</SyntaxHighlighter>
           <br/>
           <br/>
           <br/>
@@ -343,27 +331,20 @@ function TwoPointers() {
         <br/>
         <h4>Brute Force Pairs</h4>
         <p>When given a question that requires processing pairs, there is a <i>naive</i> approach that applies to both sorted and unsorted arrays:</p>
-        <Code
-          text={`nums = [1, 2, 3, 4, 5, 6] or nums = [5, 3, 2, 6, 1, 4]`}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
+        <SyntaxHighlighter className="codeBlocks" language={"python"}
+          
+          style={xcode}>{`nums = [1, 2, 3, 4, 5, 6] or nums = [5, 3, 2, 6, 1, 4]`}</SyntaxHighlighter>
         <p>Applied to either array, the algorithm below will process the same pairs, just in a different order. The cost, however, is O(n^2) time.</p>
-        <Code
-          text={`#O(n^2)
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n^2)
 for left in range(len(nums)):
     for right in range(left+1, len(nums)):
-        #process pair nums[left]:nums[right]`}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
+        #process pair nums[left]:nums[right]`}</SyntaxHighlighter>
           <br/>
           <br/>
           <br/>
         <h4>Two Pointers with Sorted Array</h4>
         <p>When given an array thats pre-sorted, we can be more strategic about its processing. Pointing at the head and tail, we can process the pair, and based on the combination, decide if we want to move the left or right pointer.</p>
-        <Code
-          text={`#O(n)
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n)
 left, right = 0, len(data) - 1
 while left < right:
     
@@ -372,11 +353,7 @@ while left < right:
     elif (condition failed this way):
         left += 1
     else:
-        right -= 1`}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
-          <br/>
+        right -= 1`}</SyntaxHighlighter>
           <br/>
           <br/>
           <h4>Two Pointers with Unsorted Array</h4>
@@ -415,8 +392,7 @@ function FastSlow() {
         <p>The first thing to consider with this approach is what exactly it approves on. Say we have a singly linked-list:</p>
         <img width="400" height="200" src={sll0} alt='' />
         <p>The intuition for most naive cycle-detecting algorithms would be to store all elements visited and end the function if we visit any element already stored. This detects any cycle that might exist, but uses extra space by storing each element, and time checking if it already exists in storage before appending it.</p>
-        <Code
-          text={`#O(n^2) time, O(n) space
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n^2) time, O(n) space
 arr = []
 while head:
 
@@ -426,10 +402,7 @@ while head:
         arr.append(head)
         head = head.next
         
-return False`}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
+return False`}</SyntaxHighlighter>
         <p>Floyd's technique improves the time and space used by implementing two pointers which only store the elements they are currently at. This is where the slow pointer moves one step at a time and the fast pointer moves two steps at a time, eventually landing on the same element (if a cycle exists).</p>
         <br/>
         <img width="400" height="200" src={sll1} alt='' />
@@ -438,8 +411,7 @@ return False`}
         <img width="400" height="200" src={sll4} alt='' />
         <br/>
         <p>Pictured above the slow (red) pointer and fast (green) pointer overlap or meet at the fourth node - thus a cycle is present.</p>
-        <Code
-          text={`#O(n) time, O(1) space
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n) time, O(1) space
 slow, fast = head, head
 while fast and fast.next:
     
@@ -449,10 +421,7 @@ while fast and fast.next:
     if slow == fast:
         return True  
     
-return False`}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
+return False`}</SyntaxHighlighter>
           <br/>
           <br/>
           <br/>
@@ -493,45 +462,28 @@ function MergeIntervals() {
         <br/>
         <br/>
         <p>Illustrated above, there are four ways (figure 2-5) that any two given intervals can overlap. Notice a pattern? For any overlap, the start of A is always less than or equal to the end of B, and the start of B is always less than or equal to the end of A. Say we have the following intervals: </p>
-        <br/>
-        <Code
-          text={`intervals = [(5,10),(0,30),(15,20)]`}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
-        <br/>
-        <br/>
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`intervals = [(5,10),(0,30),(15,20)]`}</SyntaxHighlighter>
         <p>Traversing every combination of interval, we can find which overlap:</p>
-        <br/>
-        <Code
-          text={`#O(n^2) time
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n^2) time
 for i in range(len(intervals)):
     for j in range(i+1, len(intervals)):
 
         if intervals[i].start <= intervals[j].end and intervals[j].start <= intervals[i].end:
             return False
 
-return True`}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
+return True`}</SyntaxHighlighter>
         <br/>
         <br/>
         <br/>
         <h4>Overlapping Sorted Intervals</h4>
         <p>Looking at the function above, there is a way to improve the performance of checking for overlaps. If our list of intervals were sorted in non-decreasing order, vis-à-vis their start values, we'd only need to check if each intervals end value is greater or equal to what's next to it. This would allow us to drop the second loop:</p>
-        <br/>
-        <Code
-          text={`#O(n log n) time
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n log n) time
 intervals.sort(key = lambda i: i.start)
 for i in range(len(intervals)-1):
   if intervals[i].end >= intervals[i+1].start:
       return False
 
-return True`}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
+return True`}</SyntaxHighlighter>
           <br/>
           <br/>
           <br/>
@@ -566,18 +518,9 @@ function CyclicSort() {
           <br/>
           <h4>Range of [0, n]</h4>
           <p>First, let's visualize the input we're working with:</p>
-          <br/>
-          <Code
-          text={`nums = [9, 6, 4, 2, 3, 5, 7, 0, 1]`}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
-          <br/>
-          <br/>
+          <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`nums = [9, 6, 4, 2, 3, 5, 7, 0, 1]`}</SyntaxHighlighter>
           <p>Now, for each number at the wrong index, let's swap it with the number that is currently stored in it.</p>
-          <br/>
-          <Code
-          text={`i = 0
+          <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`i = 0
 while i < len(nums):
 
     num = nums[i]
@@ -585,21 +528,9 @@ while i < len(nums):
     if num < len(nums) and num != i:
         nums[num], nums[i] = num, nums[num]
     else:
-        i += 1`}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
-        <br/>
-        <br/>
+        i += 1`}</SyntaxHighlighter>
         <p>The resulting array from this would be:</p>
-        <br/>
-        <Code
-          text={`nums = [0, 1, 2, 3, 4, 5, 6, 7, 9]`}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
-        <br/>
-        <br/>
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`nums = [0, 1, 2, 3, 4, 5, 6, 7, 9]`}</SyntaxHighlighter>
         <p>We can now attempt to fufill any particularities posed by the question.</p>
         <br/>
         <br/>
@@ -607,17 +538,9 @@ while i < len(nums):
         <h4>Range of [1, n]</h4>
           <p>Once again, let's define the input we're processing:</p>
           <br/>
-          <Code
-          text={`nums = [7,6,4,2,3,5,7,1]`}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
-          <br/>
-          <br/>
+          <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`nums = [7,6,4,2,3,5,7,1]`}</SyntaxHighlighter>
           <p>Now, for each number at the wrong index, let's swap it with the number that is currently stored in it.</p>
-          <br/>
-          <Code
-          text={`i = 0
+          <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`i = 0
 while i < len(nums):
 
     num = nums[i]
@@ -626,21 +549,9 @@ while i < len(nums):
         nums[num-1], nums[i] = num, nums[num-1]
 
     else:
-        i += 1`}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
-        <br/>
-        <br/>
+        i += 1`}</SyntaxHighlighter>
         <p>The resulting array from this would be:</p>
-        <br/>
-        <Code
-          text={`nums = [1, 2, 3, 4, 5, 6, 7, 7]`}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
-        <br/>
-        <br/>
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`nums = [1, 2, 3, 4, 5, 6, 7, 7]`}</SyntaxHighlighter>
         <p>We can now attempt to fufill any particularities posed by the question.</p>
         <br/>
         <br/>
@@ -674,9 +585,7 @@ function LinkListReversal() {
           <br/>
           <h4>In-place Reversal of Linked List</h4>
           <p>Before exploring how we can use O(1) memory to reverse a linked list, we should see what is actually being imporved upon by describing the brute-force solution first.</p>
-          <br/>
-        <Code
-          text={`#O(n) time, O(n) space
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n) time, O(n) space
 curr, nodes = head, []
 while curr:
     nodes.append(curr)
@@ -688,17 +597,9 @@ for i in range(len(nodes)-1):
     nodes[i].next = nodes[i+1]
 nodes[len(nodes)-1].next = None
 
-return nodes[0]`}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
-          <br/>
-          <br/>
+return nodes[0]`}</SyntaxHighlighter>
           <p>As displayed above, the storage of each node in the linked list is what makes the solution expesive. If we coud, instead, reverse each node while we're visiting it, there would be no need to store it.</p>
-          <br/>
-          <br/>
-          <Code
-          text={`#O(n) time, O(1) space
+          <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n) time, O(1) space
 prev = None
 while head:
     
@@ -707,10 +608,7 @@ while head:
     prev = head
     head = next
     
-return prev`}
-          language={"python"}
-          showLineNumbers={false}
-          theme={tomorrow}/>
+return prev`}</SyntaxHighlighter>
           <br/>
           <br/>
           <h4>When to use In-place Reversal of Linked List?</h4>
