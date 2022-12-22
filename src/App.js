@@ -35,6 +35,7 @@ class App extends React.Component {
             <Route path="/mergeintervals" title="mergeintervals" element={<MergeIntervals />} />
             <Route path="/cyclicsort" title="cyclicsort" element={<CyclicSort />} />
             <Route path="/llreversal" title="llreversal" element={<LinkListReversal />} />
+            <Route path="/bfs" title="bfs" element={<BFS />} />
         </Routes>
     );
   }
@@ -229,6 +230,8 @@ function Grokking() {
             <p>the frugal man's sort</p>
             <Link to="/llreversal"><i>In-place Reversal of Linked List</i></Link>           
             <p>now you see me now you don't</p>
+            <Link to="/bfs"><i>Breadth-First Search</i></Link>           
+            <p>there's levels to this sh!t</p>
             <br/>
             <br/>
           </div>
@@ -603,7 +606,7 @@ for i in range(len(nodes)-1):
 nodes[len(nodes)-1].next = None
 
 return nodes[0]`}</SyntaxHighlighter>
-          <p>As displayed above, the storage of each node in the linked list is what makes the solution expesive. If we coud, instead, reverse each node while we're visiting it, there would be no need to store it.</p>
+          <p>As displayed above, the storage of each node in the linked list is what makes the solution expensive. If we coud, instead, reverse each node while we're visiting it, there would be no need to store it.</p>
           <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n) time, O(1) space
 prev = None
 while head:
@@ -626,5 +629,30 @@ return prev`}</SyntaxHighlighter>
       </div>
   </div>); 
 }
+
+function BFS() {
+  ChangeTitle("breadth-first search")
+  return ( <div><Menu/>
+      <div className="article">
+        <div className="articleDescripion">
+        <br/>
+        <br/>
+        <h1>breadth-first search</h1>
+        <p className="date">dec 21, 2022</p>
+        <br/>
+        <p><i>Coming soon</i></p>
+        <ul className="listTitle">
+        <li><h5>(1) Level-order Traversal</h5></li>
+        </ul>
+        <br/>
+        <br/>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+      </div>
+  </div>); 
+}
+
 
 export default App;
