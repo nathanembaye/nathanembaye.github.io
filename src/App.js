@@ -5,6 +5,7 @@ import github from "./githubGrey.png";
 import github2 from "./github2.png";
 import linkedin from "./linkedinGrey.png";
 import linkedin2 from "./linkedin2.png";
+import treeTraversal from "./treetraversal.png";
 import chart from "./chart.svg";
 import sll0 from "./sll0.png";
 import sll1 from "./sll1.png";
@@ -12,6 +13,7 @@ import sll2 from "./sll2.png";
 import sll3 from "./sll3.png";
 import sll4 from "./sll4.png";
 import intervals from "./intervals.png";
+import bt from "./bt.png";
 import { Route, Link, Routes } from "react-router-dom";
 import Menu from "./Menu.js"
 import SyntaxHighlighter from 'react-syntax-highlighter';
@@ -36,6 +38,7 @@ class App extends React.Component {
             <Route path="/cyclicsort" title="cyclicsort" element={<CyclicSort />} />
             <Route path="/llreversal" title="llreversal" element={<LinkListReversal />} />
             <Route path="/bfs" title="bfs" element={<BFS />} />
+            <Route path="/dfs" title="dfs" element={<DFS />} />
         </Routes>
     );
   }
@@ -231,7 +234,9 @@ function Grokking() {
             <Link to="/llreversal"><i>In-place Reversal of Linked List</i></Link>           
             <p>now you see me now you don't</p>
             <Link to="/bfs"><i>Breadth-First Search</i></Link>           
-            <p>there's levels to this sh!t</p>
+            <p>levelling a traversal's order</p>
+            <Link to="/dfs"><i>Depth-First Search</i></Link>           
+            <p>pre --> in --> post</p>
             <br/>
             <br/>
           </div>
@@ -640,19 +645,126 @@ function BFS() {
         <h1>breadth-first search</h1>
         <p className="date">dec 21, 2022</p>
         <br/>
-        <p><i>Coming soon</i></p>
+        <p><i>Breadth-first search is an algorithm that searches through a tree structure for a node or subtree that fufills some quality. The characteristic that seperates its traversal from others is that it completely travels each level (from left to right, hence the word "breadth") before proceeding to the level below.</i></p>
         <ul className="listTitle">
-        <li><h5>(1) Level-order Traversal</h5></li>
+        <li><h5>(1) Binary Tree BFS</h5></li>
         </ul>
         <br/>
+        <h4>Binary Tree BFS</h4>
+        <p>The best way to understand such a traversal is with a "perfect binary tree" as each level is wider than the last. Lets define its class:</p>
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`class Node:
+  def __init__(self, val, left = None, right = None):
+    self.left = left
+    self.right = right
+    self.val = val`}</SyntaxHighlighter>
+        <p>Now, a illustration of its instantiation:</p>
+        <img alt="cant display" height={346} width={461} src={bt}/>
+        <p>Notice anything interesting? The numbering of the nodes are actually the order theyre visited in with BFS. What happens is at whatever level we're currently sitting at, we iterate each through each node, process it, and then store is children in memory (a queue).</p>
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#time complexity is O(n), space complexity O(n)
+def iterative_bfs(root):
+
+ if not root:
+     return
+
+ queue = [root]
+
+ while queue:
+     
+     cur_node = queue.pop(0)
+
+     #process node
+     print(cur_node.val)
+     
+     if cur_node.left:
+         queue.append(cur_node.left)
+
+     if cur_node.right:
+         queue.append(cur_node.right)`}</SyntaxHighlighter>
+         <p>The time complexity here is pretty straight forward: since we visited every node, time will grow linearly, O(n). Whats more elusive is how the space complexity is also O(n). As the code above demonstrates, while at each level, we store all its nodes children in memory. Intuitively, it'd seem the space complexity would then be the max breadth of the tree, O(b). However, with perfect trees max breadth is always equal to n/2, which in big-O is O(n).</p>
         <br/>
+        <h4>When to use Breadth-first Search?</h4>
+          <ol className="listInfo">
+          <li><p>When asked to traverse a binary tree</p></li>
+          <li><p>It is advantageous to search a tree structure level by level</p></li>
+          </ol>
         </div>
         <br/>
         <br/>
         <br/>
       </div>
   </div>); 
+
 }
 
+function DFS() {
+  ChangeTitle("depth-first search")
+  return ( <div><Menu/>
+      <div className="article">
+        <div className="articleDescripion">
+        <br/>
+        <br/>
+        <h1>depth-first search</h1>
+        <p className="date">dec 23, 2022</p>
+        <br/>
+        <p><i>Depth-first search is an algorithm that searches through a tree structure for a node or subtree that fufills some quality. The characteristic that seperates its traversal from others is that it ventures to the bottom of each branch (hence the word "depth") before backtracking. When doing so, there is are different ways the current subtree could be visited: pre-order, in-order or post-order.</i></p>
+        <ul className="listTitle">
+        <li><h5>(1) Pre-Order, In-Order and Post-Order</h5></li>
+        <li><h5>(2) Iterative DFS</h5></li>
+        </ul>
+        <br/>
+        <h4>Pre-Order, In-Order and Post-Order</h4>
+        <p>First, lets define our tree structure:</p>
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`class Node:
+  def __init__(self, val, left = None, right = None):
+    self.left = left
+    self.right = right
+    self.val = val`}</SyntaxHighlighter>
+    <p>Now, a illustration:</p>
+    <img alt="cant display" src={treeTraversal} width={"512"} height={"437"}></img>
+    <p>Above we can see each color representing a different traversal (red: pre-order, green: in-order, blue: post-order). All however follow the same heuristic - go as deep as possible before backtracking. Now lets write them out:</p>
+    <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`def pre_order(root):                def in_order(root):                   def post_order(root):
 
+    if not root:                      if not root:                          if not root:                   
+      return                            return                                return                                                                      
+                                                                             
+    print(root.val)                   self.in_order(root.left)              self.post_order(root.left)
+    self.pre_order(root.left)         print(root.val)                       self.post_order(root.right)           
+    self.pre_order(root.right)        self.in_order(root.right)             print(root.val)`}</SyntaxHighlighter>
+    <p>Since we visit every node in our traversal, completion time will grow with input, making it O(n). Looking at space complexity now, it might not be as obvious why its O(n). Since we recursively traverse our tree, the memory used is for functions being placed in the call stack. Since DFS explores the deepest part of every branch it's on, at most we'll have the height of the tree in it, O(h). This however becomes O(n), as in the worst case we can have trees with a single node, or only left children (picture only nodes F, B, A above).</p>
+    <br/>
+        <h4>Iterative DFS</h4>
+        <p>Something to be explored is the fact that all previous traversals discussed are done recursively. This means, implicitly, a stack data structure is used. If you wanted to use a stack explicitly, you'd de-facto be performing DFS iteratively. </p>
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n) time, O(n) space
+def dfs_iterative(root):
+
+  if not root:
+      return
+
+  stack = [root]
+
+  while stack:
+
+      #process node
+      node = stack.pop()
+      print(node.val)
+      
+      if node.right:
+          stack.append(node.right)
+      
+      if node.left:
+          stack.append(node.left)`}</SyntaxHighlighter>
+        <br/>
+        <h4>When to use Depth-first Search?</h4>
+          <ol className="listInfo">
+          <li><p>When asked to traverse a binary tree</p></li>
+          <li><p>It is advantageous to search a tree structure deeply</p></li>
+          </ol>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+      </div>
+  </div>); 
+  
+}
 export default App;
