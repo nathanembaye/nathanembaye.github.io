@@ -645,13 +645,13 @@ function BFS() {
         <h1>breadth-first search</h1>
         <p className="date">dec 21, 2022</p>
         <br/>
-        <p><i>Breadth-first search is an algorithm that searches through a tree structure for a node or subtree that fufills some quality. The characteristic that seperates its traversal from others is that it completely travels each level (from left to right, hence the word "breadth") before proceeding to the level below.</i></p>
+        <p><i>Breadth-first search is an algorithm that searches a tree structure for a node or subtree that fufills some quality. The characteristic that seperates it from other traversals is that it completely visits each level (from left to right, hence the word "breadth") before proceeding to the level below.</i></p>
         <ul className="listTitle">
         <li><h5>(1) Binary Tree BFS</h5></li>
         </ul>
         <br/>
         <h4>Binary Tree BFS</h4>
-        <p>The best way to understand such a traversal is with a "perfect binary tree" as each level is wider than the last. Lets define its class:</p>
+        <p>The best way to understand such a search is with a "perfect binary tree" as each level is wider than the last. Lets define its class:</p>
         <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`class Node:
   def __init__(self, val, left = None, right = None):
     self.left = left
@@ -680,7 +680,7 @@ def iterative_bfs(root):
 
      if cur_node.right:
          queue.append(cur_node.right)`}</SyntaxHighlighter>
-         <p>The time complexity here is pretty straight forward: since we visited every node, time will grow linearly, O(n). Whats more elusive is how the space complexity is also O(n). As the code above demonstrates, while at each level, we store all its nodes children in memory. Intuitively, it'd seem the space complexity would then be the max breadth of the tree, O(b). However, with perfect trees max breadth is always equal to n/2, which in big-O is O(n).</p>
+         <p>The time complexity here is quite straight forward - since we visit every node, time will grow linearly, O(n). What might be more elusive is how the space complexity is also O(n). Since at each level we store all nodes children in memory, intuitively, the space complexity would be the greatest-width of the tree, O(w). However, it is the case that some trees max-width is actually equal to their number of nodes. An example is perfect binary trees, where max-width is equal to n/2, which becomes O(n).</p>
         <br/>
         <h4>When to use Breadth-first Search?</h4>
           <ol className="listInfo">
@@ -706,7 +706,7 @@ function DFS() {
         <h1>depth-first search</h1>
         <p className="date">dec 23, 2022</p>
         <br/>
-        <p><i>Depth-first search is an algorithm that searches through a tree structure for a node or subtree that fufills some quality. The characteristic that seperates its traversal from others is that it ventures to the bottom of each branch (hence the word "depth") before backtracking. When doing so, there is are different ways the current subtree could be visited: pre-order, in-order or post-order.</i></p>
+        <p><i>Depth-first search is an algorithm that searches a tree structure for a node or subtree that fufills some quality. The characteristic that seperates it from other traversals is that it visits the bottom of each branch (hence the word "depth") before backtracking. Doing so, there are different said subtree could be visited: pre-order, in-order or post-order.</i></p>
         <ul className="listTitle">
         <li><h5>(1) Pre-Order, In-Order and Post-Order</h5></li>
         <li><h5>(2) Iterative DFS</h5></li>
@@ -719,7 +719,7 @@ function DFS() {
     self.left = left
     self.right = right
     self.val = val`}</SyntaxHighlighter>
-    <p>Now, a illustration:</p>
+    <p>Now, a illustration of its instantiation:</p>
     <img alt="cant display" src={treeTraversal} width={"512"} height={"437"}></img>
     <p>Above we can see each color representing a different traversal (red: pre-order, green: in-order, blue: post-order). All however follow the same heuristic - go as deep as possible before backtracking. Now lets write them out:</p>
     <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`def pre_order(root):                def in_order(root):                   def post_order(root):
@@ -730,10 +730,10 @@ function DFS() {
     print(root.val)                   self.in_order(root.left)              self.post_order(root.left)
     self.pre_order(root.left)         print(root.val)                       self.post_order(root.right)           
     self.pre_order(root.right)        self.in_order(root.right)             print(root.val)`}</SyntaxHighlighter>
-    <p>Since we visit every node in our traversal, completion time will grow with input, making it O(n). Looking at space complexity now, it might not be as obvious why its O(n). Since we recursively traverse our tree, the memory used is for functions being placed in the call stack. Since DFS explores the deepest part of every branch it's on, at most we'll have the height of the tree in it, O(h). This however becomes O(n), as in the worst case we can have trees with a single node, or only left children (picture only nodes F, B, A above).</p>
+    <p>Since every node is visited, time will grow linearly with input, making it O(n). For space complexity it might not be as obvious why its O(n). Recursively traverse our tree, the memory used is for functions being placed in the call stack. Since DFS explores the deepest part of every branch, at most we'll store the height of the tree, O(h). This however becomes O(n), as in the worst case we can have trees with a single node, or only left children (imagine only nodes F, B, A existed above).</p>
     <br/>
         <h4>Iterative DFS</h4>
-        <p>Something to be explored is the fact that all previous traversals discussed are done recursively. This means, implicitly, a stack data structure is used. If you wanted to use a stack explicitly, you'd de-facto be performing DFS iteratively. </p>
+        <p>Something to be explored is the fact that all discussed traversals are done recursively. Implicitly, this means a stack data structure is used. If you wanted to use a stack explicitly however, you'd be best off performing DFS iteratively.</p>
         <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n) time, O(n) space
 def dfs_iterative(root):
 
