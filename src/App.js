@@ -39,6 +39,7 @@ class App extends React.Component {
             <Route path="/llreversal" title="llreversal" element={<LinkListReversal />} />
             <Route path="/bfs" title="bfs" element={<BFS />} />
             <Route path="/dfs" title="dfs" element={<DFS />} />
+            <Route path="/twoheaps" title="twoheaps" element={<TwoHeaps />} />
         </Routes>
     );
   }
@@ -237,6 +238,8 @@ function Grokking() {
             <p>levelling a traversal's order</p>
             <Link to="/dfs"><i>Depth-First Search</i></Link>           
             <p>pre --> in --> post</p>
+            <Link to="/twoheaps"><i>Two Heaps</i></Link>           
+            <p>hippidy hop</p>
             <br/>
             <br/>
           </div>
@@ -765,6 +768,53 @@ def dfs_iterative(root):
         <br/>
       </div>
   </div>); 
+}
+
+function TwoHeaps() {
+  ChangeTitle("two heaps")
+  return ( <div><Menu/>
+      <div className="article">
+        <div className="articleDescripion">
+        <br/>
+        <br/>
+        <h1>two heaps</h1>
+        <p className="date">dec 30, 2022</p>
+        <br/>
+        <p><i>A heap is a tree like data structure that is represented by an array and implements a priority queue. Its indicies implicitly denote parent-child relationships, and those elements placement are based on if the heap is ordered with a minimum or maximum value priority. This rule is why heaps are special: their min or max value can be accessed in O(1) time. The two-heap pattern is when we use two min heaps, two max heaps, or a mix to solve some problem.</i></p>
+        <ul className="listTitle">
+        <li><h5>(1) Finding a Stream's Median</h5></li>
+        </ul>
+        <br/>
+        <h4>Finding a Stream's Median</h4>
+        <p>The median is the middle number in a sorted list of numbers. Naturally, middle indicies only exist when we have a odd length of values, so for even length lists, the median is the average of the middle two numbers.</p>
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`odd_length_stream = [1, 2, 3, 4, 5] --> #median is 3
+
+even_length_stream = [1, 2, 3, 4, 5, 6] --> #median is (3 + 4) / 2 = 3.5`}</SyntaxHighlighter>
+          <p>So how would two heaps help with this? Well imagine you were trying to find the median of a millions of numbers. With a regular list you would have to go through every element. Now, how would that time complexity change if our sorted list above was split in two, sorted with minimum and maximum order?</p>
+<SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`max_heap = [3, 2, 1] and min_heap = [4, 5, 6] # --> (max_heap[0] +  min_heap[0]) / 2 = 3.5`}</SyntaxHighlighter>
+<p>Notice anything? If we pop the head (max value) from max_heap, and pop the head (min value) from the min_heap, we retreive 3 and 4, the same values if it were a single list. The difference is we didnt have to scan the entire data stream, just pop(), giving us O(1) time. </p>
+<br/>
+<p>That was the median with an even total number of values. What if it were odd? We just pop() the head of heap with a odd number of values.</p>
+<SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`max_heap = [2, 1] and min_heap = [3, 4, 5]
+
+#odd length heap has median value
+if len(max_heap) % 2 == 0:
+  return min_heap[0]
+
+else:
+  return max_heap[0]`}</SyntaxHighlighter>
+  <br/>
+<h4>When to use Two Heaps?</h4>
+          <ol className="listInfo">
+          <li><p>If we must find the smallest, larges or median value of a data stream</p></li>
+          </ol>
+          </div>
+        <br/>
+        <br/>
+        <br/>
+      </div>
+  </div>); 
   
 }
+
 export default App;
