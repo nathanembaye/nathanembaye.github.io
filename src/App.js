@@ -239,7 +239,7 @@ function Grokking() {
             <Link to="/dfs"><i>Depth-First Search</i></Link>           
             <p>pre --> in --> post</p>
             <Link to="/twoheaps"><i>Two Heaps</i></Link>           
-            <p>hippidy hop</p>
+            <p>heap hop</p>
             <br/>
             <br/>
           </div>
