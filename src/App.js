@@ -239,7 +239,7 @@ function Grokking() {
             <Link to="/dfs"><i>Depth-First Search</i></Link>           
             <p>pre --> in --> post</p>
             <Link to="/twoheaps"><i>Two Heaps</i></Link>           
-            <p>heap hop</p>
+            <p>hippidy hop</p>
             <br/>
             <br/>
           </div>
@@ -790,11 +790,11 @@ function TwoHeaps() {
         <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`odd_length_stream = [1, 2, 3, 4, 5] --> #median is 3
 
 even_length_stream = [1, 2, 3, 4, 5, 6] --> #median is (3 + 4) / 2 = 3.5`}</SyntaxHighlighter>
-          <p>So how would two heaps help with this? Well imagine you were trying to find the median of a millions of numbers. With a regular list you would have to go through every element. Now, how would that time complexity change if our sorted list above was split in two, sorted with minimum and maximum order?</p>
+          <p>So how would two heaps help with this? Well imagine you were trying to find the median of a millions of numbers. With a regular list you would have to go through every element. Now, how would that time complexity change if our sorted list above was split in two, one in minimum and the other in maximum order?</p>
 <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`max_heap = [3, 2, 1] and min_heap = [4, 5, 6] # --> (max_heap[0] +  min_heap[0]) / 2 = 3.5`}</SyntaxHighlighter>
 <p>Notice anything? If we pop the head (max value) from max_heap, and pop the head (min value) from the min_heap, we retreive 3 and 4, the same values if it were a single list. The difference is we didnt have to scan the entire data stream, just pop(), giving us O(1) time. </p>
 <br/>
-<p>That was the median with an even total number of values. What if it were odd? We just pop() the head of heap with a odd number of values.</p>
+<p>That was the median with an even total number of values. What if it were odd? We just pop() the head of the heap with a odd number of values.</p>
 <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`max_heap = [2, 1] and min_heap = [3, 4, 5]
 
 #odd length heap has median value
