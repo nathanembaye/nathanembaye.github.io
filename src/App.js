@@ -22,6 +22,8 @@ import backtrack from "./backtrack.jpg";
 import backtrack3 from "./backtrack3.jpg";
 import backtrack2 from "./backtrack2.jpg";
 import backtrack1 from "./backtrack1.jpg";
+import backtrack4 from "./backtrack4.jpg";
+
 
 
 
@@ -159,7 +161,7 @@ function Complexity() {
         <br/>
         <br/>
         <h3>space complexity</h3>
-        <p>The space complexity of an algorithm is the amount of memory it requires to execute completely. It’s sum is <i>space complexity = auxiliary space + input space.</i></p>
+        <p>The space complexity of an algorithm is the amount of memory it requires to execute with varying input size. It’s sum is <i>space complexity = auxiliary space + input space.</i></p>
         <p>Auxiliary space is defined as all the memory used inside the algorithm itself (think variables, loops, data structures, etc.), while input space is the memory used for the data that goes into the algorithm for processing. Differentiating that, when comparing different algorithms' space complexity, we would only consider auxiliary space since they’re solutions accepting the same input.</p>
         <p>Similar to time complexity, space complexity measures the storage needed relative to changes in the size of input data. That is, how the storage used during execution time increases or decreases based on how big or small the input data is.</p>
         <h5>constant space - O(1)</h5>
@@ -886,11 +888,24 @@ def backtrack_combinations(self, nums, curr_subset, count):
         count += 1
     
     self.backtrack_combinations(nums, curr_subset, count + 1)`}</SyntaxHighlighter>
-        <br/>
+       <p>There is a final case to consider when it comes to combinations - when repetition is allowed. Whats new here is we stay at the same index until a backtrack is reached, and from there we visit the element next in our array.</p>
+       <img width="800" height="500" src={backtrack4} alt='' />
+       <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`combinations = []
+def backtrack_combinations(self, nums, target, curr_combo, count):
+
+  if count == len(nums):
+      combinations.append(curr_combo[:])
+      return
+
+
+  curr_combo.append(nums[count])
+  backtrack_combinations(nums, target, curr_combo, count)
+  curr_combo.pop()
+  backtrack_combinations(nums, target, curr_combo, count + 1)`}</SyntaxHighlighter>
         <br/>
         <br/>
         <h4>Permutations with a distinct and duplicate list</h4>
-        <p>Following the same logic as above, we can apply the backtracking rule to finding all permutations. The only difference is that instead of backtracking to visit branches without our current element, we backtrack to visit every element remaining in our initial array - but only when all permutations for that index have been exhausted.</p>
+        <p>Following the same logic as above, we can apply the backtracking rule to finding all permutations. The only difference is that instead of backtracking to visit branches without our current element, we backtrack to visit every other element remaining in our initial array.</p>
         <img width="640" height="440" src={backtrack3} alt='' />
         <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`permutations = []
 def backtrack_permutations(self, nums, curr_perm):
