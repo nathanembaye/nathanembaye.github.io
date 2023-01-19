@@ -420,8 +420,8 @@ a.myname {
 
 @media (max-width: 500px) {
   .aboutPhoto img {
-    width: 115px;
-    height: 115px;
+    width: 100px;
+    height: 100px;
   }
 
   .aboutPhoto {
@@ -429,8 +429,8 @@ a.myname {
   }
 
   .aboutText {
-    width: 85%;
-    font-size: 80%;
+    width: 55%;
+    font-size: 65%;
   }
 
   .menu{
@@ -448,6 +448,21 @@ a.myname {
 
 @media (max-width: 400px) {
 
+  .aboutPhoto img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .aboutPhoto {
+    width: 40%;
+  }
+
+  
+  .aboutText {
+    font-size: 60%;
+    width: 55%;
+  }
+  
   .menu{
     max-width: 320px;    
   }
