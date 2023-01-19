@@ -18,6 +18,13 @@ import { Route, Link, Routes } from "react-router-dom";
 import Menu from "./Menu.js"
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import backtrack from "./backtrack.jpg";
+import backtrack3 from "./backtrack3.jpg";
+import backtrack2 from "./backtrack2.jpg";
+import backtrack1 from "./backtrack1.jpg";
+
+
+
 
 
 class App extends React.Component {
@@ -40,6 +47,8 @@ class App extends React.Component {
             <Route path="/bfs" title="bfs" element={<BFS />} />
             <Route path="/dfs" title="dfs" element={<DFS />} />
             <Route path="/twoheaps" title="twoheaps" element={<TwoHeaps />} />
+            <Route path="/backtracking" title="backtracking" element={<Backtracking />} />
+
         </Routes>
     );
   }
@@ -240,6 +249,8 @@ function Grokking() {
             <p>pre --> in --> post</p>
             <Link to="/twoheaps"><i>Two Heaps</i></Link>           
             <p>hippidy hop</p>
+            <Link to="/backtracking"><i>Backtracking</i></Link>           
+            <p>retracing our steps</p>
             <br/>
             <br/>
           </div>
@@ -807,6 +818,114 @@ else:
 <h4>When to use Two Heaps?</h4>
           <ol className="listInfo">
           <li><p>If we must find the smallest, larges or median value of a data stream</p></li>
+          </ol>
+          </div>
+        <br/>
+        <br/>
+        <br/>
+      </div>
+  </div>); 
+  
+}
+
+function Backtracking() {
+  ChangeTitle("backtracking")
+  return ( <div><Menu/>
+      <div className="article">
+        <div className="articleDescripion">
+        <br/>
+        <br/>
+        <h1>backtracking</h1>
+        <p className="date">jan 14, 2023</p>
+        <br/>
+        <p><i>Backtracking is a technique for finding some collection (usually a subset, combination or permutation) given some input. Its title is given because we incrementally add, then remove (“backtrack”) elements, based on whatever our goal is. Typically this algorithm is applied recursively and with depth-first search order.</i></p>
+        <ul className="listTitle">
+        <li><h5>(1) Subsets, Combinations and Permutations</h5></li>
+        <li><h5>(2) Combinations with a distinct and duplicate list</h5></li>
+        <li><h5>(3) Permutations with a distinct and duplicate list</h5></li>
+        </ul>
+        <br/>
+        <h4>Subsets, Combinations and Permutations</h4>
+        <p>A set is a data structure holding a collection of elements, set = {'{1, 2, 3}'}. A subset is any combination of elements from that set, say {'{2, 3}'} or {'{1}'}. When trying to count all subsets for some set, there are some less obvious cases to remember - the empty set, {'{ }'} and the initial set itself, {'{1, 2, 3}'}.</p>
+        <p>So whats different between a subset and a combination? Something subtle: all subsets can be considered combinations, but not all combinations are considered subsets. An example is a combination where repetition is allowed, {'{1, 2, 2}'} or {'{3, 3, 3}'}. The set data structure does not allow such duplication.</p>
+        <p>Easy right? Well now we can look at Permutations. A Permutation is just a combination that cares about order. When looking at {'{2, 3, 1}'} and {'{1, 3, 2}'}, we'd consider them the same combination, but when looking at them as permutations, meaning considering order, they are different.</p>
+        <br/>
+        <h4>Combinations with a distinct and duplicate list</h4>
+        <p>Say we have a list of elements, nums = [1, 2, 3], and we want to find all the combinations without repeating any elements. That means at each element we have two choices: (1) add the element to the current array or (2) do not add it. Since both could lead to valid combinations, we can make two distinct lists with recursive calls. Producing [1] and [ ], we go to the next index and perform the same rule. This time however, it’s performed for all previously created arrays.</p>
+        <img width="840" height="440" src={backtrack} alt='' />
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`combinations = []
+def backtrack_combinations(self, nums, curr_combo, count):
+
+  if count == len(nums):
+    combinations.append(curr_combo[:])
+    return
+
+
+  curr_combo.append(nums[count])
+  self.backtrack_combinations(nums, curr_combo, count+1)
+  curr_combo.pop()
+  self.backtrack_combinations(nums, curr_combo, count+1)`}</SyntaxHighlighter>
+  <p>So that’s a scenario when every element in our input is unique. What happens if we were to follow the same rule with a list containing duplicates?</p>
+        <img width="1160" height="480" src={backtrack1} alt='' />
+        <p>What we can see here is that when given duplicates in our array we end up storing duplicate subsets also. So, the question is, how can we skip such routes in our decision tree? The answer is after sorting our duplicate list, we can then, during each “backtrack”, check if the next element is the same as the element last processed. If so, we can skip it, which skips visiting a duplicate route.</p>
+        <img width="1000" height="480" src={backtrack2} alt='' />
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`subsets = []
+nums.sort()
+def backtrack_combinations(self, nums, curr_subset, count):
+    
+    if count == len(nums):
+        subsets.append(curr_subset[:])
+        return
+        
+    
+    curr_subset.append(nums[count])
+    self.backtrack_combinations(nums, curr_subset, count + 1)
+    curr_subset.pop()
+    
+    while count + 1 < len(nums) and nums[count] == nums[count + 1]:
+        count += 1
+    
+    self.backtrack_combinations(nums, curr_subset, count + 1)`}</SyntaxHighlighter>
+        <br/>
+        <br/>
+        <br/>
+        <h4>Permutations with a distinct and duplicate list</h4>
+        <p>Following the same logic as above, we can apply the backtracking rule to finding all permutations. The only difference is that instead of backtracking to visit branches without our current element, we backtrack to visit every element remaining in our initial array - but only when all permutations for that index have been exhausted.</p>
+        <img width="640" height="440" src={backtrack3} alt='' />
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`permutations = []
+def backtrack_permutations(self, nums, curr_perm):
+
+  if not nums:                      
+      permutations.append(curr_perm[:])           
+      return
+
+  for i in range(len(nums)):
+      curr_perm.append(nums[i])
+      self.backtrack_permutations(nums[:i] + nums[i+1:], curr_perm)                
+      curr_perm.pop()`}</SyntaxHighlighter>
+
+<p>As we can see its very similar to the combinations procedure. So much so that when a duplicate input is given, we handle it in the same way:</p>
+<SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`permutations = []
+nums.sort()
+def backtrack_permutations(self, nums, curr_per):
+    
+    if not nums:
+      permutations.append(curr_per[:])
+    
+    for i in range(len(nums)):
+        
+        if i > 0 and nums[i-1] == nums[i]:
+            continue
+        
+        curr_per.append(nums[i])
+        self.backtrack_permutations(nums[:i] + nums[i+1:], curr_per)
+        curr_per.pop()`}</SyntaxHighlighter>
+<br/>
+<br/>
+<br/>
+<h4>When to use Backtracking?</h4>
+          <ol className="listInfo">
+          <li><p>When asked to find all subsets, combinations or permutations</p></li>
           </ol>
           </div>
         <br/>
