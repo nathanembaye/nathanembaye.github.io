@@ -50,7 +50,7 @@ class App extends React.Component {
             <Route path="/dfs" title="dfs" element={<DFS />} />
             <Route path="/twoheaps" title="twoheaps" element={<TwoHeaps />} />
             <Route path="/backtracking" title="backtracking" element={<Backtracking />} />
-
+            <Route path="/binarysearch" title="binarysearch" element={<BinarySearch />} />
         </Routes>
     );
   }
@@ -128,7 +128,7 @@ function Notes() {
             <Link to="/grokking">grokking</Link>           
             <p>annoying</p>
             <Link to="/miscellania">miscellania</Link>           
-            <p>post-it worthy essay's i’ve come across in 2022</p>
+            <p>"miscellaneous items, especially literary compositions, that have been collected together"</p>
             <br/>
             <br/>
           </div>
@@ -253,6 +253,8 @@ function Grokking() {
             <p>hippidy hop</p>
             <Link to="/backtracking"><i>Backtracking</i></Link>           
             <p>retracing our steps</p>
+            <Link to="/binarysearch"><i>Modified Binary Search</i></Link>           
+            <p>marco.....polo</p>
             <br/>
             <br/>
           </div>
@@ -951,4 +953,21 @@ def backtrack_permutations(self, nums, curr_per):
   
 }
 
+
+
+function BinarySearch() {
+  ChangeTitle("modified binary search")
+  return ( <div><Menu/>
+      <div className="article">
+        <div className="articleDescripion">
+        <br/>
+        <br/>
+        <h1>modified binary search</h1>
+        <p className="date">jan 19, 2023</p>
+        <br/>
+        </div>
+      </div>
+  </div>); 
+  
+}
 export default App;
