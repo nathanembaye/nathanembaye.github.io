@@ -128,7 +128,7 @@ function Notes() {
             <Link to="/grokking">grokking</Link>           
             <p>annoying</p>
             <Link to="/miscellania">miscellania</Link>           
-            <p>"miscellaneous items, especially literary compositions, that have been collected together"</p>
+            <p>stuff</p>
             <br/>
             <br/>
           </div>
