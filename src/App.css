@@ -373,25 +373,22 @@ a.myname {
 
 @media (max-width: 400px) {
  
+  .about {
+  }
+
   .aboutText {
     font-size: 0.80em;
-    text-align: left;
   }
 
   .aboutPhoto img {
-    height: 100px;
-    width: 100px;
-    margin: 30px 40px 0px 50px;
+    height: 80px;
+    width: 80px;
+    margin: 30px 40px 0px 0px;
   }
   
   .aboutIcon img {
     height: 15px;
     width: 15px;
-  }
-
-  .about {
-    display: inline;
-    text-align: center;
   }
 
   .menu{
