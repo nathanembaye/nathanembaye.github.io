@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 import treeTraversal from "./treetraversal.png";
 import chart from "./chart.svg";
+import omega from "./omega.png";
 import sll0 from "./sll0.png";
 import sll1 from "./sll1.png";
 import sll2 from "./sll2.png";
@@ -101,12 +102,23 @@ function Notes() {
             <p className="date">dec 6, 2022</p>
             <br/> 
             <br/> 
-            <Link to="/complexity">computational complexity</Link>           
+            <div className="bullet">
+            <Link style={{ textDecoration: 'none' }} to="/complexity">computational complexity</Link>  
+            <h5>apr 9, 2022</h5>  
             <p>a fancy way of asking: how much work is it to run this algorithm?</p>
-            <Link to="/grokking">grokking</Link>           
+            </div>
+            <br/>
+            <div className="bullet">
+            <Link style={{ textDecoration: 'none' }} to="/miscellania">miscellania</Link>  
+            <h5>apr 15, 2022</h5>          
+            <p>just a bunch of random {'<stuff/>'} </p>
+            </div>
+            <br/>
+            <div className="bullet">
+            <Link style={{ textDecoration: 'none'}} to="/grokking">grokking</Link>  
+            <h5>aug 1, 2022</h5>        
             <p>annoying</p>
-            <Link to="/miscellania">miscellania</Link>           
-            <p>stuff</p>
+            </div>
             <br/>
             <br/>
           </div>
@@ -834,7 +846,7 @@ function Backtracking() {
         <br/>
         <h4>Combinations with a distinct and duplicate list</h4>
         <p>Say we have a list of elements, nums = [1, 2, 3], and we want to find all the combinations without repeating any elements. That means at each element we have two choices: (1) add the element to the current array or (2) do not add it. Since both could lead to valid combinations, we can make two distinct lists with recursive calls. Producing [1] and [ ], we go to the next index and perform the same rule. This time however, it’s performed for all previously created arrays.</p>
-        <img width="840" height="440" src={backtrack} alt='' />
+        <img width="588" height="308" src={backtrack} alt='' />
         <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`combinations = []
 def backtrack_combinations(self, nums, curr_combo, count):
 
@@ -848,9 +860,9 @@ def backtrack_combinations(self, nums, curr_combo, count):
   curr_combo.pop()
   self.backtrack_combinations(nums, curr_combo, count+1)`}</SyntaxHighlighter>
   <p>So that’s a scenario when every element in our input is unique. What happens if we were to follow the same rule with a list containing duplicates?</p>
-        <img width="1160" height="480" src={backtrack1} alt='' />
+        <img width="580" height="240" src={backtrack1} alt='' />
         <p>What we can see here is that when given duplicates in our array we end up storing duplicate subsets also. So, the question is, how can we skip such routes in our decision tree? The answer is after sorting our duplicate list, we can then, during each “backtrack”, check if the next element is the same as the element last processed. If so, we can skip it, which skips visiting a duplicate route.</p>
-        <img width="1000" height="480" src={backtrack2} alt='' />
+        <img width="600" height="288" src={backtrack2} alt='' />
         <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`subsets = []
 nums.sort()
 def backtrack_combinations(self, nums, curr_subset, count):
@@ -869,7 +881,7 @@ def backtrack_combinations(self, nums, curr_subset, count):
     
     self.backtrack_combinations(nums, curr_subset, count + 1)`}</SyntaxHighlighter>
        <p>There is a final case to consider when it comes to combinations - when repetition is allowed. Whats new here is we stay at the same index until a backtrack is reached, and from there we visit the element next in our array.</p>
-       <img width="800" height="500" src={backtrack4} alt='' />
+       <img width="560" height="350" src={backtrack4} alt='' />
        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`combinations = []
 def backtrack_combinations(self, nums, target, curr_combo, count):
 
@@ -886,7 +898,7 @@ def backtrack_combinations(self, nums, target, curr_combo, count):
         <br/>
         <h4>Permutations with a distinct and duplicate list</h4>
         <p>Following the same logic as above, we can apply the backtracking rule to finding all permutations. The only difference is that instead of backtracking to visit branches without our current element, we backtrack to visit every other element remaining in our initial array.</p>
-        <img width="640" height="440" src={backtrack3} alt='' />
+        <img width="512" height="352" src={backtrack3} alt='' />
         <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`permutations = []
 def backtrack_permutations(self, nums, curr_perm):
 

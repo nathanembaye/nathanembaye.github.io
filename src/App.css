@@ -1,3 +1,22 @@
+.bullet {
+  border-top: 1px solid #7c7d7d;
+  padding: 10px 0px 0px 0px;
+  margin: auto;
+}
+
+.bullet h5{
+  float: right;
+  color: #e0218a;
+}
+
+.bullet p{
+  color: #7c7d7d;
+}
+
+.bullet a:hover {
+  color: #7c7d7d;
+}
+
 .about {
   text-align: left;
   display: flex;
@@ -145,13 +164,10 @@ h1 {
   opacity: 0.3;
 }
 
-.article {
-  text-align: center;
-}
 
 .articleDescripion .arrow a{
-text-decoration: none;
-color: #000
+  text-decoration: none;
+  color: #000
 }
 
 .article h1{
@@ -182,43 +198,6 @@ color: #000
   text-decoration: none;
 }
 
-.sectiontitle {
-  position: absolute;
-  right: 75%;
-  width: 25%;
-  text-align: right;
-  margin: 0;
-  padding: 0;
-  font-family: "FreeSans", sans-serif;
-  font-weight: 400;
-  white-space: nowrap;
-}
-
-.myname {
-  font-family: "Trebuchet MS",sans-serif;
-  font-size: 200%;
-  text-transform: lowercase;
-  white-space: nowrap;
-  text-decoration: none;
-}
-
-a.myname {
-  color: black;
-}
-
-.myname i {
-  font-weight: normal;
-}
-
-.sectioninfo {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  padding-left: 1em;
-  left: 25%;
-  width: 75%;
-  text-align: left;
-}
 
 .address {
   font-family: "Trebuchet MS",sans-serif;
@@ -230,10 +209,14 @@ a.myname {
    text-decoration: underline;
 }
 
+.article {
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+}
+
 .articleDescripion {
-  display: inline-block; 
   text-align: left;
-  width: 65%;
 }
 
 .articleDescripion h1{
@@ -271,25 +254,9 @@ a.myname {
   color: #000;
 }
 
-@media (max-width: 1150px) {
-  
-}
-
-@media (max-width: 880px) {
-  
-}
-
-
-@media (max-width: 800px) {
-
-}
-
-@media (max-width: 750px) {
-
-}
-
 
 @media (max-width: 700px) {
+
 
   .title {
     width: 90%;
@@ -302,14 +269,6 @@ a.myname {
   .social img {
     height: 22px;
     width: 22px;
-  }
-
-  .articleDescripion {
-    width: 85%;
-  }
-  .articleDescripion img {
-    width: 80%;
-    height: 80%;
   }
 
   .address a {
@@ -326,20 +285,6 @@ a.myname {
     margin-top: -5%;
   }
 
-  .sectiontitle {
-    left: 10%;
-    margin-top: -5%;
-  }
- 
-
-  .myname i {
-    font-size: 70%;
-  }
-
-  .myname p {
-    margin-top: -5%;
-  }
-
   .homeContainer {
     margin-top: 40%;
   }
@@ -351,6 +296,19 @@ a.myname {
   .menu{
     max-width: 500px;
   }
+
+  .article {
+    max-width: 500px;  
+  }
+
+  .articleDescripion{
+    max-width: 500px;  
+  }
+
+  .bullet{
+    max-width: 500px;
+  }
+
   .menu li {
     padding: 20px;
   }
@@ -358,7 +316,26 @@ a.myname {
 
 @media (max-width: 500px) {
 
+  .articleDescripion img {
+    height: 80%;
+    width: 80%;
+  }
+
   .menu{
+    max-width: 380px;
+  }
+
+  .article {
+    max-width: 380px;
+  }
+
+  .articleDescripion{
+    max-width: 380px;
+  }
+
+  
+
+  .bullet{
     max-width: 380px;
   }
 
@@ -372,8 +349,9 @@ a.myname {
 }
 
 @media (max-width: 400px) {
- 
-  .about {
+  .articleDescripion img {
+    height: 80%;
+    width: 80%;
   }
 
   .aboutText {
@@ -396,6 +374,18 @@ a.myname {
     max-width: 320px;    
   }
 
+  .article{
+    max-width: 320px;
+  }
+
+  .articleDescripion h1 {
+    max-width: 320px;
+  }
+
+  .bullet{
+    max-width: 320px;    
+  }
+
   .menu a {
     font-size: 12px;
   }
@@ -407,8 +397,21 @@ a.myname {
 
 @media (max-width: 330px) {
 
+  .articleDescripion img {
+    height: 80%;
+    width: 80%;
+  }
+
   .menu{
     max-width: 290px;    
+  }
+
+  .article{
+    max-width: 290px;
+  }
+
+  .articleDescripion {
+    max-width: 290px;
   }
 
   .menu a {
