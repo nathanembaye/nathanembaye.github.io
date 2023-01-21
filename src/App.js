@@ -1,10 +1,5 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import nathan from "./nathan.jpg";
-import github from "./githubGrey.png";
-import github2 from "./github2.png";
-import linkedin from "./linkedinGrey.png";
-import linkedin2 from "./linkedin2.png";
 import treeTraversal from "./treetraversal.png";
 import chart from "./chart.svg";
 import sll0 from "./sll0.png";
@@ -90,23 +85,6 @@ function About() {
   return (
     <div>
       <Menu/>
-      <div className="about">
-            <div className="aboutPhoto">
-              <img alt="cant show" src={nathan}></img>
-            </div>
-            <div className="aboutText">
-              <h1>about</h1>
-              <p> Public policy junkie and software engineer. I enjoy turning elusive business requirements into performant, scalable code. Currently I do just that at Canada's{" "} <a href="https://www.bankofcanada.ca/core-functions/"> central bank.</a><br /><br /> When I'm not developing I like to lift,{" "} <a href="http://www.rosenfels.org/Joseph%20Campbell%20-%20The%20Hero%20With%20A%20Thousand%20Faces,%20Commemorative%20Edition%20%282004%29.pdf"> read</a> {""} and frequent comedy clubs. Feel free to check out my latest project, a COVID-19 relief initiative:{" "} <a href="https://dekiottawa.com"> Deki Ottawa.</a></p>
-              <div>
-                <a href="https://www.linkedin.com/in/nathanembaye/">
-                  <img onMouseOver={e => e.currentTarget.src = linkedin2} onMouseLeave={e => e.currentTarget.src = linkedin} alt='' className="linkedin" src={linkedin} />
-                </a>
-                <a href="https://github.com/nathanembaye">
-                  <img onMouseOver={e => e.currentTarget.src = github2} onMouseLeave={e => e.currentTarget.src = github} alt='' className="github" src={github} />
-                </a>
-              </div>
-            </div>
-        </div>
     </div>); 
 }
 

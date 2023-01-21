@@ -1,3 +1,37 @@
+.about {
+  text-align: left;
+  display: flex;
+}
+
+.aboutPhoto img {
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  margin: 30px 40px 0px 50px;
+}
+
+.aboutIcon img {
+  height: 25px;
+  width: 25px;
+  margin: 0px 30px 0px 0px;
+}
+
+
+.about h2 {
+  color: #e0218a;
+}
+
+.aboutText {
+  font-family: system-ui;
+  font-size: .95em;
+  line-height: 1.34em;
+}
+
+.aboutText a {
+  color: #e0218a;
+  text-decoration: underline;
+}
+
 .codeBlocks{
     border: 1px solid #bbb;
     border-radius: 4px;
@@ -45,48 +79,6 @@
 .menu h2 {
   color: #e0218a;
   font-weight: 400;
-}
-
-.about {
-  text-align: center;
-  margin-top: 0%;
-}
-
-.aboutPhoto {
-  width: 15%;
-  display: inline-block;
-}
-
-.aboutPhoto img {
-  border-radius: 50%;
-  height: 120px;
-  width: 120px;
-  margin: 2% 3% 30% 10%;
-}
-
-.aboutText {
-  display: inline-block;
-  text-align: left;
-  width: 30%;
-}
-
-.aboutText h1 {
-  font-family: Trebuchet MS, sans-serif;
-  color: #e0218a;
-}
-
-.aboutText a {
-  color: #e0218a;
-}
-
-.aboutText p {
-  font-size: 90%;
-}
-
-.aboutText img {
-  height: 25px;
-  width: 25px;
-  margin: 2% 3% 0% 0%;
 }
 
 
@@ -281,64 +273,19 @@ a.myname {
 
 @media (max-width: 1150px) {
   
-  .aboutPhoto {
-    width: 30%;
-  }
-  
-  .aboutPhoto img {
-    height: 230px;
-    width: 230px;
-  }
-  
-  .aboutText {
-    width: 45%;
-  }
-  
-  .aboutText img {
-    height: 25px;
-    width: 25px;
-    margin: 2% 3% 0% 0%;
-  }
 }
 
 @media (max-width: 880px) {
   
-  .aboutPhoto {
-    width: 35%;
-  }
-  
-  .aboutPhoto img {
-    height: 195px;
-    width: 195px;
-  }
-  
-  .aboutText {
-    width: 55%;
-  }
-  
-  .aboutText img {
-    height: 20px;
-    width: 20px;
-    margin: 2% 3% 0% 0%;
-  }
 }
 
 
 @media (max-width: 800px) {
-  .aboutPhoto img {
-    height: 175px;
-    width: 175px;
-  }
 
-  .aboutText {
-    font-size: 90%;
-  }
 }
 
 @media (max-width: 750px) {
-  .aboutText {
-    font-size: 90%;
-  }
+
 }
 
 
@@ -397,15 +344,6 @@ a.myname {
     margin-top: 40%;
   }
 
-  .aboutText {
-    font-size: 70%;
-  }
-
-  .aboutPhoto img {
-    width: 130px;
-    height: 130px;
-  }
-
 }
 
 @media (max-width: 600px) {
@@ -419,19 +357,6 @@ a.myname {
 }
 
 @media (max-width: 500px) {
-  .aboutPhoto img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .aboutPhoto {
-    width: 35%;
-  }
-
-  .aboutText {
-    width: 55%;
-    font-size: 65%;
-  }
 
   .menu{
     max-width: 380px;
@@ -447,22 +372,28 @@ a.myname {
 }
 
 @media (max-width: 400px) {
+ 
+  .aboutText {
+    font-size: 0.80em;
+    text-align: left;
+  }
 
   .aboutPhoto img {
-    width: 100px;
     height: 100px;
-  }
-
-  .aboutPhoto {
-    width: 40%;
-  }
-
-  
-  .aboutText {
-    font-size: 60%;
-    width: 55%;
+    width: 100px;
+    margin: 30px 40px 0px 50px;
   }
   
+  .aboutIcon img {
+    height: 15px;
+    width: 15px;
+  }
+
+  .about {
+    display: inline;
+    text-align: center;
+  }
+
   .menu{
     max-width: 320px;    
   }
