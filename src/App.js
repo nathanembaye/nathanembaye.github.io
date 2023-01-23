@@ -11,6 +11,7 @@ import sll4 from "./sll4.png";
 import intervals from "./intervals.png";
 import bt from "./bt.png";
 import { Route, Link, Routes } from "react-router-dom";
+import { HashLink as HashLink } from 'react-router-hash-link';
 import Menu from "./Menu.js"
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
@@ -98,25 +99,26 @@ function Notes() {
           <div className="articleDescripion">
             <br/>
             <br/>
+            <br/> 
             <h1>notes</h1>
-            <p className="date">dec 6, 2022</p>
+            <br/> 
             <br/> 
             <br/> 
             <div className="bullet">
             <Link style={{ textDecoration: 'none' }} to="/complexity">computational complexity</Link>  
-            <h5>apr 9, 2022</h5>  
+            <h5>09 Apr 2022</h5>  
             <p>a fancy way of asking: how much work is it to run this algorithm?</p>
             </div>
             <br/>
             <div className="bullet">
             <Link style={{ textDecoration: 'none' }} to="/miscellania">miscellania</Link>  
-            <h5>apr 15, 2022</h5>          
+            <h5>15 Apr 2022</h5>          
             <p>just a bunch of random {'<stuff/>'} </p>
             </div>
             <br/>
             <div className="bullet">
             <Link style={{ textDecoration: 'none'}} to="/grokking">grokking</Link>  
-            <h5>aug 1, 2022</h5>        
+            <h5>01 Aug 2022</h5>        
             <p>annoying</p>
             </div>
             <br/>
@@ -217,34 +219,106 @@ function Grokking() {
   return ( <div><Menu/>
         <div className="article">
           <div className="articleDescripion">
-            <br/>
-            <br/>
-            <h1>grokking</h1>
-            <p className="date">aug 1, 2022</p>
-            <br/> 
-            <br/> 
-            <Link to="/slidingwindow"><i>Sliding Window</i></Link>           
+            <div class="container">
+              <div class="box" id="one">
+                <HashLink style={{ textDecoration: 'none' }} to="/grokking#arr">sliding window</HashLink> 
+              </div>
+              <div class="box" id="two">
+                <HashLink style={{ textDecoration: 'none' }} to="/grokking#pointers">two pointers</HashLink> 
+              </div>
+              <div class="box" id="three">
+                <HashLink style={{ textDecoration: 'none' }} to="/grokking#pointers">pointers</HashLink> 
+              </div>
+              <div class="box" id="four">
+                <HashLink style={{ textDecoration: 'none' }} to="/grokking#intervals">intervals</HashLink> 
+              </div>
+              <div class="box" id="five">
+                <HashLink style={{ textDecoration: 'none' }} to="/grokking#sort">sorting</HashLink> 
+              </div>
+              <div class="box" id="six">
+                <HashLink style={{ textDecoration: 'none' }} to="/grokking#sll">linked-list</HashLink> 
+              </div>
+              <div class="box" id="seven">
+                <HashLink style={{ textDecoration: 'none' }} to="/grokking#bfs">bfs</HashLink> 
+              </div>
+              <div class="box" id="eight">
+                <HashLink style={{ textDecoration: 'none' }} to="/grokking#trees">trees</HashLink> 
+              </div>
+              <div class="box" id="nine">
+                <HashLink style={{ textDecoration: 'none' }} to="/grokking#heaps">heaps</HashLink> 
+              </div>
+              <div class="box" id="ten">
+                <HashLink style={{ textDecoration: 'none' }} to="/grokking#backtracking">backtracking</HashLink> 
+              </div>
+              <div class="box" id="eleven">
+                <HashLink style={{ textDecoration: 'none' }} to="/grokking#trees">modified binary search</HashLink> 
+              </div>
+            </div>
+            <div id="arr" className="bullet">
+            <Link style={{ textDecoration: 'none' }} to="/slidingwindow">sliding window</Link>  
+            <h5>02 Aug 2022</h5>          
             <p>cha-cha slide through linear data structures</p>
-            <Link to="/twopointers"><i>Two Pointers</i></Link>           
+            </div>
+            <br/>
+            <div id="pointers" className="bullet">
+            <Link style={{ textDecoration: 'none' }} to="/twopointers">two pointers</Link>  
+            <h5>25 Aug 2022</h5>          
             <p>two stepping data structures sorted in non-decreasing order</p>
-            <Link to="/fastslow"><i>Fast and Slow Pointers</i></Link>           
+            </div>
+            <br/>
+            <div id="pointers" className="bullet">
+            <Link style={{ textDecoration: 'none' }} to="/fastslow">fast and slow pointers</Link>  
+            <h5>01 Oct 2022</h5>          
             <p>the tortoise and the hare</p>
-            <Link to="/mergeintervals"><i>Merge Intervals</i></Link>           
+            </div>
+            <br/>
+            <div id="intervals" className="bullet">
+            <Link style={{ textDecoration: 'none' }} to="/mergeintervals">merge intervals</Link>  
+            <h5>02 Oct, 2022</h5>          
             <p>can i get a woot woot</p>
-            <Link to="/cyclicsort"><i>Cyclic Sort</i></Link>           
+            </div>
+            <br/>
+            <div id="sort" className="bullet">
+            <Link style={{ textDecoration: 'none' }} to="/cyclicsort">cyclic sort</Link>    
+            <h5>03 Oct 2022</h5>        
             <p>the frugal man's sort</p>
-            <Link to="/llreversal"><i>In-place Reversal of Linked List</i></Link>           
+            </div>
+            <br/>
+            <div id="sll" className="bullet">
+            <Link style={{ textDecoration: 'none' }} to="/llreversal">in-place reversal of linked list</Link>    
+            <h5>09 Oct 2022</h5>        
             <p>now you see me now you don't</p>
-            <Link to="/bfs"><i>Breadth-First Search</i></Link>           
+            </div>
+            <br/>
+            <div id="bfs" className="bullet">
+            <Link style={{ textDecoration: 'none' }} to="/bfs">breadth-first search</Link>       
+            <h5>21 Dec 2022</h5>     
             <p>levelling a traversal's order</p>
-            <Link to="/dfs"><i>Depth-First Search</i></Link>           
+            </div>
+            <br/>
+            <div className="bullet">
+            <Link style={{ textDecoration: 'none' }} to="/dfs">depth-first search</Link>    
+            <h5>23 Dec 2022</h5>        
             <p>pre --> in --> post</p>
-            <Link to="/twoheaps"><i>Two Heaps</i></Link>           
+            </div>
+            <br/>
+            <div id="heaps" className="bullet">
+            <Link style={{ textDecoration: 'none' }} to="/twoheaps">two heaps</Link>  
+            <h5>30 Dec 2022</h5>          
             <p>hippidy hop</p>
-            <Link to="/backtracking"><i>Backtracking</i></Link>           
+            </div>
+            <br/>
+            <div id="backtracking" className="bullet">
+            <Link style={{ textDecoration: 'none' }} to="/backtracking">backtracking</Link> 
+            <h5>14 Jan 2023</h5>           
             <p>retracing our steps</p>
-            <Link to="/binarysearch"><i>Modified Binary Search</i></Link>           
+            </div>
+            <br/>
+            <div id="trees" className="bullet">
+            <Link style={{ textDecoration: 'none' }} to="/binarysearch">modified binary search</Link>  
+            <h5>19 Jan 2023</h5>          
             <p>marco.....polo</p>
+            </div>
             <br/>
             <br/>
           </div>
