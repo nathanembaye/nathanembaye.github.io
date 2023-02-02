@@ -8,10 +8,8 @@ import linkedin from "./linkedinGrey.png";
 import linkedin2 from "./linkedin2.png";
 
 export default class Menu extends React.Component {
-  
-  render() {
 
-    
+  render() {
     return (
           <div className="menu">
             <ul>

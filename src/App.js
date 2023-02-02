@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import "./App.css";
 import treeTraversal from "./treetraversal.png";
 import chart from "./chart.svg";
-import omega from "./omega.png";
 import sll0 from "./sll0.png";
 import sll1 from "./sll1.png";
 import sll2 from "./sll2.png";
@@ -23,11 +22,8 @@ import backtrack4 from "./backtrack4.jpg";
 
 
 
-
-
-
 class App extends React.Component {
-
+  
   render() {
     return (
         <Routes>
@@ -62,6 +58,8 @@ function ChangeTitle(title) {
 
 function Home() {
   ChangeTitle("home")
+ 
+
   return (
     <div className="homeContainer">
       <div className="home">
@@ -1029,6 +1027,13 @@ function BinarySearch() {
         <h1>modified binary search</h1>
         <p className="date">jan 19, 2023</p>
         <br/>
+        <p><i>The binary search algorithm is a divide and conquer technique for finding some target in an array. Applied to sorted arrays, it improves on a linear search (checking every element), by using said sorted status to reduce our search space by half each iteration. This results in an improved time complexity from O(n) to O(log n).</i></p>
+        <ul className="listTitle">
+        <li><h5>(1) Binary Search</h5></li>
+        <li><h5>(2) Modified Binary Search</h5></li>
+        </ul>
+        <br/>
+        <h4>Binary Search</h4>
         </div>
       </div>
   </div>); 

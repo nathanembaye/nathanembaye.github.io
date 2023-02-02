@@ -1,3 +1,50 @@
+.menu{
+  font-family: "Source Sans Pro", sans-serif, helvetica;
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+}
+
+.menu li {
+  display: inline-block;
+  padding: 30px 43px 20px 30px;
+  text-align: center;
+}
+
+.menu ul {
+  list-style: none;
+  border-bottom: 1px solid #e0218a;
+  margin-top: -5%;
+  padding: 0%;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #7c7d7d;
+}
+
+.menu a:hover {
+  color: #e0218a;
+}
+
+.menu a:active {
+  color: #e0218a;
+}
+
+.menu h2 {
+  color: #e0218a;
+  font-weight: 400;
+}
+
+
+.toggleButton {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+
 .container {
   width: 300px;  
   height: 200px;
@@ -254,45 +301,6 @@
   color: #7c7d7d;
   font-weight: 100;
 }
-
-.menu{
-  font-family: "Source Sans Pro", sans-serif, helvetica;
-  text-align: center;
-  max-width: 600px;
-  margin: auto;
-}
-
-.menu li {
-  display: inline-block;
-  padding: 30px 43px 20px 30px;
-  text-align: center;
-}
-
-.menu ul {
-  list-style: none;
-  border-bottom: 1px solid #e0218a;
-  margin-top: -5%;
-  padding: 0%;
-}
-
-.menu a {
-  text-decoration: none;
-  color: #7c7d7d;
-}
-
-.menu a:hover {
-  color: #e0218a;
-}
-
-.menu a:active {
-  color: #e0218a;
-}
-
-.menu h2 {
-  color: #e0218a;
-  font-weight: 400;
-}
-
 
 .home {
   display: inline-block; 
