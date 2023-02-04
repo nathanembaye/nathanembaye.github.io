@@ -22,6 +22,7 @@ import backtrack4 from "./backtrack4.jpg";
 import bs1 from "./bs1.jpg";
 import bs2 from "./bs2.jpg";
 import bs3 from "./bs3.jpg";
+import bs4 from "./bs4.jpg";
 
 
 
@@ -1042,8 +1043,9 @@ function BinarySearch() {
         <img width="480" height="396" src={bs1} alt='' />
         <p>Those are cases when the target exists in the array. When he target doesn’t exist, but min(arr) {'< target < max(arr)'},
 the right pointer ends at the greatest value less than target and the left pointer ends at the smallest value greater than target.</p>
+<br/>
 <img width="205" height="446" src={bs2} alt='' />
-<p>Heres the code:</p>
+<br/>
 <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#time complexity is O(log n)
 #space complexity is O(1)
 def binary_search(self, nums, target):
@@ -1065,8 +1067,54 @@ def binary_search(self, nums, target):
   return None `}</SyntaxHighlighter>
   <br/>
     <h4>Modified Binary Search</h4>
-    <p>The modified binary search is the binary search, tweaked, to work on "rotated" sorted array’s. An array has been rotated when an element from the front is added to the back. [1, 2, 3, 4] --> [2, 3, 4, 1]. If the number of rotations is equal to its length of nums, our array remains the same.</p><p> An important note here is that for each element in a sorted array, {'nums[i - 1] < nums[i]'}. In a rotated array, where {'nums[i-1] > nums[i]'}, we have found our inflection point (where rotation begins). Say we have an array, [0, 1, 2, 4, 5, 6, 7]:</p>
+    <p>The modified binary search is the binary search, tweaked, to work on "rotated" sorted array’s. An array has been rotated when an element from the front is added to the back. [1, 2, 3, 4] --> [2, 3, 4, 1]. If the number of rotations is equal to its length of nums, our array remains the same.</p>
+    <p>So if we want to find a target in a rotated sorted array, we use the middle pointer to check which side is sorted [left, middle] or [middle, right], then if our target is in that sorted partition. If it is, we enclose the pointers so that is our new search space, if not, we enclose the other partition.</p>
+    <br/>
+    <img width="222" height="496" src={bs4} alt='' />
+    <br/>
+<SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#time complexity is O(log n)
+#space complexity is O(1)
+def binary_search(self, nums, target):
+    
+    left, right = 0, len(nums) - 1
+    
+    while left <= right:
+        
+        middle = (left + right) // 2
+        
+        if target == nums[middle]:
+            return middle
+        
+
+        #left side is sorted
+        elif nums[left] <= nums[middle]:
+            
+            if target >= nums[left] and target < nums[middle]:
+                right = middle - 1
+            else:
+                left = middle + 1
+            
+            
+        #right side is sorted
+        else:
+            if  target > nums[middle] and target <= nums[right]:
+                left = middle + 1
+            else:
+                right = middle - 1
+    
+    return None `}</SyntaxHighlighter>
+    <p> An important note here is that for each element in a sorted array, {'nums[i - 1] < nums[i]'}. In a rotated array, where {'nums[i-1] > nums[i]'}, we have found our inflection point (where rotation begins). Say we have an array, [0, 1, 2, 4, 5, 6, 7]:</p>
+    <br/>
     <img width="543" height="308" src={bs3} alt='' />
+    <br/>
+    <br/>
+    <br/>
+    <h4>When to use Binary Search?</h4>
+          <ol className="listInfo">
+          <li><p>When we need to search a sorted list</p></li>
+          </ol>
+          <br/>
+          <br/>
       </div>
       </div>
   </div>); 
