@@ -19,6 +19,9 @@ import backtrack3 from "./backtrack3.jpg";
 import backtrack2 from "./backtrack2.jpg";
 import backtrack1 from "./backtrack1.jpg";
 import backtrack4 from "./backtrack4.jpg";
+import bs1 from "./bs1.jpg";
+import bs2 from "./bs2.jpg";
+import bs3 from "./bs3.jpg";
 
 
 
@@ -1027,14 +1030,44 @@ function BinarySearch() {
         <h1>modified binary search</h1>
         <p className="date">jan 19, 2023</p>
         <br/>
-        <p><i>The binary search algorithm is a divide and conquer technique for finding some target in an array. Applied to sorted arrays, it improves on a linear search (checking every element), by using said sorted status to reduce our search space by half each iteration. This results in an improved time complexity from O(n) to O(log n).</i></p>
+        <p><i>The binary search is a divide and conquer algorithm for finding some target in an array. Applied to sorted arrays, it uses said status to reduce our search space by half each iteration, instead of checking every element, to improve time complexity from O(n) to O(log n).</i></p>
         <ul className="listTitle">
         <li><h5>(1) Binary Search</h5></li>
         <li><h5>(2) Modified Binary Search</h5></li>
         </ul>
         <br/>
         <h4>Binary Search</h4>
-        </div>
+        <p>The binary search algorithm begins by creating three pointers for our sorted list. A left pointer at the first index, a right pointer at the last index, and a middle pointer for the middle index (for even length lists we select the two middle indexes then point to the leftmost).</p>
+        <br/>
+        <img width="480" height="396" src={bs1} alt='' />
+        <p>Those are cases when the target exists in the array. When he target doesn’t exist, but min(arr) {'< target < max(arr)'},
+the right pointer ends at the greatest value less than target and the left pointer ends at the smallest value greater than target.</p>
+<img width="205" height="446" src={bs2} alt='' />
+<p>Heres the code:</p>
+<SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#time complexity is O(log n)
+#space complexity is O(1)
+def binary_search(self, nums, target):
+            
+  left, right = 0, len(nums)-1
+  while left <= right:
+      
+      middle = (left + right) // 2
+      
+      if target < nums[middle]:
+          right = middle - 1
+      
+      elif target > nums[middle]:
+          left = middle + 1
+          
+      else:
+          return middle
+  
+  return None `}</SyntaxHighlighter>
+  <br/>
+    <h4>Modified Binary Search</h4>
+    <p>The modified binary search is the binary search, tweaked, to work on "rotated" sorted array’s. An array has been rotated when an element from the front is added to the back. [1, 2, 3, 4] --> [2, 3, 4, 1]. If the number of rotations is equal to its length of nums, our array remains the same.</p><p> An important note here is that for each element in a sorted array, {'nums[i - 1] < nums[i]'}. In a rotated array, where {'nums[i-1] > nums[i]'}, we have found our inflection point (where rotation begins). Say we have an array, [0, 1, 2, 4, 5, 6, 7]:</p>
+    <img width="543" height="308" src={bs3} alt='' />
+      </div>
       </div>
   </div>); 
   
