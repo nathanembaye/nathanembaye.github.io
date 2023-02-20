@@ -118,11 +118,6 @@ function Notes() {
             <p>just a bunch of random {'<stuff/>'} </p>
             </div>
             <br/>
-            <div className="bullet">
-            <Link style={{ textDecoration: 'none'}} to="/grokking">grokking</Link>  
-            <h5>01 Aug 2022</h5>        
-            <p>annoying</p>
-            </div>
             <br/>
             <br/>
           </div>
