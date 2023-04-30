@@ -115,7 +115,7 @@ function Notes() {
             <div className="bullet">
             <Link style={{ textDecoration: 'none' }} to="/miscellania">miscellania</Link>  
             <h5>15 Apr 2022</h5>          
-            <p>just a bunch of random {'<stuff/>'} </p>
+            <p>{'<stuff/>'} </p>
             </div>
             <br/>
             <br/>
@@ -138,21 +138,21 @@ function Complexity() {
         <br/>
         <h3>time complexity</h3>
         <p>We should begin by saying time complexity is not the actual hours:minutes:seconds required to execute any particular piece of code. That depends on a myriad of factors like programming language, operating system and processing power.</p>
-        <p>Instead, time complexity describes how long an algorithm will take to execute with changes in its input size. In other words, how the execution time will increase or decrease based on how big or small the input data is. Why an algorithm's lifetime time could differ given a new input length is because it could change the number of operations being performed.</p>
+        <p>Instead, time complexity describes how long an algorithm will take to execute with changes in its input size. More specifically, how it will increase or decrease based on how big or small the input data is. Why this alters an algorithm's lifetime is because it could change the number of operations being performed.</p>
         <h5>constant time - O(1)</h5>
         <p>An algorithm is said to have constant time, O(1), when how many operations it performs is independent of input length. Simply -- it completes the same number of tasks no matter input size.</p>
         <h5>logarithmic time - (log n)</h5>
         <p>An algorithm is said to have logarithmic time, O(log n), when it begins processing input at its initial length but divides said data by a constant (usually two) each iteration until its less or equal to 1. This is most commonly seen with binary search trees.</p>
         <h5>linear time - O(n)</h5>
-        <p>An algorithm is said to have linear time, O(n), when how long it takes to execute increases proportionally (1 to 1) with its input length. This occurs in cases when we have input data that needs to have every value inside it processed, and each of those assessments take constant time, O(1). This growth can be understood as <i>cn</i>, where <i>c = 1</i> and  <i>n = input length</i>.</p>
+        <p>An algorithm is said to have linear time, O(n), when how long it takes to execute increases proportionally (1 to 1) with its input length. This occurs in cases when we have input data that needs to have every value inside it processed, and each of those assessments is constant, O(1). This growth can be understood as <i>cn</i>, where <i>c = 1</i> and  <i>n = input length</i>.</p>
         <h5>quadratic time - (n<sup>2</sup>)</h5>
         <p>An algorithm is said to have quadratic time, O(n<sup>2</sup>), when the execution time increases proportionally to the squared size of the input length. This occurs in cases when we have input data that needs to have every value inside it processed, but each of those assessments must process the entire length of the original input data with it. These types of algorithms are most commonly seen with nested for loops.</p>
         <br/>
         <br/>
         <h3>space complexity</h3>
-        <p>The space complexity of an algorithm is the amount of memory it requires to execute with varying input size. It’s sum is <i>space complexity = auxiliary space + input space.</i></p>
-        <p>Auxiliary space is defined as all the memory used inside the algorithm itself (think variables, loops, data structures, etc.), while input space is the memory used for the data that goes into the algorithm for processing. Differentiating that, when comparing different algorithms' space complexity, we would only consider auxiliary space since they’re solutions accepting the same input.</p>
-        <p>Similar to time complexity, space complexity measures the storage needed relative to changes in the size of input data. That is, how the storage used during execution time increases or decreases based on how big or small the input data is.</p>
+        <p>The space complexity of an algorithm is the amount of memory it requires to execute. Similar to time complexity, it measures how much storage is used relative to changes in the size of input data.</p>
+        <p>It’s sum is <i>space complexity = auxiliary space + input space.</i></p>
+        <p>Auxiliary space is defined as all the memory used inside the algorithm itself (think variables, loops, data structures, etc). In contrast, input space is the memory used for the data that goes into the algorithm for processing. Differentiating that, when comparing different algorithms' space complexity, we would only consider auxiliary space since they’re solutions accepting the same input.</p>
         <h5>constant space - O(1)</h5>
         <p>An algorithm is said to use constant space when the amount of memory used each execution remains the same, no matter the size of the input. A telltale of this is when only booleans and integers are ever stored.</p> 
         <h5>linear space - O(n)</h5>

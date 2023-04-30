@@ -336,6 +336,7 @@
 
 .title span {
   color: #7c7d7d;
+  font-weight: 400;
 }
 
 .listTitle li {
@@ -623,3 +624,4 @@ h1 {
     padding: 10px;
   }
 }
+

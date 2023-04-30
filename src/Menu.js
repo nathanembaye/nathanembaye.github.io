@@ -27,7 +27,7 @@ export default class Menu extends React.Component {
                   </div>
                   <div className="aboutText">
                     <h2>about</h2>
-                    <p>Public policy junkie and software engineer. I enjoy turning elusive business requirements into performant, scalable code. Currently I do just that at the Bank of Canada.</p>
+                    <p>Public policy junkie and software engineer. I enjoy turning elusive business requirements into performant, scalable code. Currently I do just that at Canada's central bank.</p>
                     <div className="aboutIcon">
                       <a href="https://www.linkedin.com/in/nathanembaye/">
                         <img onMouseOver={e => e.currentTarget.src = linkedin2} onMouseLeave={e => e.currentTarget.src = linkedin} alt='' src={linkedin}/>
