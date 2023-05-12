@@ -69,6 +69,7 @@ function Home() {
       <div className="home">
           <div className="title">
             <h1><span>λ</span> nathan embaye</h1>
+           
           </div>
           <div className="home">
             <Link to="/about">about</Link>
@@ -141,11 +142,11 @@ function Complexity() {
         <p>Instead, time complexity describes how long an algorithm will take to execute with changes in its input size. More specifically, how it will increase or decrease based on how big or small the input data is. Why this alters an algorithm's lifetime is because it could change the number of operations being performed.</p>
         <h5>constant time - O(1)</h5>
         <p>An algorithm is said to have constant time, O(1), when how many operations it performs is independent of input length. Simply -- it completes the same number of tasks no matter input size.</p>
-        <h5>logarithmic time - (log n)</h5>
+        <h5>logarithmic time - O(log n)</h5>
         <p>An algorithm is said to have logarithmic time, O(log n), when it begins processing input at its initial length but divides said data by a constant (usually two) each iteration until its less or equal to 1. This is most commonly seen with binary search trees.</p>
         <h5>linear time - O(n)</h5>
         <p>An algorithm is said to have linear time, O(n), when how long it takes to execute increases proportionally (1 to 1) with its input length. This occurs in cases when we have input data that needs to have every value inside it processed, and each of those assessments is constant, O(1). This growth can be understood as <i>cn</i>, where <i>c = 1</i> and  <i>n = input length</i>.</p>
-        <h5>quadratic time - (n<sup>2</sup>)</h5>
+        <h5>quadratic time - O(n<sup>2</sup>)</h5>
         <p>An algorithm is said to have quadratic time, O(n<sup>2</sup>), when the execution time increases proportionally to the squared size of the input length. This occurs in cases when we have input data that needs to have every value inside it processed, but each of those assessments must process the entire length of the original input data with it. These types of algorithms are most commonly seen with nested for loops.</p>
         <br/>
         <br/>
@@ -157,6 +158,8 @@ function Complexity() {
         <p>An algorithm is said to use constant space when the amount of memory used each execution remains the same, no matter the size of the input. A telltale of this is when only booleans and integers are ever stored.</p> 
         <h5>linear space - O(n)</h5>
         <p>An algorithm is said to use linear space when the amount of memory used for an execution, could take up to the length of the given input. A giveaway for this is the requirement of a linear data structure, like list or a hash table.</p>         
+        <br/>
+        <br/>
         <br/>
         <br/>
         <h3>big-o chart</h3>
