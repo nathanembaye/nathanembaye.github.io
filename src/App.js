@@ -48,6 +48,7 @@ class App extends React.Component {
             <Route path="/twoheaps" title="twoheaps" element={<TwoHeaps />} />
             <Route path="/backtracking" title="backtracking" element={<Backtracking />} />
             <Route path="/binarysearch" title="binarysearch" element={<BinarySearch />} />
+            <Route path="/datalake" title="datalake" element={<DataLake />} />
         </Routes>
     );
   }
@@ -118,6 +119,11 @@ function Notes() {
             <h5>15 Apr 2022</h5>          
             <p>{'<stuff/>'} </p>
             </div>
+            <div className="bullet">
+            <Link style={{ textDecoration: 'none' }} to="/datalake">data lake</Link>  
+            <h5>14 May 2023</h5>          
+            <p>{'a modern data architecture'} </p>
+            </div>
             <br/>
             <br/>
             <br/>
@@ -125,6 +131,7 @@ function Notes() {
         </div>
      </div>); 
 }
+ 
 
 function Complexity() {
   ChangeTitle("computational complexity")
@@ -174,6 +181,36 @@ function Complexity() {
   </div>); 
 }
 
+
+function DataLake() {
+  ChangeTitle("data lake")
+  return ( <div><Menu/>
+      <div className="article">
+        <div className="articleDescripion">
+        <br/>
+        <br/>
+        <h1>data lake</h1>
+        <p className="date">may 14, 2023</p>
+        <p><i>Data architecture describes the contents and orginzation of systems responsible for the collection, transformation and distribution of information.</i></p>
+        <br/>
+        <h3>what is a data lake?</h3>
+        <p>A data lake is the modern business’ central hub for storing and processing all structured, semi-structured and unstructured data. Inside it you’ll find different zones - raw, standardized and curated - each serving a distinct purpose.</p>
+        <h5>raw zone</h5>
+        <p>The raw zone is for storing data in its original format. This helps with data lineage. All datasets downstream can be recreated from their raw state, so it's advantageous to store such immutably.</p>
+        <h5>standardized zone</h5>
+        <p>The standardized zone stores data transformed to meet internal quality standards. Not all data ingested is in an optimal or even workable format. So, we enforce standards to make datasets as uniform and efficient to work with as possible. This can be using file formats like Parquet or applying ISO data standards.</p>
+        <h5>curated zone</h5>
+        <p>The curated zone is for storing data that’s had business logic applied to it. These transformations come from the business requirements defined by a project's stakeholders. The curated schema is ultimately what data customers consume.</p>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        </div>
+      </div>
+  </div>); 
+}
+
 function Miscellania() {
   ChangeTitle("miscellania")
   return ( <div><Menu/>
@@ -207,6 +244,8 @@ function Miscellania() {
             <p>The old form of marriage, based on outdated social rules and gender roles, is fading. A new version is emerging—egalitarian, committed, and focused on children.</p>
             <a href="https://www.youtube.com/watch?v=ZtpWTJ7Jsh8"><i>Geohot</i></a>
             <p>Do it faster, do it better.</p>
+            <Link to="/evolution"><i>Old is new</i></Link>
+            <p>A wonderful excerpt from the book "fundementals of data engineering"</p>
             <br/>
             <br/>
           </div>
