@@ -191,7 +191,7 @@ function DataLake() {
         <br/>
         <h1>data lake</h1>
         <p className="date">may 14, 2023</p>
-        <p><i>Data architecture describes the design and organization of the systems used to collect, store, transform and serve data.</i></p>
+        <p><i>Data architecture describes the design and organization of systems used to collect, store, transform and serve data.</i></p>
         <br/>
         <h3>a historical excerpt</h3>
         <p><b>The quote below is from the book "fundementals of data engineering", where Joe Reis and Matt Housley wonderfully describe how we got to modern data platforms:</b></p>
@@ -211,20 +211,25 @@ function DataLake() {
         <br/>
         <p>So, what does this mean? Data warehouses were the standard central data repository until something more cost-efficient, scalable, available and reliable was made. Once compute and storage became cheap and distributed the standard became data lakes (with data warehouses only complimenting them). And today, we are seeing even further development with the data lakehouse.</p>
         <br/>
+        <br/>
         <h3>data warehouse</h3>
         <p>A data warehouse is a centralized location (database) exclusively for structured data. Its data can come from disparate sources, has already been processed and or transformed with a predefined schema designed specifically for  business analytics, reporting and more. </p>
         <p>A data warehouse should not be confused as being the exact same thing as a database. Every data warehouse is a database but not every database is a data warehouse. A data warehouse is only a OLAP (On-Line Analytical Processing) database, while a database generally can also be a OLTP (On-Line Transactional Processing) system, for storing the current data required to power an application</p>
+        <br/>
         <br/>
         <h3>data lake</h3>
         <p>A data lake is the modern business’ central hub for storing and processing all structured, semi-structured and unstructured data. Inside it you’ll find different zones - raw, standardized and curated - each serving a distinct purpose.</p>
         <h5>raw zone</h5>
         <p>The raw zone is for storing data in its original format. This helps with data lineage. All datasets downstream can be recreated from their raw state, so it's advantageous to store such immutably.</p>
+        <h5>standardized zone</h5>
         <p>The standardized zone stores data transformed to meet internal quality standards. Not all data ingested is in an optimal or even workable format. So, we enforce standards to make datasets as uniform and efficient to work with as possible. This can be using file formats like Parquet or applying ISO data standards.</p>
         <h5>curated zone</h5>
         <p>The curated zone is for storing data that’s had business logic applied to it. These transformations come from the business requirements defined by a project's stakeholders. The curated schema is ultimately what data customers consume.</p>
         <br/>
+        <br/>
         <h3>two-tier data architecture</h3>
         <p>This is what's most commonly seen today. It is when both the data warehouse and the data lake are side-by-side in one ecosystem. Typically, what happens here is data is ETL'd from its source to the data lake and once again ETL'd into the data warehouse for business intelligence and data analytics.</p>
+        <br/>
         <br/>
         <h3>data lakehouse</h3>
         <p>A data lakehouse is a hybrid of the data warehouse and the data lake. It uses blob storage, so it benefits from the data lake's cost-efficiency and scale. However, it also allows the ACID transactions that a warehouse does. This is possible due to a metdata layer sitting atop the aforementioned cloud storage. This open architecture is most commonly seen with parquet or delta format. Databricks recently publshed a paper on this, the <a href="http://cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf">data lakehouse</a>.</p>
