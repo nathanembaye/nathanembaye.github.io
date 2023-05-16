@@ -194,7 +194,7 @@ function DataLake() {
         <p><i>Data architecture describes the design and organization of the systems used to collect, store, transform and serve data.</i></p>
         <br/>
         <h3>a hisorical excerpt</h3>
-        <p><b>The quote below is from the book "fundementals of data engineering", where Joe Reis and Matt Housley wonderfully describe how we got to modern data platforms.</b></p>
+        <p><b>The quote below is from the book "fundementals of data engineering", where Joe Reis and Matt Housley wonderfully describe how we got to modern data platforms:</b></p>
         <br/>
         <div class="quote">
         <p><i>"The birth of the data engineer arguably has its roots in data warehousing, dating as far back as the 1970s, with the business data warehouse taking shape in the 1980s and Bill Inmon officially coining the term data warehouse in 1989. After engineers at IBM developed the relational database and Structured Query Language (SQL), Oracle popularized the technology. As nascent data systems grew, businesses needed dedicated tools and data pipelines for reporting and business intelligence (BI). To help people correctly model their business logic in the data warehouse, Ralph Kimball and Inmon developed their respective eponymous data-modeling techniques and approaches, which are still widely used today.</i></p>
