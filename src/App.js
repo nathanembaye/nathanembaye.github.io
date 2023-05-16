@@ -193,7 +193,7 @@ function DataLake() {
         <p className="date">may 14, 2023</p>
         <p><i>Data architecture describes the design and organization of the systems used to collect, store, transform and serve data.</i></p>
         <br/>
-        <h3>a hisorical excerpt</h3>
+        <h3>a historical excerpt</h3>
         <p><b>The quote below is from the book "fundementals of data engineering", where Joe Reis and Matt Housley wonderfully describe how we got to modern data platforms:</b></p>
         <br/>
         <div class="quote">
