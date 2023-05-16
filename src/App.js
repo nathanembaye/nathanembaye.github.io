@@ -191,16 +191,43 @@ function DataLake() {
         <br/>
         <h1>data lake</h1>
         <p className="date">may 14, 2023</p>
-        <p><i>Data architecture describes the contents and orginzation of systems responsible for the collection, transformation and distribution of information.</i></p>
+        <p><i>Data architecture describes the design and organization of systems that are used for the collection, transformation and distribution of data.</i></p>
         <br/>
-        <h3>what is a data lake?</h3>
+        <h3>a hisorical excerpt</h3>
+        <p><b>The quote below is from the book "fundementals of data engineering", where Joe Reis and Matt Housley wonderfully describe how we got to modern data platforms.</b></p>
+        <br/>
+        <div class="quote">
+        <p><i>"The birth of the data engineer arguably has its roots in data warehousing, dating as far back as the 1970s, with the business data warehouse taking shape in the 1980s and Bill Inmon officially coining the term data warehouse in 1989. After engineers at IBM developed the relational database and Structured Query Language (SQL), Oracle popularized the technology. As nascent data systems grew, businesses needed dedicated tools and data pipelines for reporting and business intelligence (BI). To help people correctly model their business logic in the data warehouse, Ralph Kimball and Inmon developed their respective eponymous data-modeling techniques and approaches, which are still widely used today.</i></p>
+        <p><i>Data warehousing ushered in the first age of scalable analytics, with new massively parallel processing (MPP) databases that use multiple processors to crunch large amounts of data coming on the market and supporting unprecedented volumes of data. Roles such as BI engineer, ETL developer, and data warehouse engineer addressed the various needs of the data warehouse. Data warehouse and BI engineering were a precursor to today’s data engineering and still play a central role in the discipline.</i></p>
+        <p><i>The internet went mainstream around the mid-1990s, creating a whole new generation of web-first companies such as AOL, Yahoo, and Amazon. The dot-com boom spawned a ton of activity in web applications and the backend systems to support them—servers, databases, and storage. Much of the infrastructure was expensive, monolithic, and heavily licensed. The vendors selling these backend systems likely didn’t foresee the sheer scale of the data that web applications would produce.</i></p>
+        <p><i>Fast-forward to the early 2000s, when the dot-com boom of the late ’90s went bust, leaving behind a tiny cluster of survivors. Some of these companies, such as Yahoo, Google, and Amazon, would grow into powerhouse tech companies. Initially, these companies continued to rely on the traditional monolithic, relational databases and data warehouses of the 1990s, pushing these systems to the limit. As these systems buckled, updated approaches were needed to handle data growth. The new generation of the systems must be cost-effective, scalable, available, and reliable.</i></p>
+        <p><i>Coinciding with the explosion of data, commodity hardware—such as servers, RAM, disks, and flash drives—also became cheap and ubiquitous. Several innovations allowed distributed computation and storage on massive computing clusters at a vast scale. These innovations started decentralizing and breaking apart traditionally monolithic services. The “big data” era had begun.</i></p>
+        <p><i>In 2003, Google published a paper on the Google File System, and shortly after that, in 2004, a paper on MapReduce, an ultra-scalable data-processing paradigm. In truth, big data has earlier antecedents in MPP data warehouses and data management for experimental physics projects, but Google’s publications constituted a “big bang” for data technologies and the cultural roots of data engineering as we know it today. </i></p>
+        <p><i>The Google papers inspired engineers at Yahoo to develop and later open source Apache Hadoop in 2006. It’s hard to overstate the impact of Hadoop. Software engineers interested in large-scale data problems were drawn to the possibilities of this new open source technology ecosystem. As companies of all sizes and types saw their data grow into many terabytes and even petabytes, the era of the big data engineer was born.</i></p>
+        <p><i>Around the same time, Amazon had to keep up with its own exploding data needs and created elastic computing environments (Amazon Elastic Compute Cloud, or EC2), infinitely scalable storage systems (Amazon Simple Storage Service, or S3), highly scalable NoSQL databases (Amazon DynamoDB), and many other core data building blocks. Amazon elected to offer these services for internal and external consumption through Amazon Web Services (AWS), becoming the first popular public cloud. AWS created an ultra-flexible pay-as-you-go resource marketplace by virtualizing and reselling vast pools of commodity hardware. Instead of purchasing hardware for a data center, developers could simply rent compute and storage from AWS.</i></p>
+        <p><i>As AWS became a highly profitable growth engine for Amazon, other public clouds would soon follow, such as Google Cloud, Microsoft Azure, and DigitalOcean. The public cloud is arguably one of the most significant innovations of the 21st century and spawned a revolution in the way software and data applications are developed and deployed.</i></p>
+        <p><i>The early big data tools and public cloud laid the foundation for today’s data ecosystem. The modern data landscape—and data engineering as we know it now—would not exist without these innovations."</i></p>
+        </div>
+        <br/>
+        <p>So, what does this mean? Data warehouses were the standard central data repository until something more cost-efficient, scalable, available and reliable was made. Once compute and storage became cheap and distributed the standard became data lakes (with data warehouses only complimenting them). And today, we are seeing even further development with the data lakehouse.</p>
+        <br/>
+        <h3>data warehouse</h3>
+        <p>A data warehouse is a centralized location (database) exclusively for structured data. Its data can come from disparate sources, has already been processed and or transformed with a predefined schema designed specifically for  business analytics, reporting and more. </p>
+        <p>A data warehouse should not be confused as being the exact same thing as a database. Every data warehouse is a database but not every database is a data warehouse. A data warehouse is only a OLAP (On-Line Analytical Processing) database, while a database generally can also be a OLTP (On-Line Transactional Processing) system, for storing the current data required to power an application</p>
+        <br/>
+        <h3>data lake</h3>
         <p>A data lake is the modern business’ central hub for storing and processing all structured, semi-structured and unstructured data. Inside it you’ll find different zones - raw, standardized and curated - each serving a distinct purpose.</p>
         <h5>raw zone</h5>
         <p>The raw zone is for storing data in its original format. This helps with data lineage. All datasets downstream can be recreated from their raw state, so it's advantageous to store such immutably.</p>
-        <h5>standardized zone</h5>
         <p>The standardized zone stores data transformed to meet internal quality standards. Not all data ingested is in an optimal or even workable format. So, we enforce standards to make datasets as uniform and efficient to work with as possible. This can be using file formats like Parquet or applying ISO data standards.</p>
         <h5>curated zone</h5>
         <p>The curated zone is for storing data that’s had business logic applied to it. These transformations come from the business requirements defined by a project's stakeholders. The curated schema is ultimately what data customers consume.</p>
+        <br/>
+        <h3>two-tier data architecture</h3>
+        <p>This is what's most commonly seen today. It is when both the data warehouse and the data lake are side-by-side in one ecosystem. Typically, what happens here is data is ETL'd from its source to the data lake and once again ETL'd into the data warehouse for business intelligence and data analytics.</p>
+        <br/>
+        <h3>data lakehouse</h3>
+        <p>A data lakehouse is a hybrid of the data warehouse and the data lake. It uses blob storage, so it benefits from the data lake's cost-efficiency and scale. However, it also allows the ACID transactions that a warehouse does. This is possible due to a metdata layer sitting atop the aforementioned cloud storage. This open architecture is most commonly seen with parquet or delta format. Databricks recently publshed a paper on this, the <a href="http://cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf">data lakehouse</a>.</p>
         <br/>
         <br/>
         <br/>
@@ -244,8 +271,6 @@ function Miscellania() {
             <p>The old form of marriage, based on outdated social rules and gender roles, is fading. A new version is emerging—egalitarian, committed, and focused on children.</p>
             <a href="https://www.youtube.com/watch?v=ZtpWTJ7Jsh8"><i>Geohot</i></a>
             <p>Do it faster, do it better.</p>
-            <Link to="/evolution"><i>Old is new</i></Link>
-            <p>A wonderful excerpt from the book "fundementals of data engineering"</p>
             <br/>
             <br/>
           </div>
