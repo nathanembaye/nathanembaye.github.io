@@ -1,5 +1,11 @@
+
+.codeBlocks {
+  background-color: #e0218a;
+}
+
 .quote i {
-  font-family: "Times New Roman", Times, serif;}
+  font-family: "Times New Roman", Times, serif;
+}
 
 .menu{
   font-family: "Source Sans Pro", sans-serif, helvetica;
@@ -273,8 +279,8 @@
 }
 
 .aboutIcon img {
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
   margin: 0px 15px 0px 0px;
 }
 

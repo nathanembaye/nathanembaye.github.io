@@ -13,7 +13,7 @@ import { Route, Link, Routes } from "react-router-dom";
 import { HashLink as HashLink } from 'react-router-hash-link';
 import Menu from "./Menu.js"
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import backtrack from "./backtrack.jpg";
 import backtrack3 from "./backtrack3.jpg";
 import backtrack2 from "./backtrack2.jpg";
@@ -414,13 +414,13 @@ function SlidingWindow() {
         <br/>
         <h4>Fixed Window Size</h4>
         <p>For some questions, typically “easy'', the windows (substructures) to be visited must be of a set size. Say we have a list:</p>
-    <SyntaxHighlighter className="codeBlocks" language="python" style={xcode}>
+    <SyntaxHighlighter className="codeBlocks" language="python" style={atomOneLight}>
       {`nums = [1, 2, 3, 4, 5, 6]`}
     </SyntaxHighlighter>
           <p>Now, lets say the fixed size is k = 3. How could we traverse <i>nums</i> for every window of length k?</p>
           <SyntaxHighlighter className="codeBlocks" 
           language={"python"}
-          style={xcode}>{`#brue force O(n*k)
+          style={atomOneLight}>{`#brue force O(n*k)
 for i in range(len(nums)-k+1):
     for j in range(i, i + k):
         nums[j] #process window
@@ -435,14 +435,14 @@ for i in range(k, len(nums)):
     sum += nums[i] 
     nums[i] #remove first, add new, then process`}</SyntaxHighlighter>
         <p>Which would process windows:</p>
-        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`[1, 2, 3, 4], [2, 3, 4, 5], [3, 4, 5, 6]`}</SyntaxHighlighter>
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`[1, 2, 3, 4], [2, 3, 4, 5], [3, 4, 5, 6]`}</SyntaxHighlighter>
         <br/>
         <br/>
         <h4>Dynamic Window Size</h4>
         <p>For most problems however, you’ll work with a window that is dynamic. This means the answer could be a window of any size, so we need to be able to expand and contract it. When we might do either, depends on if the current window fufills a condition or not:</p>
         <SyntaxHighlighter className="codeBlocks"
           language={"python"}
-          style={xcode}>{`#brute force O(n^2)
+          style={atomOneLight}>{`#brute force O(n^2)
 for i in range(len(nums)):
     for j in range(i+1, len(nums)):
         nums[i:j] #process every window
@@ -496,9 +496,9 @@ function TwoPointers() {
         <p>When given a question that requires processing pairs, there is a <i>naive</i> approach that applies to both sorted and unsorted arrays:</p>
         <SyntaxHighlighter className="codeBlocks" language={"python"}
           
-          style={xcode}>{`nums = [1, 2, 3, 4, 5, 6] or nums = [5, 3, 2, 6, 1, 4]`}</SyntaxHighlighter>
+          style={atomOneLight}>{`nums = [1, 2, 3, 4, 5, 6] or nums = [5, 3, 2, 6, 1, 4]`}</SyntaxHighlighter>
         <p>Applied to either array, the algorithm below will process the same pairs, just in a different order. The cost, however, is O(n^2) time.</p>
-        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n^2)
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`#O(n^2)
 for left in range(len(nums)):
     for right in range(left+1, len(nums)):
         #process pair nums[left]:nums[right]`}</SyntaxHighlighter>
@@ -507,7 +507,7 @@ for left in range(len(nums)):
           <br/>
         <h4>Two Pointers with Sorted Array</h4>
         <p>When given an array thats pre-sorted, we can be more strategic about its processing. Pointing at the head and tail, we can process the pair, and based on the combination, decide if we want to move the left or right pointer.</p>
-        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n)
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`#O(n)
 left, right = 0, len(data) - 1
 while left < right:
     
@@ -555,7 +555,7 @@ function FastSlow() {
         <p>The first thing to consider with this approach is what exactly it approves on. Say we have a singly linked-list:</p>
         <img width="400" height="200" src={sll0} alt='' />
         <p>The intuition for most naive cycle-detecting algorithms would be to store all elements visited and end the function if we visit any element already stored. This detects any cycle that might exist, but uses extra space by storing each element, and time checking if it already exists in storage before appending it.</p>
-        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n^2) time, O(n) space
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`#O(n^2) time, O(n) space
 arr = []
 while head:
 
@@ -574,7 +574,7 @@ return False`}</SyntaxHighlighter>
         <img width="400" height="200" src={sll4} alt='' />
         <br/>
         <p>Pictured above the slow (red) pointer and fast (green) pointer overlap or meet at the fourth node - thus a cycle is present.</p>
-        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n) time, O(1) space
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`#O(n) time, O(1) space
 slow, fast = head, head
 while fast and fast.next:
     
@@ -625,9 +625,9 @@ function MergeIntervals() {
         <br/>
         <br/>
         <p>Illustrated above, there are four ways (figure 2-5) that any two given intervals can overlap. Notice a pattern? For any overlap, the start of A is always less than or equal to the end of B, and the start of B is always less than or equal to the end of A. Say we have the following intervals: </p>
-        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`intervals = [(5,10),(0,30),(15,20)]`}</SyntaxHighlighter>
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`intervals = [(5,10),(0,30),(15,20)]`}</SyntaxHighlighter>
         <p>Traversing every combination of interval, we can find which overlap:</p>
-        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n^2) time
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`#O(n^2) time
 for i in range(len(intervals)):
     for j in range(i+1, len(intervals)):
 
@@ -640,7 +640,7 @@ return True`}</SyntaxHighlighter>
         <br/>
         <h4>Overlapping Sorted Intervals</h4>
         <p>Looking at the function above, there is a way to improve the performance of checking for overlaps. If our list of intervals were sorted in non-decreasing order, vis-à-vis their start values, we'd only need to check if each intervals end value is greater or equal to what's next to it. This would allow us to drop the second loop:</p>
-        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n log n) time
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`#O(n log n) time
 intervals.sort(key = lambda i: i.start)
 for i in range(len(intervals)-1):
 
@@ -682,9 +682,9 @@ function CyclicSort() {
           <br/>
           <h4>Range of [0, n]</h4>
           <p>First, let's visualize the input we're working with:</p>
-          <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`nums = [9, 6, 4, 2, 3, 5, 7, 0, 1]`}</SyntaxHighlighter>
+          <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`nums = [9, 6, 4, 2, 3, 5, 7, 0, 1]`}</SyntaxHighlighter>
           <p>Now, for each number at the wrong index, let's swap it with the number that is currently stored in it.</p>
-          <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`i = 0
+          <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`i = 0
 while i < len(nums):
 
     num = nums[i]
@@ -694,7 +694,7 @@ while i < len(nums):
     else:
         i += 1`}</SyntaxHighlighter>
         <p>The resulting array from this would be:</p>
-        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`nums = [0, 1, 2, 3, 4, 5, 6, 7, 9]`}</SyntaxHighlighter>
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`nums = [0, 1, 2, 3, 4, 5, 6, 7, 9]`}</SyntaxHighlighter>
         <p>We can now attempt to fufill any particularities posed by the question.</p>
         <br/>
         <br/>
@@ -702,9 +702,9 @@ while i < len(nums):
         <h4>Range of [1, n]</h4>
           <p>Once again, let's define the input we're processing:</p>
           <br/>
-          <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`nums = [7,6,4,2,3,5,7,1]`}</SyntaxHighlighter>
+          <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`nums = [7,6,4,2,3,5,7,1]`}</SyntaxHighlighter>
           <p>Now, for each number at the wrong index, let's swap it with the number that is currently stored in it.</p>
-          <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`i = 0
+          <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`i = 0
 while i < len(nums):
 
     num = nums[i]
@@ -715,7 +715,7 @@ while i < len(nums):
     else:
         i += 1`}</SyntaxHighlighter>
         <p>The resulting array from this would be:</p>
-        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`nums = [1, 2, 3, 4, 5, 6, 7, 7]`}</SyntaxHighlighter>
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`nums = [1, 2, 3, 4, 5, 6, 7, 7]`}</SyntaxHighlighter>
         <p>We can now attempt to fufill any particularities posed by the question.</p>
         <br/>
         <br/>
@@ -749,7 +749,7 @@ function LinkListReversal() {
           <br/>
           <h4>In-place Reversal of Linked List</h4>
           <p>Before exploring how we can use O(1) memory to reverse a linked list, we should see what is actually being imporved upon by describing the brute-force solution first.</p>
-        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n) time, O(n) space
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`#O(n) time, O(n) space
 curr, nodes = head, []
 while curr:
     nodes.append(curr)
@@ -763,7 +763,7 @@ nodes[len(nodes)-1].next = None
 
 return nodes[0]`}</SyntaxHighlighter>
           <p>As displayed above, the storage of each node in the linked list is what makes the solution expensive. If we coud, instead, reverse each node while we're visiting it, there would be no need to store it.</p>
-          <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n) time, O(1) space
+          <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`#O(n) time, O(1) space
 prev = None
 while head:
     
@@ -803,7 +803,7 @@ function BFS() {
         <br/>
         <h4>Binary Tree BFS</h4>
         <p>The best way to understand such a search is with a "perfect binary tree" as each level is wider than the last. Lets define its class:</p>
-        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`class Node:
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`class Node:
   def __init__(self, val, left = None, right = None):
     self.left = left
     self.right = right
@@ -811,7 +811,7 @@ function BFS() {
         <p>Now, a illustration of its instantiation:</p>
         <img alt="cant display" height={346} width={461} src={bt}/>
         <p>Notice anything interesting? The numbering of the nodes are actually the order theyre visited in with BFS. What happens is at whatever level we're currently sitting at, we iterate each through each node, process it, and then store is children in memory (a queue).</p>
-        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#time complexity is O(n), space complexity O(n)
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`#time complexity is O(n), space complexity O(n)
 def iterative_bfs(root):
 
  if not root:
@@ -865,7 +865,7 @@ function DFS() {
         <br/>
         <h4>Pre-Order, In-Order and Post-Order</h4>
         <p>First, lets define our tree structure:</p>
-        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`class Node:
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`class Node:
   def __init__(self, val, left = None, right = None):
     self.left = left
     self.right = right
@@ -873,7 +873,7 @@ function DFS() {
     <p>Now, a illustration of its instantiation:</p>
     <img alt="cant display" src={treeTraversal} width={"512"} height={"437"}></img>
     <p>Above we can see each color representing a different traversal (red: pre-order, green: in-order, blue: post-order). All however follow the same heuristic - go as deep as possible before backtracking. Now lets write them out:</p>
-    <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`def pre_order(root):                def in_order(root):                   def post_order(root):
+    <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`def pre_order(root):                def in_order(root):                   def post_order(root):
 
     if not root:                      if not root:                          if not root:                   
       return                            return                                return                                                                      
@@ -885,7 +885,7 @@ function DFS() {
     <br/>
         <h4>Iterative DFS</h4>
         <p>Something to be explored is the fact that all discussed traversals are done recursively. Implicitly, this means a stack data structure is used. If you wanted to use a stack explicitly however, you'd be best off performing DFS iteratively.</p>
-        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#O(n) time, O(n) space
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`#O(n) time, O(n) space
 def dfs_iterative(root):
 
   if not root:
@@ -935,15 +935,15 @@ function TwoHeaps() {
         <br/>
         <h4>Finding a Stream's Median</h4>
         <p>The median is the middle number in a sorted list of numbers. Naturally, middle indicies only exist when we have a odd length of values, so for even length lists, the median is the average of the middle two numbers.</p>
-        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`odd_length_stream = [1, 2, 3, 4, 5] --> #median is 3
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`odd_length_stream = [1, 2, 3, 4, 5] --> #median is 3
 
 even_length_stream = [1, 2, 3, 4, 5, 6] --> #median is (3 + 4) / 2 = 3.5`}</SyntaxHighlighter>
           <p>So how would two heaps help with this? Well imagine you were trying to find the median of a millions of numbers. With a regular list you would have to go through every element. Now, how would that time complexity change if our sorted list above was split in two, one in minimum and the other in maximum order?</p>
-<SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`max_heap = [3, 2, 1] and min_heap = [4, 5, 6] # --> (max_heap[0] +  min_heap[0]) / 2 = 3.5`}</SyntaxHighlighter>
+<SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`max_heap = [3, 2, 1] and min_heap = [4, 5, 6] # --> (max_heap[0] +  min_heap[0]) / 2 = 3.5`}</SyntaxHighlighter>
 <p>Notice anything? If we pop the head (max value) from max_heap, and pop the head (min value) from the min_heap, we retreive 3 and 4, the same values if it were a single list. The difference is we didnt have to scan the entire data stream, just pop(), giving us O(1) time. </p>
 <br/>
 <p>That was the median with an even total number of values. What if it were odd? We just pop() the head of the heap with a odd number of values.</p>
-<SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`max_heap = [2, 1] and min_heap = [3, 4, 5]
+<SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`max_heap = [2, 1] and min_heap = [3, 4, 5]
 
 #odd length heap has median value
 if len(max_heap) % 2 == 0:
@@ -990,7 +990,7 @@ function Backtracking() {
         <h4>Combinations with a distinct and duplicate list</h4>
         <p>Say we have a list of elements, nums = [1, 2, 3], and we want to find all the combinations without repeating any elements. That means at each element we have two choices: (1) add the element to the current array or (2) do not add it. Since both could lead to valid combinations, we can make two distinct lists with recursive calls. Producing [1] and [ ], we go to the next index and perform the same rule. This time however, it’s performed for all previously created arrays.</p>
         <img width="588" height="308" src={backtrack} alt='' />
-        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`combinations = []
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`combinations = []
 def backtrack_combinations(self, nums, curr_combo, count):
 
   if count == len(nums):
@@ -1006,7 +1006,7 @@ def backtrack_combinations(self, nums, curr_combo, count):
         <img width="580" height="240" src={backtrack1} alt='' />
         <p>What we can see here is that when given duplicates in our array we end up storing duplicate subsets also. So, the question is, how can we skip such routes in our decision tree? The answer is after sorting our duplicate list, we can then, during each “backtrack”, check if the next element is the same as the element last processed. If so, we can skip it, which skips visiting a duplicate route.</p>
         <img width="600" height="288" src={backtrack2} alt='' />
-        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`subsets = []
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`subsets = []
 nums.sort()
 def backtrack_combinations(self, nums, curr_subset, count):
     
@@ -1025,7 +1025,7 @@ def backtrack_combinations(self, nums, curr_subset, count):
     self.backtrack_combinations(nums, curr_subset, count + 1)`}</SyntaxHighlighter>
        <p>There is a final case to consider when it comes to combinations - when repetition is allowed. Whats new here is we stay at the same index until a backtrack is reached, and from there we visit the element next in our array.</p>
        <img width="560" height="350" src={backtrack4} alt='' />
-       <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`combinations = []
+       <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`combinations = []
 def backtrack_combinations(self, nums, target, curr_combo, count):
 
   if count == len(nums):
@@ -1042,7 +1042,7 @@ def backtrack_combinations(self, nums, target, curr_combo, count):
         <h4>Permutations with a distinct and duplicate list</h4>
         <p>Following the same logic as above, we can apply the backtracking rule to finding all permutations. The only difference is that instead of backtracking to visit branches without our current element, we backtrack to visit every other element remaining in our initial array.</p>
         <img width="512" height="352" src={backtrack3} alt='' />
-        <SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`permutations = []
+        <SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`permutations = []
 def backtrack_permutations(self, nums, curr_perm):
 
   if not nums:                      
@@ -1055,7 +1055,7 @@ def backtrack_permutations(self, nums, curr_perm):
       curr_perm.pop()`}</SyntaxHighlighter>
 
 <p>As we can see its very similar to the combinations procedure. So much so that when a duplicate input is given, we handle it in the same way:</p>
-<SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`permutations = []
+<SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`permutations = []
 nums.sort()
 def backtrack_permutations(self, nums, curr_per):
     
@@ -1113,7 +1113,7 @@ the right pointer ends at the greatest value less than target and the left point
 <br/>
 <img width="205" height="446" src={bs2} alt='' />
 <br/>
-<SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#time complexity is O(log n)
+<SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`#time complexity is O(log n)
 #space complexity is O(1)
 def binary_search(self, nums, target):
             
@@ -1139,7 +1139,7 @@ def binary_search(self, nums, target):
     <br/>
     <img width="222" height="496" src={bs4} alt='' />
     <br/>
-<SyntaxHighlighter className="codeBlocks" language={"python"} style={xcode}>{`#time complexity is O(log n)
+<SyntaxHighlighter className="codeBlocks" language={"python"} style={atomOneLight}>{`#time complexity is O(log n)
 #space complexity is O(1)
 def binary_search(self, nums, target):
     
