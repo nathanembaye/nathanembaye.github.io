@@ -276,6 +276,8 @@ function Miscellania() {
             <p>The old form of marriage, based on outdated social rules and gender roles, is fading. A new version is emerging—egalitarian, committed, and focused on children.</p>
             <a href="https://www.youtube.com/watch?v=ZtpWTJ7Jsh8"><i>Geohot</i></a>
             <p>Do it faster, do it better.</p>
+            <a href="http://www.phys.unm.edu/~tw/fas/yits/archive/bukowski_thebluebird.html"><i>Bluebird</i></a>
+            <p>Bukowski</p>
             <br/>
             <br/>
           </div>
@@ -405,11 +407,10 @@ function SlidingWindow() {
         <h1>sliding window</h1>
         <p className="date">aug 2, 2022</p>
         <br/>
-        <p><i>The sliding window technique applies to linear data structures like arrays, lists and strings. It improves the performance of algorithms trying to visit every substructure of an input. For any given window (contigous elements), there is an index that denotes the start of the window and an index that marks the end of the window. Typically using nested loops, O(n²), we’ll see how it can be optimized to O(n). Here are its three variations:</i></p>
+        <p><i>The sliding window technique applies to linear data structures like lists and strings. It improves the performance of algorithms trying to visit every substructure of an input. For any given window (contigous elements), there is an index that denotes the start of the window and an index that marks the end of the window. Typically using nested loops, O(n²), we’ll see how it can be optimized to O(n). Here are its three variations:</i></p>
         <ul className="listTitle">
         <li><h5>(1) Fixed Window Size</h5></li>
         <li><h5>(2) Dynamic Window Size</h5></li>
-        <li><h5>(3) Dynamic Window Size + Auxiliary Structure</h5></li>
         </ul>
         <br/>
         <h4>Fixed Window Size</h4>
@@ -420,7 +421,7 @@ function SlidingWindow() {
           <p>Now, lets say the fixed size is k = 3. How could we traverse <i>nums</i> for every window of length k?</p>
           <SyntaxHighlighter className="codeBlocks" 
           language={"python"}
-          style={atomOneLight}>{`#brue force O(n*k)
+          style={atomOneLight}>{`#brute force O(n*k)
 for i in range(len(nums)-k+1):
     for j in range(i, i + k):
         nums[j] #process window
@@ -458,9 +459,6 @@ for right in range(len(nums)):
           <br/>
           <br/>
           <br/>
-          <h4>Dynamic Window Size + Auxiliary Structure</h4>
-          <p>Similar to above, these types of questions require our window to dynamically grow and shrink. However, it differs in the way that computation requires data storage possibly up to the length of the input - which is where our auxiliary structure comes into play.</p>
-          <br/>
           <h4>When to use the Sliding Window?</h4>
           <ol className="listInfo">
           <li><p>When the input is an array, list or string</p></li>
@@ -485,7 +483,7 @@ function TwoPointers() {
         <h1>two pointers</h1>
         <p className="date">aug 25, 2022</p>
         <br/>
-        <p><i>The two pointer technique applies to (often sorted) linear data structures like arrays, lists and strings. It improves the performance of algorithms trying to visit every possible pair in such inputs. For any pair, there is a left pointer denoting the first element and a right pointer identifying the second. Typically done in O(n²) time with nested loops, we'll see how such pairings can be improved to O(n) time.</i></p>
+        <p><i>The two pointer technique applies to sorted linear data structures like lists and strings. It improves the performance of algorithms trying to visit every possible pair in such inputs. For any pair, there is a left pointer denoting the first element and a right pointer identifying the second. Typically done in O(n²) time with nested loops, we'll see how such pairings can be improved to O(n) time.</i></p>
         <ul className="listTitle">
         <li><h5>(1) Brute Force Pairs</h5></li>
         <li><h5>(2) Two Pointers with Sorted Array</h5></li>
@@ -520,7 +518,7 @@ while left < right:
           <br/>
           <br/>
           <h4>Two Pointers with Unsorted Array</h4>
-          <p>There is no tecehnique to necessarily be applied here. Rather, we just need to sort the array we're working with before applying the two pointer technique. Seeing as the time complexity of the method is O(n) time, its best to use a sorting algorithm that runs in the same time to experience no complexity difference. I'll leave it to your imagination which can be applied here.</p>
+          <p>There is no technique to necessarily be applied here. Rather, we just need to sort the array we're working with before applying the two pointer method. Since the typical sorting algoirthm runs in O(n log n), we wont get to O(n) but we do improve from O(n^2).</p>
         <br/>
         <br/>
         <h4>When to use Two Pointers?</h4>
