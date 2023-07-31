@@ -142,15 +142,15 @@ function Complexity() {
         <br/>
         <h1>computational complexity</h1>
         <p className="date">apr 9, 2022</p>
-        <p><i>Computational complexity is the estimate of computer resources an algorithm needs to complete a execution. In it there's a particular focus on two categories: time and space.</i></p>
+        <p><i>Computational complexity is the estimate of computer resources an algorithm needs to complete a execution. With it there's a particular focus on two categories: time and space.</i></p>
         <br/>
         <h3>time complexity</h3>
         <p>We should begin by saying time complexity is not the actual hours:minutes:seconds required to execute any particular piece of code. That depends on a myriad of factors like programming language, operating system and processing power.</p>
-        <p>Instead, time complexity describes how long an algorithm will take to execute with changes in its input size. More specifically, how it will increase or decrease based on how big or small the input data is. Why this alters an algorithm's lifetime is because it could change the number of operations being performed.</p>
+        <p>Instead, time complexity describes how long an algorithm will take to complete with changes in its input size. More specifically, how time will increase or decrease based on how big or small the input data is. Why this alters an algorithm's lifetime is because it could change the number of operations being performed.</p>
         <h5>constant time - O(1)</h5>
         <p>An algorithm is said to have constant time, O(1), when how many operations it performs is independent of input length. Simply -- it completes the same number of tasks no matter input size.</p>
         <h5>logarithmic time - O(log n)</h5>
-        <p>An algorithm is said to have logarithmic time, O(log n), when it begins processing input at its initial length but divides said data by a constant (usually two) each iteration until its less or equal to 1. This is most commonly seen with binary search trees.</p>
+        <p>An algorithm is said to have logarithmic time, O(log n), when it begins processing input at its initial length but divides said data by a constant (usually two) each iteration until its less than or equal to 1. This is most commonly seen with binary search trees.</p>
         <h5>linear time - O(n)</h5>
         <p>An algorithm is said to have linear time, O(n), when how long it takes to execute increases proportionally (1 to 1) with its input length. This occurs in cases when we have input data that needs to have every value inside it processed, and each of those assessments is constant, O(1). This growth can be understood as <i>cn</i>, where <i>c = 1</i> and  <i>n = input length</i>.</p>
         <h5>quadratic time - O(n<sup>2</sup>)</h5>
