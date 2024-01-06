@@ -111,7 +111,7 @@ function Notes() {
             <div className="bullet">
             <Link style={{ textDecoration: 'none' }} to="/complexity">computational complexity</Link>  
             <h5>09 Apr 2022</h5>  
-            <p>a fancy way of asking: how much work is it to run this algorithm?</p>
+            <p>a fancy way of asking: what does it cost to run this algorithm?</p>
             </div>
             <br/>
             <div className="bullet">
@@ -142,31 +142,25 @@ function Complexity() {
         <br/>
         <h1>computational complexity</h1>
         <p className="date">apr 9, 2022</p>
-        <p><i>Computational complexity is the estimate of computer resources an algorithm needs to complete a execution. With it there's a particular focus on two categories: time and space.</i></p>
+        <p><i>Computational complexity is the estimate of computer resources an algorithm needs to complete a execution. In it there's a particular focus on two categories: time and space.</i></p>
         <br/>
         <h3>time complexity</h3>
         <p>We should begin by saying time complexity is not the actual hours:minutes:seconds required to execute any particular piece of code. That depends on a myriad of factors like programming language, operating system and processing power.</p>
-        <p>Instead, time complexity describes how long an algorithm will take to complete with changes in its input size. More specifically, how time will increase or decrease based on how big or small the input data is. Why this alters an algorithm's lifetime is because it could change the number of operations being performed.</p>
-        <h5>constant time - O(1)</h5>
-        <p>An algorithm is said to have constant time, O(1), when how many operations it performs is independent of input length. Simply -- it completes the same number of tasks no matter input size.</p>
-        <h5>logarithmic time - O(log n)</h5>
-        <p>An algorithm is said to have logarithmic time, O(log n), when it begins processing input at its initial length but divides said data by a constant (usually two) each iteration until its less than or equal to 1. This is most commonly seen with binary search trees.</p>
-        <h5>linear time - O(n)</h5>
-        <p>An algorithm is said to have linear time, O(n), when how long it takes to execute increases proportionally (1 to 1) with its input length. This occurs in cases when we have input data that needs to have every value inside it processed, and each of those assessments is constant, O(1). This growth can be understood as <i>cn</i>, where <i>c = 1</i> and  <i>n = input length</i>.</p>
-        <h5>quadratic time - O(n<sup>2</sup>)</h5>
-        <p>An algorithm is said to have quadratic time, O(n<sup>2</sup>), when the execution time increases proportionally to the squared size of the input length. This occurs in cases when we have input data that needs to have every value inside it processed, but each of those assessments must process the entire length of the original input data with it. These types of algorithms are most commonly seen with nested for loops.</p>
-        <br/>
+        <p>Instead, time complexity describes how the number of operations an algorithm performs changes with its input size. If our input doubles in size, do the number of operations performed also double? Does it stay the same? What if our input get smaller?</p>
         <br/>
         <h3>space complexity</h3>
-        <p>The space complexity of an algorithm is the amount of memory it requires to execute. Similar to time complexity, it measures how much storage is used relative to changes in the size of input data.</p>
+        <p>The space complexity of an algorithm is the amount of memory it requires for a run. Similar to time complexity, this is  measured relative to changes in the size of input data.</p>
         <p>It’s sum is <i>space complexity = auxiliary space + input space.</i></p>
         <p>Auxiliary space is defined as all the memory used inside the algorithm itself (think variables, loops, data structures, etc). In contrast, input space is the memory used for the data that goes into the algorithm for processing. Differentiating that, when comparing different algorithms' space complexity, we would only consider auxiliary space since they’re solutions accepting the same input.</p>
-        <h5>constant space - O(1)</h5>
-        <p>An algorithm is said to use constant space when the amount of memory used each execution remains the same, no matter the size of the input. A telltale of this is when only booleans and integers are ever stored.</p> 
-        <h5>linear space - O(n)</h5>
-        <p>An algorithm is said to use linear space when the amount of memory used for an execution, could take up to the length of the given input. A giveaway for this is the requirement of a linear data structure, like list or a hash table.</p>         
         <br/>
-        <br/>
+        <h5>constant operation - O(1)</h5>
+        <p>An algorithm is said to have constant time or space, O(1), when the resources it uses is independent of input. Simply -- it completes the same number of tasks and uses the same amount of memory no matter the input size.</p>
+        <h5>logarithmic operation - O(log n)</h5>
+        <p>An algorithm is said to be logarithmic, O(log n), when it begins processing an input at its initial length but divides said data by a constant (usually two) each iteration until its less than or equal to 1.</p>
+        <h5>linear operation - O(n)</h5>
+        <p>An algorithm is said to have linear time, O(n), when how long it takes and the memory it uses increases proportionally (1 to 1) with its input size. This occurs in cases when we have input data that needs to have every value inside it processed, and each of those assessments is constant, O(1). This growth can be understood as <i>cn</i>, where <i>c = 1</i> and  <i>n = input length</i>.</p>
+        <h5>quadratic operation - O(n<sup>2</sup>)</h5>
+        <p>An algorithm is said to be quadratic, O(n<sup>2</sup>), when the cost (operations and memory) increases proportionally to the squared size of the input length. This occurs in cases when we have input data that needs to have every value inside it processed, but each of those assessments must process the entire length of the original input data with it.</p>
         <br/>
         <br/>
         <h3>big-o chart</h3>
