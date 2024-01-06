@@ -149,7 +149,7 @@ function Complexity() {
         <p>Instead, time complexity describes how the number of operations an algorithm performs changes with its input size. If our input doubles in size, do the number of operations performed also double? Does it stay the same? What if our input get smaller?</p>
         <br/>
         <h3>space complexity</h3>
-        <p>The space complexity of an algorithm is the amount of memory it requires for a run. Similar to time complexity, this is  measured relative to changes in the size of input data.</p>
+        <p>The space complexity of an algorithm is the amount of memory it requires for a run. Similar to time complexity, this is  measured relative to changes in input size.</p>
         <p>It’s sum is <i>space complexity = auxiliary space + input space.</i></p>
         <p>Auxiliary space is defined as all the memory used inside the algorithm itself (think variables, loops, data structures, etc). In contrast, input space is the memory used for the data that goes into the algorithm for processing. Differentiating that, when comparing different algorithms' space complexity, we would only consider auxiliary space since they’re solutions accepting the same input.</p>
         <br/>
