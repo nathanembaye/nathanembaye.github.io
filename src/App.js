@@ -142,7 +142,7 @@ function Complexity() {
         <br/>
         <h1>computational complexity</h1>
         <p className="date">apr 9, 2022</p>
-        <p><i>Computational complexity is the estimate of computer resources an algorithm needs to complete a execution. In it there's a particular focus on two categories: time and space.</i></p>
+        <p><i>Computational complexity is the estimate of computer resources an algorithm needs to complete a run. In it there's a particular focus on two categories: time and space.</i></p>
         <br/>
         <h3>time complexity</h3>
         <p>We should begin by saying time complexity is not the actual hours:minutes:seconds required to execute any particular piece of code. That depends on a myriad of factors like programming language, operating system and processing power.</p>
@@ -272,6 +272,8 @@ function Miscellania() {
             <p>Do it faster, do it better.</p>
             <a href="http://www.phys.unm.edu/~tw/fas/yits/archive/bukowski_thebluebird.html"><i>Bluebird</i></a>
             <p>Bukowski</p>
+            <a href="https://www.youtube.com/watch?v=RWsx1X8PV_A"><i>What is greed?</i></a>
+            <p>And just tell me, where in the world do you find these angels, that will organize society for us? I don't even trust you to do that.</p>
             <br/>
             <br/>
           </div>
