@@ -113,7 +113,6 @@ function Notes() {
             <h5>09 Apr 2022</h5>  
             <p>a fancy way of asking: what does it cost to run this algorithm?</p>
             </div>
-            <br/>
             <div className="bullet">
             <Link style={{ textDecoration: 'none' }} to="/miscellania">miscellania</Link>  
             <h5>15 Apr 2022</h5>          
@@ -156,11 +155,11 @@ function Complexity() {
         <h5>constant operation - O(1)</h5>
         <p>An algorithm is said to have constant time or space, O(1), when the resources it uses is independent of input. Simply -- it completes the same number of tasks and uses the same amount of memory no matter the input size.</p>
         <h5>logarithmic operation - O(log n)</h5>
-        <p>An algorithm is said to be logarithmic, O(log n), when it begins processing an input at its initial length but divides said data by a constant (usually two) each iteration until its less than or equal to 1.</p>
+        <p>An algorithm is said to be logarithmic, O(log n), when the time and space used begins at the inputs initial length, but is divided by some constant (usually two) each iteration until its less than or equal to 1.</p>
         <h5>linear operation - O(n)</h5>
         <p>An algorithm is said to have linear time, O(n), when how long it takes and the memory it uses increases proportionally (1 to 1) with its input size. This occurs in cases when we have input data that needs to have every value inside it processed, and each of those assessments is constant, O(1). This growth can be understood as <i>cn</i>, where <i>c = 1</i> and  <i>n = input length</i>.</p>
         <h5>quadratic operation - O(n<sup>2</sup>)</h5>
-        <p>An algorithm is said to be quadratic, O(n<sup>2</sup>), when the cost (operations and memory) increases proportionally to the squared size of the input length. This occurs in cases when we have input data that needs to have every value inside it processed, but each of those assessments must process the entire length of the original input data with it.</p>
+        <p>An algorithm is said to be quadratic, O(n<sup>2</sup>), when the cost (operations and space) increases proportionally to the squared size of the input length. This occurs in cases when we have input data that needs to have every value inside it processed, but each of those assessments must process the entire length of the original input data with it.</p>
         <br/>
         <br/>
         <h3>big-o chart</h3>
@@ -203,7 +202,7 @@ function DataLake() {
         <p><i>The early big data tools and public cloud laid the foundation for today’s data ecosystem. The modern data landscape—and data engineering as we know it now—would not exist without these innovations."</i></p>
         </div>
         <br/>
-        <p>So, what does this mean? Data warehouses were the standard central data repository until something more cost-efficient, scalable, available and reliable was made. Once compute and storage became cheap and distributed the standard became data lakes (with data warehouses only complimenting them). And today, we are seeing even further development with the data lakehouse.</p>
+        <p>So, what does this mean? Data warehouses were the standard central data repository until compute and storage became cheap and distributed. The standard then became data lakes and data warehouses complimenting one another in the same ecosystem. And today, we see some push for the data lakehouse (discussed later) to become the next generation data warehouse.</p>
         <br/>
         <br/>
         <h3>data warehouse</h3>
@@ -221,12 +220,12 @@ function DataLake() {
         <p>The curated zone is for storing data that’s had business logic applied to it. These transformations come from the business requirements defined by a project's stakeholders. The curated schema is ultimately what data customers consume.</p>
         <br/>
         <br/>
-        <h3>two-tier data architecture</h3>
-        <p>This is what's most commonly seen today. It is when both the data warehouse and the data lake are side-by-side in one ecosystem. Typically, what happens here is data is ETL'd from its source to the data lake and once again ETL'd into the data warehouse for business intelligence and data analytics.</p>
-        <br/>
-        <br/>
         <h3>data lakehouse</h3>
         <p>A data lakehouse is a hybrid of the data warehouse and the data lake. It uses blob storage, so it benefits from the data lake's cost-efficiency and scale. However, it also allows the ACID transactions that a warehouse does. This is possible due to a metdata layer sitting atop the aforementioned cloud storage. This open architecture is most commonly seen with parquet or delta format. Databricks recently publshed a paper on this, the <a href="http://cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf">data lakehouse</a>.</p>
+        <br/>
+        <br/>
+        <h3>two-tier data architecture</h3>
+        <p>This is what's most commonly seen today. It is when both the data warehouse and the data lake are side-by-side in one ecosystem. Typically, what happens here is data is ETL'd from its source to the data lake and once again ETL'd into the data warehouse for business intelligence and data analytics.</p>
         <br/>
         <br/>
         <br/>
