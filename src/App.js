@@ -121,7 +121,7 @@ function Notes() {
             <div className="bullet">
             <Link style={{ textDecoration: 'none' }} to="/datalake">data lake</Link>  
             <h5>14 May 2023</h5>          
-            <p>{'a modern data architecture'} </p>
+            <p>{'a modern data repository'} </p>
             </div>
             <br/>
             <br/>
