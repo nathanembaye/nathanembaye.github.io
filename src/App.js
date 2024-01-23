@@ -49,6 +49,7 @@ class App extends React.Component {
             <Route path="/backtracking" title="backtracking" element={<Backtracking />} />
             <Route path="/binarysearch" title="binarysearch" element={<BinarySearch />} />
             <Route path="/datalake" title="datalake" element={<DataLake />} />
+            <Route path="/quotes" title="quotes" element={<Quotes />} />
         </Routes>
     );
   }
@@ -174,6 +175,36 @@ function Complexity() {
   </div>); 
 }
 
+function Quotes() {
+  ChangeTitle("quotes")
+  return ( <div><Menu/>
+      <div className="article">
+        <div className="articleDescripion">
+        <br/>
+        <br/>
+        <h1>quotes</h1>
+        <p className="date">jan 20, 2024</p>
+        <br/>
+        <br/>
+        <p>“I study everybody, extensively, and then I come up with their patterns. I figure out the way they flinch, I figure out their first favourite punch, their second favourite punch, their third. Their favourite combinations, the setups to their takedowns, when they clinch what side their head is going to be on. Literally, everything. I know everything about every opponent. What side they’re going to shoot, whether its going to be head inside, or head outside, and what I’m going to do about that. I figure out everything. Why they shoot, what area of the cage they like to shoot…everything.”</p>
+        <p>- Jon Jones</p>
+        <br/>
+        <p>"Civilization is not inherited; it has to be learned and earned by each generation anew; if the transmission should be interrupted for one century, civilization would die, and we should be savages again."</p>
+        <p>- Will Durant</p>
+        <br/>
+        <p>“Half the harm that is done in this world is due to people who want to feel important. They don't mean to do harm -- but the harm does not interest them. Or they do not see it, or they justify it because they are absorbed in the endless struggle to think well of themselves.”</p>
+        <p>- T.S. Eliot</p>
+        <br/>
+        <p>“The clocks stopped at one seventeen. There was a long shear of bright light, then a series of low concussions. I think it's October but I can't be sure. I haven't kept a calender for years. Each day is more gray than the one before. It is cold and growing colder as the world slowly dies. No animals have survived, and all the crops are long gone. Someday all the trees in the world will fall. The roads are peopled by refugees towing carts, and gangs carrying weapons, looking for fuel and food. Within a year there were fires on the ridges and deranged chanting. There has been cannibalism. Cannibalism is the great fear. Mostly I worry about food, always food. Food and the cold and our shoes. Sometimes I tell the boy old stories of courage and justice, difficult as they are to remember. All I know is the child is my warrant, and if he is not the word of God, then God never spoke.”</p>
+        <p>- The Road screenplay by Joe Penhall, from the novel by Cormac McCarthy</p>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        </div>
+      </div>
+  </div>); 
+}
 
 function DataLake() {
   ChangeTitle("data lake")
