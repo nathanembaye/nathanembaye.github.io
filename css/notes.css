@@ -7,6 +7,7 @@
     display: block;
 }
 
+
 .article h1 {
     text-align: left;
     font-weight: 100;
@@ -20,6 +21,7 @@
     padding-top: 1%;
 }
 
+
 .content h5 {
     text-align: right;
     float: right;
@@ -30,14 +32,17 @@
     margin-top: 0%;
 }
 
+
 .content a {
     color:#e0218a;
     text-decoration: none;
 }
 
+
 .content a:hover {
     color:#777;
 }
+
 
 .content p {
     color:#777;
