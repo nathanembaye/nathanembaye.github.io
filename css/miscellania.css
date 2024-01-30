@@ -7,6 +7,7 @@
     display: block;
 }
 
+
 .article h1 {
     text-align: left;
     font-weight: 100;
@@ -24,6 +25,7 @@
     color:#e0218a;
     text-decoration: underline;
 }
+
 
 .links p {
     font-weight: 100;
