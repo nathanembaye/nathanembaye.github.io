@@ -1,0 +1,52 @@
+.about {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+    max-width: 600px;
+    min-height: 20vh;
+    margin-top: 1%;
+
+ 
+}
+
+
+.left {
+    float: left;
+    max-width: 28%;
+    margin-top: 4%;
+ 
+}
+
+.right {
+    font-family: system-ui;
+    float: right;
+    max-width: 68%;
+}
+
+.left img {
+    border-radius: 50%;
+    height: 75%;
+    width: 75%;
+}
+
+
+.right h2 {
+    color:#e0218a;
+    text-align: left;
+    font-weight: 100;
+    font-family: "Source Sans Pro", sans-serif, helvetica;
+    margin-bottom: -2%;
+}
+
+.right p {
+    text-align: left;
+    font-size: .90em;
+    line-height: 1.34em;
+}
+
+.right a {
+    float: left;
+    text-align: left;
+    min-width: 10%;
+}
