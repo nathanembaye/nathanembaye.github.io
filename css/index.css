@@ -3,6 +3,7 @@ html, body {
     height: 100%;
 }
 
+
 .home {
     font-family: "Source Sans Pro", sans-serif, helvetica;
     display: flex;
@@ -20,17 +21,21 @@ html, body {
     text-align: left;
 }
 
+
 .home span {
     color: #777;
 }
+
 
 .home ul {
     padding-left: 0;
 }
 
+
 .home li {
     list-style-type: none;
 }
+
 
 .home h1 {
     color:#e0218a;
@@ -38,12 +43,13 @@ html, body {
     margin-bottom: 0%;
 }
 
+
 .home a {
     color:#777;
     text-decoration: none;
 }
 
+
 .home a:hover {
     color:#e0218a;
 }
-
