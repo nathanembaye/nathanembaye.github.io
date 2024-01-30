@@ -7,21 +7,23 @@
     display: block;
 }
 
+
 .article h1 {
     text-align: left;
     font-weight: 100;
 }
+
 
 .article h3 {
     text-align: left;
     color: #e0218a;
 }
 
+
 .article p {
     text-align: left;
     font-size: 15px;
 }
-
 
 
 .article h4 {
@@ -30,14 +32,17 @@
     font-weight: 100;
 }
 
+
 .article h5 {
     text-align: left;
     color: #e0218a;
 }
 
+
 .excerpt p {
     font-family: 'Times New Roman', Times, serif;
 }
+
 
 .excerpt i {
     font-weight: 100;
