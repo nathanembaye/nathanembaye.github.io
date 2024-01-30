@@ -8,10 +8,12 @@
     
 }
 
+
 .article h1 {
     text-align: left;
     font-weight: 100;
 }
+
 
 .article p {
     color:#777;
@@ -22,6 +24,7 @@
     font-family: system-ui;
     text-align: left;
 }
+
 
 .quote span {
     color:#e0218a;
