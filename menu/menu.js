@@ -21,6 +21,8 @@ else {
   favicon = document.write("<link rel=\"icon\" type=\"image\/x-icon\" href=\"..\/media\/favicon.ico\">");
 }
 
+console.log(file)
+console.log(favicon)
 
 document.write("<!doctype html>");
 document.write("<html>");
