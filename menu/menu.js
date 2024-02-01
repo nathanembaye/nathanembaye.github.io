@@ -1,4 +1,7 @@
-  if (window.location.href.includes("complexity") || window.location.href.includes("quotes") || window.location.href.includes("data") || window.location.href.includes("miscellania")){
+  
+  link = window.location.href
+
+  if (link.includes("complexity") || link.includes("quotes") || link.href.includes("data") || link.includes("miscellania")){
     styles = "    <link type=\"text\/css\" rel=\"stylesheet\" href=\"..\/..\/menu\/index.css\" \/>"
     favicon = "    <link rel=\"icon\" type=\"image\/x-icon\" href=\"..\/..\/media\/favicon.ico\">"
     home = "            <li><a href=\"..\/..\/\">home<\/a><\/li>"
