@@ -1,8 +1,8 @@
 //highlight navbar selection based on current url
 
 if (window.location.href.includes("about")) {
-    about = "            <li><a href=\"..\/about\/index.html\" style=\"color:#e0218a;\">about<\/a><\/li>"
-    notes = "            <li><a href=\"..\/notes\/index.html\">notes<\/a><\/li>"
+    about = "            <li><a href=\"..\/about\/\" style=\"color:#e0218a;\">about<\/a><\/li>"
+    notes = "            <li><a href=\"..\/notes\/\">notes<\/a><\/li>"
   }
 
 else {
@@ -12,13 +12,13 @@ else {
 
  
 if (window.location.href.includes("complexity") || window.location.href.includes("quotes") || window.location.href.includes("data") || window.location.href.includes("miscellania")){
-  file = document.write("<link type=\"text\/css\" rel=\"stylesheet\" href=\"..\/..\/menu\/index.css\" \/>");
-  favicon = document.write("<link rel=\"icon\" type=\"image\/x-icon\" href=\"..\/..\/media\/favicon.ico\">");
+  file = "<link type=\"text\/css\" rel=\"stylesheet\" href=\"..\/..\/menu\/index.css\" \/>"
+  favicon = "<link rel=\"icon\" type=\"image\/x-icon\" href=\"..\/..\/media\/favicon.ico\">"
 }
 
 else {
-  file = document.write("<link type=\"text\/css\" rel=\"stylesheet\" href=\"..\/menu\/index.css\" \/>");
-  favicon = document.write("<link rel=\"icon\" type=\"image\/x-icon\" href=\"..\/media\/favicon.ico\">");
+  file = "<link type=\"text\/css\" rel=\"stylesheet\" href=\"..\/menu\/index.css\" \/>"
+  favicon = "<link rel=\"icon\" type=\"image\/x-icon\" href=\"..\/media\/favicon.ico\">"
 }
 
 document.write("<!doctype html>");
@@ -32,7 +32,7 @@ document.write("  <body>");
 document.write("    <div class=\"menu\">");
 document.write("        <h2>&lambda;<\/h2>");
 document.write("        <ul>");
-document.write("            <li><a href=\"..\/index.html\">home<\/a><\/li>");
+document.write("            <li><a href=\"..\/\">home<\/a><\/li>");
 document.write(about);
 document.write(notes);
 document.write("            <li><a href=\"..\/media\/resume.pdf\">resume<\/a><\/li>");
