@@ -1,0 +1,55 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+
+.home {
+    font-family: "Source Sans Pro", sans-serif, helvetica;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 70vh;
+    font-size: 1em;
+    line-height: 1.34em;
+}
+
+
+.table {
+    display: inline-block;
+    text-align: left;
+}
+
+
+.home span {
+    color: #777;
+}
+
+
+.home ul {
+    padding-left: 0;
+}
+
+
+.home li {
+    list-style-type: none;
+}
+
+
+.home h1 {
+    color:#e0218a;
+    font-weight: 100;
+    margin-bottom: 0%;
+}
+
+
+.home a {
+    color:#777;
+    text-decoration: none;
+}
+
+
+.home a:hover {
+    color:#e0218a;
+}
