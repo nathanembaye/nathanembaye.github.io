@@ -1,0 +1,39 @@
+.article {
+    font-family: "Trebuchet MS",sans-serif;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+}
+
+
+.article h1 {
+    text-align: left;
+    font-weight: 100;
+}
+
+
+.article h3 {
+    text-align: left;
+    color: #e0218a;
+}
+
+
+.article p {
+    text-align: left;
+    font-size: 15px;
+}
+
+
+.article h4 {
+    text-align: left;
+    color:#777;
+    font-weight: 100;
+}
+
+
+.article h5 {
+    text-align: left;
+    color: #e0218a;
+}
