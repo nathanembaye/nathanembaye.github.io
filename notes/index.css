@@ -5,7 +5,6 @@
     margin-right: auto;
     text-align: center;
     display: block;
-    
 }
 
 
@@ -15,17 +14,38 @@
 }
 
 
-.article p {
+.content {
+    text-align: left;
+    border-top: 1px solid #777;
+    align-items: flex-start;
+    padding-top: 1%;
+}
+
+
+.content h5 {
+    text-align: right;
+    float: right;
+    color:#e0218a;
+    text-decoration: none;
+    width: 20%;
+    font-weight: 100;
+    margin-top: 0%;
+}
+
+
+.content a {
+    color:#e0218a;
+    text-decoration: none;
+}
+
+
+.content a:hover {
     color:#777;
 }
 
 
-.quote {
-    font-family: system-ui;
-    text-align: left;
-}
-
-
-.quote span {
-    color:#e0218a;
+.content p {
+    color:#777;
+    font-weight: 100;
+    font-size: 15px;
 }
