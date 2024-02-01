@@ -1,13 +1,13 @@
 //highlight navbar selection based on current url
 
 if (window.location.href.includes("about")) {
-    about = "            <li><a href=\"..\/about\/index.html\" style=\"color:#e0218a;\">about<\/a><\/li>"
-    notes = "            <li><a href=\"..\/notes\/index.html\">notes<\/a><\/li>"
+    about = "            <li><a href=\"..\/about\/\" style=\"color:#e0218a;\">about<\/a><\/li>"
+    notes = "            <li><a href=\"..\/notes\/\">notes<\/a><\/li>"
   }
 
 else {
-    about = "            <li><a href=\"..\/about\/index.html\">about<\/a><\/li>"
-    notes = "            <li><a href=\"..\/notes\/index.html\" style=\"color:#e0218a;\">notes<\/a><\/li>"
+    about = "            <li><a href=\"..\/about\/\">about<\/a><\/li>"
+    notes = "            <li><a href=\"..\/notes\/\" style=\"color:#e0218a;\">notes<\/a><\/li>"
   }
 
 
@@ -22,7 +22,7 @@ document.write("  <body>");
 document.write("    <div class=\"menu\">");
 document.write("        <h2>&lambda;<\/h2>");
 document.write("        <ul>");
-document.write("            <li><a href=\"..\/index.html\">home<\/a><\/li>");
+document.write("            <li><a href=\"..\/\">home<\/a><\/li>");
 document.write(about);
 document.write(notes);
 document.write("            <li><a href=\"..\/media\/resume.pdf\">resume<\/a><\/li>");
