@@ -1,0 +1,39 @@
+.menu {
+    font-family: "Source Sans Pro", sans-serif, helvetica;
+    border-bottom: 1px solid #e0218a;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+}
+
+
+.menu h2 {
+    color:#e0218a;
+    font-weight: 100;
+}
+
+
+.menu ul {   
+    display: flex;
+    padding-left: 0%;
+}
+
+
+.menu li {
+    list-style-type: none;    
+    display: inline-block;
+    width: 20%;
+}
+
+
+.menu a {
+    text-decoration: none;
+    color:#777;
+}
+
+
+.menu a:hover {
+    color:#e0218a;
+}
