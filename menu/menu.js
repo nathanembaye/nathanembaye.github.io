@@ -10,7 +10,7 @@ else {
     notes = "            <li><a href=\"..\/notes\/\" style=\"color:#e0218a;\">notes<\/a><\/li>"
   }
 
-console.log('<link type="text/css" rel="stylesheet" href=' + window.location.host + "menu/index.css" + '/>')
+console.log('<link type="text/css" rel="stylesheet" href=' + window.location.hostname + "menu/index.css" + '/>')
 document.write("<!doctype html>");
 document.write("<html>");
 document.write("  <head>");
