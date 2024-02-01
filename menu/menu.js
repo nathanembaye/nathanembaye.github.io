@@ -10,11 +10,11 @@ else {
     notes = "            <li><a href=\"..\/notes\/\" style=\"color:#e0218a;\">notes<\/a><\/li>"
   }
 
-
+console.log('<link type="text/css" rel="stylesheet" href=' + window.location.host + "menu/index.css" + '/>')
 document.write("<!doctype html>");
 document.write("<html>");
 document.write("  <head>");
-document.write("    <link type=\"text\/css\" rel=\"stylesheet\" href=\"..\/menu\/index.css\" \/>");
+document.write('<link type="text/css" rel="stylesheet" href=' + window.location.host + "menu/index.css" + '/>');
 document.write("    <link rel=\"icon\" type=\"image\/x-icon\" href=\"..\/media\/favicon.ico\">");
 document.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" \/>");
 document.write("  <\/head>");
