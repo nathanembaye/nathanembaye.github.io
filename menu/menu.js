@@ -1,7 +1,7 @@
   
   link = window.location.href
 
-  if (link.includes("complexity") || link.includes("quotes") || link.href.includes("data") || link.includes("miscellania")){
+  if (link.includes("complexity") || link.includes("quotes") || link.includes("data") || link.includes("miscellania")){
     styles = "    <link type=\"text\/css\" rel=\"stylesheet\" href=\"..\/..\/menu\/index.css\" \/>"
     favicon = "    <link rel=\"icon\" type=\"image\/x-icon\" href=\"..\/..\/media\/favicon.ico\">"
     home = "            <li><a href=\"..\/..\/\">home<\/a><\/li>"
@@ -18,7 +18,7 @@
     favicon = "    <link rel=\"icon\" type=\"image\/x-icon\" href=\"..\/media\/favicon.ico\">"
 
     //highlight about in navbar
-    if (window.location.href.includes("about")) {
+    if (link.includes("about")) {
       about = "            <li><a href=\"..\/about\/\" style=\"color:#e0218a;\">about<\/a><\/li>"
       notes = "            <li><a href=\"..\/notes\/\">notes<\/a><\/li>" 
     }
