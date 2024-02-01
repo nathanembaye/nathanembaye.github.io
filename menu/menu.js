@@ -14,7 +14,7 @@ console.log('<link type="text/css" rel="stylesheet" href=' + window.location.hos
 document.write("<!doctype html>");
 document.write("<html>");
 document.write("  <head>");
-document.write('<link type="text/css" rel="stylesheet" href=' + window.location.host + "menu/index.css" + '/>');
+document.write('<link type="text/css" rel="stylesheet" href=' + window.location.hostname + "menu/index.css" + '/>');
 document.write("    <link rel=\"icon\" type=\"image\/x-icon\" href=\"..\/media\/favicon.ico\">");
 document.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" \/>");
 document.write("  <\/head>");
