@@ -6,8 +6,8 @@ if (window.location.href.includes("about")) {
   }
 
 else {
-    about = "            <li><a href=\"..\/about\/index.html\">about<\/a><\/li>"
-    notes = "            <li><a href=\"..\/notes\/index.html\" style=\"color:#e0218a;\">notes<\/a><\/li>"
+    about = "            <li><a href=\"..\/about\/\">about<\/a><\/li>"
+    notes = "            <li><a href=\"..\/notes\/\" style=\"color:#e0218a;\">notes<\/a><\/li>"
   }
 
  
