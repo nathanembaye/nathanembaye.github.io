@@ -49,5 +49,11 @@
 .right a {
     float: left;
     text-align: left;
-    min-width: 10%;
+    min-width: 8%;
+}
+
+@media (max-width: 750px){
+    .right a{
+        min-width: 10%;
+    }
 }
