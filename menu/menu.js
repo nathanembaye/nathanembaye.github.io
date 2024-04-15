@@ -7,13 +7,13 @@
     home = "            <li><a href=\"..\/..\/\">home<\/a><\/li>"
     about = "            <li><a href=\"..\/..\/about\/\">about<\/a><\/li>"
     notes = "            <li><a href=\"..\/..\/notes\/\" style=\"color:#e0218a;\">notes<\/a><\/li>"
-    resume = "            <li><a href=\"..\/..\/media\/resume.pdf\">resume<\/a><\/li>"
+    resume = "            <li><a href=\"..\/..\/media\/Resume.pdf\">resume<\/a><\/li>"
   }
 
   else {
 
     home = "            <li><a href=\"..\/\">home<\/a><\/li>"
-    resume = "            <li><a href=\"..\/media\/resume.pdf\">resume<\/a><\/li>"
+    resume = "            <li><a href=\"..\/media\/Resume.pdf\">resume<\/a><\/li>"
     styles = "    <link type=\"text\/css\" rel=\"stylesheet\" href=\"..\/menu\/index.css\" \/>"
     favicon = "    <link rel=\"icon\" type=\"image\/x-icon\" href=\"..\/media\/favicon.ico\">"
 
