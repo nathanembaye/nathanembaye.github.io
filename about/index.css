@@ -102,7 +102,16 @@
 
 
 @media (max-width: 750px){
-    .right a{
-        min-width: 10%;
+    .githubIcon {
+        min-width: 13%;
+        width: 23px;
+        height: 23px;
+        background-size: 23px;
+    }
+    
+    .linkedinIcon {
+        width: 23px;
+        height: 23px;
+        background-size: 23px;
     }
 }

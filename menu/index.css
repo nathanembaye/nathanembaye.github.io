@@ -91,3 +91,12 @@
 .dark-mode .menu .highlightLink {
     color: burlywood;
 }
+
+
+@media (max-width: 750px){
+    .mode {
+        height: 23px;
+        width: 23px;
+        background-size: 23px;
+    }
+}
