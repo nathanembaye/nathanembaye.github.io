@@ -60,7 +60,8 @@
     width: 25px;
     height: 25px;
     float: left;
-    min-width: 8%;
+    min-width: 10%;
+    background-size: 25px;
 }
 
 .linkedinIcon {
@@ -69,7 +70,9 @@
     width: 25px;
     height: 25px;
     float: left;
+    background-size: 25px;
 }
+
 
 .githubIcon:hover {
     background-image: url('../media/github2.png');
@@ -90,11 +93,11 @@
 }
 
 .dark-mode .githubIcon:hover {
-    background-image: url('../media/githubYellow.png');
+    background-image: url('../media/githubBurly.png');
 }
 
 .dark-mode .linkedinIcon:hover {
-    background-image: url('../media/linkedinYellow.png');
+    background-image: url('../media/linkedinBurly.png');
 }
 
 
