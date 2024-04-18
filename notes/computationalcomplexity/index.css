@@ -37,3 +37,29 @@
     text-align: left;
     color: #e0218a;
 }
+
+.article {
+    font-family: "Trebuchet MS",sans-serif;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+}
+
+ 
+.dark-mode {
+    color: white;
+}
+
+.dark-mode .article h3 {
+    color: burlywood;
+}
+
+.dark-mode .article h4 {
+    color:burlywood;
+}
+
+.dark-mode .article h5 {
+    color: burlywood;
+}

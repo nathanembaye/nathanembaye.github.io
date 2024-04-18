@@ -4,7 +4,7 @@
     <title>data lake</title>
     <link type="text/css" rel="stylesheet" href="index.css" />
     <link rel="icon" type="image/x-icon" href="../../../media/favicon.ico">
-    <script src="../../../menu/menu.js"></script>
+    <script src="../../menu/menu.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
@@ -80,7 +80,7 @@
         <p>The curated zone is for storing data that’s had business logic applied to it. These transformations come from the business requirements defined by a project's stakeholders. The curated schema is ultimately what data customers consume.</p>
         <br/>
         <h3>data lakehouse</h3>
-        <p>A data lakehouse is a hybrid of the data warehouse and the data lake. It uses blob storage, so it benefits from the data lake's cost-efficiency and scale. However, it also allows the ACID transactions that a warehouse does. This is possible due to a metdata layer sitting atop the aforementioned cloud storage. This open architecture is most commonly seen with parquet or delta format. Databricks recently publshed a paper on this, the <a href="http://cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf" style="color: #e0218a;">data lakehouse</a>.</p>
+        <p>A data lakehouse is a hybrid of the data warehouse and the data lake. It uses blob storage, so it benefits from the data lake's cost-efficiency and scale. However, it also allows the ACID transactions that a warehouse does. This is possible due to a metdata layer sitting atop the aforementioned cloud storage. This open architecture is most commonly seen with parquet or delta format. Databricks recently publshed a paper on this, the <a href="http://cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf">data lakehouse</a>.</p>
         <br/>
         <h3>two-tier data architecture</h3>
         <p>This is what's most commonly seen today. It is when both the data warehouse and the data lake are side-by-side in one ecosystem. Typically, what happens here is data is ETL'd from its source to the data lake and once again ETL'd into the data warehouse for business intelligence and data analytics.</p>

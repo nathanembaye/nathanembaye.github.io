@@ -44,8 +44,25 @@
 }
 
 
+.dark-mode .article h1 {
+    color: white;
+}
+
 .content p {
     color:#777;
     font-weight: 100;
     font-size: 15px;
+}
+
+
+.dark-mode .content a {
+    color: burlywood;
+}
+
+.dark-mode .content h5 {
+    color: burlywood;
+}
+
+.dark-mode .content p {
+    color: white;
 }

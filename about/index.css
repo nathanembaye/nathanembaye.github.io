@@ -46,11 +46,57 @@
 }
 
 
-.right a {
+.dark-mode .right h2 {
+    color: burlywood;
+}
+
+.dark-mode {
+    color: white;
+}
+
+.githubIcon {
+    background-image: url('../media/github.png');
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
     float: left;
-    text-align: left;
     min-width: 8%;
 }
+
+.linkedinIcon {
+    background-image: url('../media/linkedin.png');
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    float: left;
+}
+
+.githubIcon:hover {
+    background-image: url('../media/github2.png');
+    cursor: pointer;
+}
+
+.linkedinIcon:hover {
+    background-image: url('../media/linkedin2.png');
+    cursor: pointer;
+}
+
+.dark-mode .githubIcon {
+    background-image: url('../media/githubWhite.png');
+}
+
+.dark-mode .linkedinIcon {
+    background-image: url('../media/linkedinWhite.png');
+}
+
+.dark-mode .githubIcon:hover {
+    background-image: url('../media/githubYellow.png');
+}
+
+.dark-mode .linkedinIcon:hover {
+    background-image: url('../media/linkedinYellow.png');
+}
+
 
 @media (max-width: 750px){
     .right a{

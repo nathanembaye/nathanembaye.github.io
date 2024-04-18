@@ -4,6 +4,10 @@ html, body {
 }
 
 
+.dark-mode {
+    background-color: #1A0800;
+}
+
 .home {
     font-family: "Source Sans Pro", sans-serif, helvetica;
     display: flex;
@@ -21,6 +25,10 @@ html, body {
     text-align: left;
 }
 
+
+.dark-mode .home span {
+    color: white;
+}
 
 .home span {
     color: #777;
@@ -44,13 +52,48 @@ html, body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.dark-mode .home h1 {
+    color:burlywood;
+}
 
 .home a {
     color:#777;
     text-decoration: none;
 }
 
+.dark-mode .home a {
+    color: white;
+}
+
 
 .home a:hover {
     color:#e0218a;
+}
+
+.dark-mode .home a:hover {
+    color: burlywood;
+}
+
+.mode {
+    background-image: url('media/moon.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 3%;
+    left: 2%;
+    height: 24px;
+    width: 24px;
+}
+
+.mode:hover {
+    background-image: url('media/moonPink.png');
+    cursor: pointer;
+}
+
+.dark-mode .mode {
+    background-image: url('media/sun.png');
+}
+
+.dark-mode .mode:hover {
+    background-image: url('media/sunYellow.png');
+    cursor: pointer;
 }

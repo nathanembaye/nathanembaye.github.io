@@ -37,3 +37,56 @@
 .menu a:hover {
     color:#e0218a;
 }
+
+.mode {
+    background-image: url('../media/moon.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 3%;
+    left: 2%;
+    height: 24px;
+    width: 24px;
+}
+
+.mode:hover {
+    background-image: url('../media/moonPink.png');
+    cursor: pointer;
+}
+
+.dark-mode {
+    background-color: #1A0800;
+}
+
+.dark-mode .menu {
+    border-bottom: 1px solid burlywood;
+}
+
+
+.dark-mode .menu h2 {
+    color:burlywood;
+}
+
+.dark-mode .menu a {
+    color:white;
+}
+
+
+.dark-mode .menu a:hover {
+    color:burlywood;
+}
+
+.dark-mode .mode {
+    background-image: url('../media/sun.png');
+}
+
+.dark-mode .mode:hover {
+    background-image: url('../media/sunYellow.png');
+}
+
+.menu .highlightLink {
+    color: #e0218a;
+}
+
+.dark-mode .menu .highlightLink {
+    color: burlywood;
+}

@@ -43,7 +43,31 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
+.excerpt a {
+    color: #e0218a;
+}
+
 
 .excerpt i {
     font-weight: 100;
+}
+
+.dark-mode {
+    color: white;
+}
+
+.dark-mode .article h3 {
+    color: burlywood;
+}
+
+.dark-mode .article h4 {
+    color:#777;
+}
+
+.dark-mode .article h5 {
+    color: burlywood;
+}
+
+.dark-mode a {
+    color: burlywood;
 }
