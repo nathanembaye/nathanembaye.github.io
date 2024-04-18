@@ -97,10 +97,6 @@
     background-image: url('../media/linkedinYellow.png');
 }
 
-a {
-    width: 25px;
-    height: 25px;
-}
 
 @media (max-width: 750px){
     .right a{

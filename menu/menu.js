@@ -1,5 +1,5 @@
 link = window.location.href
-console.log(link)
+
 if (link.includes("complexity") || link.includes("quotes") || link.includes("datalake") || link.includes("miscellania")){
   styles = "    <link type=\"text\/css\" rel=\"stylesheet\" href=\"..\/..\/menu\/index.css\" \/>"
   favicon = "    <link rel=\"icon\" type=\"image\/x-icon\" href=\"..\/..\/media\/favicon.ico\">"
