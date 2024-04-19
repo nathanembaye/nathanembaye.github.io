@@ -7,7 +7,6 @@
     display: block;
 }
 
-
 .article h1 {
     text-align: left;
     font-weight: 100;
@@ -24,10 +23,23 @@
 .links a {
     color:#e0218a;
     text-decoration: underline;
+    font-family: system-ui;
 }
 
 
 .links p {
-    font-weight: 100;
     font-size: 15px;
+    font-family: system-ui;
+}
+
+.dark-mode h1 {
+    color: burlywood;
+}
+
+.dark-mode a {
+    color: burlywood;
+}
+
+.dark-mode p {
+    color: white;
 }

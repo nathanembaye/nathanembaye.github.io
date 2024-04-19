@@ -5,7 +5,6 @@
     margin-right: auto;
     text-align: center;
     display: block;
-    
 }
 
 
@@ -28,4 +27,24 @@
 
 .quote span {
     color:#e0218a;
+}
+
+
+
+
+.article p {
+    color:#777;
+}
+
+
+.dark-mode p {
+    color: white;
+}
+
+.dark-mode h1 {
+    color:burlywood;
+}
+
+.dark-mode .quote span {
+    color:burlywood;
 }

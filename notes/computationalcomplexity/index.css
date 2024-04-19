@@ -23,6 +23,7 @@
 .article p {
     text-align: left;
     font-size: 15px;
+    font-family: system-ui;
 }
 
 
@@ -36,15 +37,6 @@
 .article h5 {
     text-align: left;
     color: #e0218a;
-}
-
-.article {
-    font-family: "Trebuchet MS",sans-serif;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    display: block;
 }
 
  
