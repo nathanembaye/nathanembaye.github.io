@@ -1,6 +1,15 @@
 link = window.location.href
 
-if (link.includes("complexity") || link.includes("quotes") || link.includes("datalake") || link.includes("miscellania")){
+if (link.includes("slidingwindow")){
+  styles = "    <link type=\"text\/css\" rel=\"stylesheet\" href=\"..\/..\/..\/menu\/index.css\" \/>"
+  favicon = "    <link rel=\"icon\" type=\"image\/x-icon\" href=\"..\/..\/..\/media\/favicon.ico\">"
+  home = "<li><a href=\"..\/..\/..\/\">home<\/a><\/li>"
+  about = "            <li><a id=\"one\" href=\"..\/..\/..\/about\/\">about<\/a><\/li>"
+  notes = "            <li><a id=\"two\" href=\"..\/..\/..\/notes\/\">notes<\/a><\/li>"
+  resume = "<li><a id=\"three\" href=\"..\/..\/..\/media\/Resume.pdf\">resume<\/a><\/li>"
+}
+
+else if (link.includes("complexity") || link.includes("quotes") || link.includes("datalake") || link.includes("miscellania") || link.includes("grokking")){
   styles = "    <link type=\"text\/css\" rel=\"stylesheet\" href=\"..\/..\/menu\/index.css\" \/>"
   favicon = "    <link rel=\"icon\" type=\"image\/x-icon\" href=\"..\/..\/media\/favicon.ico\">"
   home = "<li><a href=\"..\/..\/\">home<\/a><\/li>"
@@ -8,6 +17,8 @@ if (link.includes("complexity") || link.includes("quotes") || link.includes("dat
   notes = "            <li><a id=\"two\" href=\"..\/..\/notes\/\">notes<\/a><\/li>"
   resume = "<li><a id=\"three\" href=\"..\/..\/media\/Resume.pdf\">resume<\/a><\/li>"
 }
+
+
 
 else {
     styles = "    <link type=\"text\/css\" rel=\"stylesheet\" href=\"..\/menu\/index.css\" \/>"

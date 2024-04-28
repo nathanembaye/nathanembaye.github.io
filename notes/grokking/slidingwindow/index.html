@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>sliding window</title>
+    <link type="text/css" rel="stylesheet" href="index.css" />
+    <link rel="icon" type="image/x-icon" href="../../media/favicon.ico">
+    <script src="../../../menu/menu.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <br/>
+    <br/>
+    <div class="article">
+        <h1>sliding window</h1>
+        <h4>apr 26, 2024</h4>
+        <br/>
+        <br/>
+        <h3>brute force</h3>
+        <p>We should begin by saying time complexity is not the actual hours:minutes:seconds required to execute any particular piece of code. That depends on a myriad of factors like programming language, operating system and processing power.</p>
+        <p>Instead, time complexity describes how the number of operations an algorithm performs changes with its input size. If our input doubles in size, do the number of operations performed also double? Does it stay the same? What if our input get smaller?</p>
+        <br/>
+        <pre>
+          <code>class Solution:
+      def slidingWindow(self, List[str]):
+          
+          for i in range(len(arr)):
+              for j in range(i, len(arr)):
+              </code>
+            </pre>
+          <br/>
+        <h3>optimal</h3>
+        <p>The space complexity of an algorithm is the amount of memory it requires for a run. Similar to time complexity, this is measured relative to changes in input size.</p>
+        <p>It’s sum is <i>space complexity = auxiliary space + input space.</i></p>
+        <p>Auxiliary space is defined as all the memory used inside the algorithm itself (think variables, loops, data structures, etc). In contrast, input space is the memory used for the data that goes into the algorithm for processing. Differentiating that, when comparing different algorithms' space complexity, we would only consider auxiliary space since they’re solutions accepting the same input.</p>
+        <br/>
+        <pre>
+        <code>class Solution:
+      def slidingWindow(self, arr: List[str]):
+          
+          left = 0
+          for right in range(len(arr)):
+              
+              while (some condition is true):
+                  left += 1
+            </code>
+          </pre>
+          <h3>questions</h3>
+          <i><p><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">longest-substring-without-repeating-characters</a></p></i>
+          <i><p><a href="https://leetcode.com/problems/minimum-size-subarray-sum/">minimum-size-subarray-sum</a></p></i>
+          <i><p><a href="https://leetcode.com/problems/minimum-window-substring/">minimum-window-substring</a></p></i>
+          <br/>
+          <br/>
+    </div>
+  </body>
+</html>
