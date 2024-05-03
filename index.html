@@ -3,7 +3,7 @@
   <head>
     <title>home</title>
     <link type="text/css" rel="stylesheet" href="index.css" />
-    <link rel="icon" type="image/x-icon" href="media/favicon.ico">
+    <link rel="icon" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body onload="init()">
@@ -23,12 +23,15 @@
 
               if (localStorage.getItem("mode") == null) {
                 localStorage.setItem("mode", "light");
+                document.querySelector("link[rel*='icon']").href = "media/favicon_light.ico";
               }
               else if (localStorage.getItem("mode") == "light") {
                 localStorage.setItem("mode", "dark")
+                document.querySelector("link[rel*='icon']").href = "media/favicon_dark.ico";
               }
               else {
                 localStorage.setItem("mode", "light");
+                document.querySelector("link[rel*='icon']").href = "media/favicon_light.ico";
               }
               document.body.classList.toggle("dark-mode");
             }
@@ -36,7 +39,11 @@
           <script>
             function init() {
               if (localStorage.getItem("mode") == "dark"){
+                document.querySelector("link[rel*='icon']").href = "media/favicon_dark.ico";
                 document.body.classList.toggle("dark-mode");
+              }
+              else {
+                document.querySelector("link[rel*='icon']").href = "media/favicon_light.ico";
               }
             }
           </script>
