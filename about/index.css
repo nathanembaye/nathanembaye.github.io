@@ -1,117 +1,85 @@
 .about {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    display: block;
-    max-width: 600px;
-    min-height: 20vh;
-    margin-top: 1%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: block;
+  max-width: 600px;
+  min-height: 20vh;
+  margin-top: 1%;
 }
-
 
 .left {
-    float: left;
-    max-width: 28%;
-    margin-top: 4%;
+  float: left;
+  max-width: 28%;
+  margin-top: 4%;
 }
-
 
 .right {
-    font-family: system-ui;
-    float: right;
-    max-width: 68%;
+  font-family: system-ui;
+  float: right;
+  max-width: 68%;
 }
-
 
 .left img {
-    border-radius: 50%;
-    height: 75%;
-    width: 75%;
+  border-radius: 50%;
+  height: 75%;
+  width: 75%;
 }
-
 
 .right h2 {
-    color:#e0218a;
-    text-align: left;
-    font-weight: 100;
-    font-family: "Source Sans Pro", sans-serif, helvetica;
-    margin-bottom: -2%;
+  color: #e0218a;
+  text-align: left;
+  font-weight: 100;
+  font-family: "Source Sans Pro", sans-serif, helvetica;
+  margin-bottom: -2%;
 }
-
 
 .right p {
-    text-align: left;
-    font-size: .80em;
-    line-height: 1.34em;
-}
-
-
-.dark-mode .right h2 {
-    color: burlywood;
-}
-
-.dark-mode {
-    color: white;
+  text-align: left;
+  font-size: 0.8em;
+  line-height: 1.34em;
 }
 
 .githubIcon {
-    background-image: url('../media/github.png');
-    background-repeat: no-repeat;
-    width: 25px;
-    height: 25px;
-    float: left;
-    min-width: 10%;
-    background-size: 25px;
+  background-image: url("../media/github.png");
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  float: left;
+  min-width: 10%;
+  background-size: 25px;
 }
 
 .linkedinIcon {
-    background-image: url('../media/linkedin.png');
-    background-repeat: no-repeat;
-    width: 25px;
-    height: 25px;
-    float: left;
-    background-size: 25px;
+  background-image: url("../media/linkedin.png");
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  float: left;
+  background-size: 25px;
 }
 
-
 .githubIcon:hover {
-    background-image: url('../media/github2.png');
-    cursor: pointer;
+  background-image: url("../media/github2.png");
+  cursor: pointer;
 }
 
 .linkedinIcon:hover {
-    background-image: url('../media/linkedin2.png');
-    cursor: pointer;
+  background-image: url("../media/linkedin2.png");
+  cursor: pointer;
 }
 
-.dark-mode .githubIcon {
-    background-image: url('../media/githubWhite.png');
-}
+@media (max-width: 750px) {
+  .githubIcon {
+    min-width: 13%;
+    width: 23px;
+    height: 23px;
+    background-size: 23px;
+  }
 
-.dark-mode .linkedinIcon {
-    background-image: url('../media/linkedinWhite.png');
-}
-
-.dark-mode .githubIcon:hover {
-    background-image: url('../media/githubBurly.png');
-}
-
-.dark-mode .linkedinIcon:hover {
-    background-image: url('../media/linkedinBurly.png');
-}
-
-
-@media (max-width: 750px){
-    .githubIcon {
-        min-width: 13%;
-        width: 23px;
-        height: 23px;
-        background-size: 23px;
-    }
-    
-    .linkedinIcon {
-        width: 23px;
-        height: 23px;
-        background-size: 23px;
-    }
+  .linkedinIcon {
+    width: 23px;
+    height: 23px;
+    background-size: 23px;
+  }
 }

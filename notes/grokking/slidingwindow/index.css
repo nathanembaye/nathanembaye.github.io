@@ -1,82 +1,47 @@
 .article {
-    font-family: "Trebuchet MS",sans-serif;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    display: block;
+  font-family: "Trebuchet MS", sans-serif;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: block;
 }
-
 
 .article h1 {
-    text-align: left;
-    font-weight: 100;
+  text-align: left;
+  font-weight: 100;
 }
-
 
 .article h3 {
-    text-align: left;
-    color: #e0218a;
+  text-align: left;
+  color: #e0218a;
 }
-
 
 .article p {
-    text-align: left;
-    font-size: 15px;
+  text-align: left;
+  font-size: 15px;
 }
-
 
 .article h4 {
-    text-align: left;
-    color:#777;
-    font-weight: 100;
+  text-align: left;
+  color: #777;
+  font-weight: 100;
 }
 
-
 .article h5 {
-    text-align: left;
-    color: #e0218a;
+  text-align: left;
+  color: #e0218a;
 }
 
 .article a {
-   color: black;
-}
-
- 
-.dark-mode {
-    color: white;
-}
-
-.dark-mode .article a {
-    color: white;
- }
-
-.dark-mode .article h3 {
-    color: burlywood;
-}
-
-.dark-mode .article h4 {
-    color:burlywood;
-}
-
-.dark-mode .article h5 {
-    color: burlywood;
+  color: black;
 }
 
 pre code {
-    background-color: #e5e5e5;
-    border-radius: 4px;
-    border: 1px solid #bbb;
-    display: block;
-    padding: 20px;
-    text-align: left;
-}
-
-.dark-mode pre code {
-    background-color: #383838;
-    border-radius: 4px;
-    border: 1px solid #bbb;
-    display: block;
-    padding: 20px;
-    text-align: left;
+  background-color: #e5e5e5;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  display: block;
+  padding: 20px;
+  text-align: left;
 }

@@ -1,60 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <link type="text/css" rel="stylesheet" href= "../menu/index.css" />
-    <link rel="icon" type="image/x-icon">
+    <link type="text/css" rel="stylesheet" href="../menu/index.css" />
+    <link rel="icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body onload="init()">
-    <div class="mode" onclick="toggleDarkMode()">
-        <script>
-          function toggleDarkMode() {
-            if (localStorage.getItem("mode") == null) {
-              localStorage.setItem("mode", "light");
-              
-              document.querySelector("link[rel*='icon']").href = layer_light[layer];
-            }
-            else if (localStorage.getItem("mode") == "light") {
-              localStorage.setItem("mode", "dark")
-              document.querySelector("link[rel*='icon']").href = layer_dark[layer];
-            }
-            else {
-              localStorage.setItem("mode", "light");
-              document.querySelector("link[rel*='icon']").href = layer_light[layer];
-            }
-            document.body.classList.toggle("dark-mode");
-          }
-        </script>
-        <script>
-          function init() {
-            if (localStorage.getItem("mode") == "dark"){
-              document.body.classList.toggle("dark-mode");
-              document.querySelector("link[rel*='icon']").href = layer_dark[layer];
-            }
-            else{
-              document.querySelector("link[rel*='icon']").href = layer_light[layer];
-            }
-            if (location.href.includes("about")) {
-                document.getElementById("one").className = "highlightLink";
-            }
-            else if (location.href.includes("Resume")) {
-                document.getElementById("three").className = "highlightLink";
-            }
-            else {
-                document.getElementById("two").className = "highlightLink";
-            }
-          }
-        </script>
-      </div>
+  <body>
     <div class="menu">
-        <h2>&lambda;</h2>
-        <ul>
-            <li><a href="../../">home</a></li>
-            <li><a id="one" href="../about/">about</a></li>
-            <li><a id="two" href="../notes/">notes</a></li>
-            <li><a id="three" href="../../media/Resume.pdf">resume</a></li>
-            <li><a href="mailto:nathanembaye26@gmail.com">contact</a></li>
-        </ul>
+      <h2>&lambda;</h2>
+      <ul>
+        <li><a href="../../">home</a></li>
+        <li><a id="one" href="../about/">about</a></li>
+        <li><a id="two" href="../notes/">notes</a></li>
+        <li><a id="three" href="../../media/Resume.pdf">resume</a></li>
+        <li><a href="mailto:nathanembaye26@gmail.com">contact</a></li>
+      </ul>
     </div>
   </body>
-</html>  
+</html>

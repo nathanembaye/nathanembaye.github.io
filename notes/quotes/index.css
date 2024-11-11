@@ -1,50 +1,30 @@
 .article {
-    font-family: "Trebuchet MS",sans-serif;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    display: block;
+  font-family: "Trebuchet MS", sans-serif;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: block;
 }
-
 
 .article h1 {
-    text-align: left;
-    font-weight: 100;
+  text-align: left;
+  font-weight: 100;
 }
-
 
 .article p {
-    color:#777;
+  color: #777;
 }
-
 
 .quote {
-    font-family: system-ui;
-    text-align: left;
+  font-family: system-ui;
+  text-align: left;
 }
-
 
 .quote span {
-    color:#e0218a;
+  color: #e0218a;
 }
-
-
-
 
 .article p {
-    color:#777;
-}
-
-
-.dark-mode p {
-    color: white;
-}
-
-.dark-mode h1 {
-    color:burlywood;
-}
-
-.dark-mode .quote span {
-    color:burlywood;
+  color: #777;
 }

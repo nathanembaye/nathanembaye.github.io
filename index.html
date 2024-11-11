@@ -1,53 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>home</title>
     <link type="text/css" rel="stylesheet" href="index.css" />
-    <link rel="icon" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body onload="init()">
+  <body>
     <div class="home">
-        <div class="table">
-            <h1><span>λ</span> nathan embaye</h1>
-            <ul>
-                <li><a href="about/">about</a></li>
-                <li><a href="notes/">notes</a></li>
-                <li><a href="media/Resume.pdf">resume</a></li>
-                <li><a href="mailto:nathanembaye26@gmail.com">contact</a></li>
-            </ul>
-        </div>
-        <div class="mode" onclick="toggleDarkMode()">
-          <script>
-            function toggleDarkMode() {
-
-              if (localStorage.getItem("mode") == null) {
-                localStorage.setItem("mode", "light");
-                document.querySelector("link[rel*='icon']").href = "media/favicon_light.ico";
-              }
-              else if (localStorage.getItem("mode") == "light") {
-                localStorage.setItem("mode", "dark")
-                document.querySelector("link[rel*='icon']").href = "media/favicon_dark.ico";
-              }
-              else {
-                localStorage.setItem("mode", "light");
-                document.querySelector("link[rel*='icon']").href = "media/favicon_light.ico";
-              }
-              document.body.classList.toggle("dark-mode");
-            }
-          </script>
-          <script>
-            function init() {
-              if (localStorage.getItem("mode") == "dark"){
-                document.querySelector("link[rel*='icon']").href = "media/favicon_dark.ico";
-                document.body.classList.toggle("dark-mode");
-              }
-              else {
-                document.querySelector("link[rel*='icon']").href = "media/favicon_light.ico";
-              }
-            }
-          </script>
-        </div>
+      <div class="table">
+        <h1><span>λ</span> nathan embaye</h1>
+        <ul>
+          <li><a href="about/">about</a></li>
+          <li><a href="notes/">notes</a></li>
+          <li><a href="media/Resume.pdf">resume</a></li>
+          <li><a href="mailto:nathanembaye26@gmail.com">contact</a></li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>

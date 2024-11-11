@@ -1,44 +1,29 @@
 .article {
-    font-family: "Trebuchet MS",sans-serif;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    display: block;
+  font-family: "Trebuchet MS", sans-serif;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: block;
 }
-
 
 .article h1 {
-    text-align: left;
-    font-weight: 100;
+  text-align: left;
+  font-weight: 100;
 }
 
-
 .links {
-    text-align: left;
-    align-items: flex-start;
-    padding-top: 1%;
+  text-align: left;
+  align-items: flex-start;
+  padding-top: 1%;
 }
 
 .links a {
-    color:#e0218a;
-    text-decoration: underline;
+  color: #e0218a;
+  text-decoration: underline;
 }
-
 
 .links p {
-    font-weight: 100;
-    font-size: 15px;
-}
-
-.dark-mode h1 {
-    color: burlywood;
-}
-
-.dark-mode a {
-    color: burlywood;
-}
-
-.dark-mode p {
-    color: white;
+  font-weight: 100;
+  font-size: 15px;
 }
