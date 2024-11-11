@@ -30,7 +30,7 @@ else {
 }
 
 const layer_light = {"1": "../media/favicon_light.ico", "2": "../../media/favicon_light.ico", "3": "../../../media/favicon_light.ico"}
-const layer_dark = {"1": "../media/favicon_dark.ico", "2": "../../media/favicon_dark.ico", "3": "../../../media/favicon_dark.ico"}
+const layer_dark = {"1": "../media/favicon_light.ico", "2": "../../media/favicon_light.ico", "3": "../../../media/favicon_light.ico"}
  
 
 document.write("<!doctype html>");
